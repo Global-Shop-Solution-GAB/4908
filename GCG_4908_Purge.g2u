@@ -1,0 +1,316 @@
+Program.Sub.ScreenSU.Start
+Gui.FormConfiguratorPurge..Create
+Gui.FormConfiguratorPurge..Caption("Configurator Purge")
+Gui.FormConfiguratorPurge..Size(3975,2085)
+Gui.FormConfiguratorPurge..MinX(0)
+Gui.FormConfiguratorPurge..MinY(0)
+Gui.FormConfiguratorPurge..Position(0,0)
+Gui.FormConfiguratorPurge..BackColor(-2147483633)
+Gui.FormConfiguratorPurge..MaxButton(False)
+Gui.FormConfiguratorPurge..MinButton(False)
+Gui.FormConfiguratorPurge..MousePointer(0)
+Gui.FormConfiguratorPurge..Sizeable(False)
+Gui.FormConfiguratorPurge..Event(UnLoad,FormConfiguratorPurge_UnLoad)
+Gui.FormConfiguratorPurge.chkRouters.Create(CheckBox)
+Gui.FormConfiguratorPurge.chkRouters.Size(1560,360)
+Gui.FormConfiguratorPurge.chkRouters.Position(255,255)
+Gui.FormConfiguratorPurge.chkRouters.Caption("Purge Routers")
+Gui.FormConfiguratorPurge.chkRouters.Value(1)
+Gui.FormConfiguratorPurge.chkParts.Create(CheckBox)
+Gui.FormConfiguratorPurge.chkParts.Size(1560,360)
+Gui.FormConfiguratorPurge.chkParts.Position(255,585)
+Gui.FormConfiguratorPurge.chkParts.Caption("Purge Parts")
+Gui.FormConfiguratorPurge.chkParts.Value(1)
+Gui.FormConfiguratorPurge.chkParts.Visible(False)
+Gui.FormConfiguratorPurge.btnPurge.Create(Button)
+Gui.FormConfiguratorPurge.btnPurge.Size(990,375)
+Gui.FormConfiguratorPurge.btnPurge.Position(1455,1335)
+Gui.FormConfiguratorPurge.btnPurge.Caption("Purge")
+Gui.FormConfiguratorPurge.btnPurge.Event(Click,btnPurge_Click)
+Gui.FormConfiguratorPurge.chkScreens.Create(CheckBox)
+Gui.FormConfiguratorPurge.chkScreens.Size(2145,360)
+Gui.FormConfiguratorPurge.chkScreens.Position(255,570)
+Gui.FormConfiguratorPurge.chkScreens.Caption("Purge Saved Screens")
+Gui.FormConfiguratorPurge.chkScreens.Value(1)
+Gui.FormConfiguratorPurge.progressBar1.Create(ProgressBar)
+Gui.FormConfiguratorPurge.progressBar1.Visible(False)
+Gui.FormConfiguratorPurge.progressBar1.Size(3735,255)
+Gui.FormConfiguratorPurge.progressBar1.Position(60,615)
+Gui.FormConfiguratorPurge.lblProgress.Create(Label,"",False,1935,255,0,75,1005,True,0,"Arial",8,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'GCG_4908_Purge.g2u
+'Trey S
+'12-14-2018
+'For Mercedes
+'This program will purge unused parts / routers created by the configurator
+
+GUI.FormConfiguratorPurge..Show
+Program.Sub.Main.End
+
+Program.Sub.FormConfiguratorPurge_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.FormConfiguratorPurge_UnLoad.End
+
+Program.Sub.btnPurge_Click.Start
+V.Local.sMsg.Declare(String)
+V.Local.sRouters.Declare(String)
+V.Local.sParts.Declare(String)
+V.Local.sAnd.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.sScreens.Declare(String)
+V.Local.sZ.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkParts.checkedAsBoolean, =, False, and, V.Screen.FormConfiguratorPurge!chkRouters.checkedAsBoolean, =, False)
+	F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkScreens.checkedAsBoolean, =, False)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkParts.checkedAsBoolean)
+	V.Local.sParts.Set("parts")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkRouters.checkedAsBoolean)
+	V.Local.sRouters.Set("routers")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sParts.Trim, !=, "", and, V.Local.sRouters.Trim, !=, "")
+	V.Local.sAnd.Set(" and ")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sParts.Trim, !=, "", or, V.Local.sRouters.Trim, !=, "")
+	V.Local.sZ.Set(" starting with a Z ")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkScreens.checkedAsBoolean)
+	F.Intrinsic.Control.If(V.Local.sZ.Trim, !=, "")
+		V.Local.sScreens.Set("as well as all saved screens ")
+	F.Intrinsic.Control.Else
+		V.Local.sScreens.Set("all saved screens ")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("This will delete all {0}{1}{2}{4}{3}that aren't on an open sales order. Are you sure you want to continue?", V.Local.sRouters, V.Local.sAnd, V.Local.sParts, V.Local.sScreens, V.Local.sZ, V.Local.sMsg)
+F.Intrinsic.UI.Msgbox(V.Local.sMsg, "Warning", 4, V.Local.iRet)
+
+F.Intrinsic.Control.If(V.Local.iRet, =, V.Ambient.MsgBoxYes)
+	F.Intrinsic.Control.CallSub(Purge)
+F.Intrinsic.Control.EndIf
+Program.Sub.btnPurge_Click.End
+
+Program.Sub.Purge.Start
+V.Local.sSQL.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.bInString.Declare(Boolean)
+V.Local.bExists.Declare(Boolean)
+V.Local.sPath.Declare(String)
+V.Local.sFiles.Declare(String)
+V.Local.iMax.Declare(Long)
+V.Local.sTemp.Declare(String)
+
+GUI.FormConfiguratorPurge..Enabled(False)
+GUI.FormConfiguratorPurge.btnPurge.Visible(False)
+GUI.FormConfiguratorPurge.chkParts.Visible(False)
+GUI.FormConfiguratorPurge.chkRouters.Visible(False)
+GUI.FormConfiguratorPurge.chkScreens.Visible(False)
+GUI.FormConfiguratorPurge.progressBar1.Visible(True)
+GUI.FormConfiguratorPurge.lblProgress.Visible(True)
+GUI.FormConfiguratorPurge.progressBar1.Min(0)
+GUI.FormConfiguratorPurge.progressBar1.Max(1)
+F.ODBC.Connection!Con.OpenCompanyConnection
+
+'get parts
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkParts.checkedAsBoolean)
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Getting parts...")
+	V.Local.sSQL.Set("select distinct RTRIM(PART) as NAME from V_INVENTORY_MSTR where PART like 'Z%'")
+	F.Data.DataTable.CreateFromSQL("dtParts", "Con", V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+'get routers
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkRouters.checkedAsBoolean)
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Getting routers...")
+	'V.Local.sSQL.Set("select distinct RTRIM(ROUTER) as NAME from V_ROUTER_HEADER where ROUTER like 'Z%'")
+	V.Local.sSQL.Set("select distinct RTRIM(RTR_NUMBER) as NAME from V_RTR_SEQ_COMMENTS where RTR_NUMBER like 'Z%'")
+	F.Data.DataTable.CreateFromSQL("dtRouters", "Con", V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+'Merge if neccessary
+F.Intrinsic.Control.If(V.DataTable.dtParts.Exists, =, True, and, V.DataTable.dtRouters.Exists, =, True)
+	F.Data.DataTable.Merge("dtParts", "dtRouters", False, 1)
+	F.Data.Dataview.Create("dtRouters", "dvNames", 22)
+	F.Data.DataView.ToDataTableDistinct("dtRouters", "dvNames", "dtNames", "NAME")
+	F.Data.DataView.Close("dtRouters", "dvNames")
+	F.Data.DataTable.Close("dtRouters")
+	F.Data.DataTable.Close("dtParts")
+F.Intrinsic.Control.ElseIf(V.DataTable.dtParts.Exists, =, True)
+	F.Data.DataView.Create("dtParts", "dvNames", 22)
+	F.Data.DataView.ToDataTable("dtParts", "dvNames", "dtNames")
+	F.Data.DataView.Close("dtParts", "dvNames")
+	F.Data.DataTable.Close("dtParts")
+F.Intrinsic.Control.ElseIf(V.DataTable.dtRouters.Exists, =, True)
+	F.Data.DataView.Create("dtRouters", "dvNames", 22)
+	F.Data.DataView.ToDataTable("dtRouters", "dvNames", "dtNames")
+	F.Data.DataView.Close("dtRouters", "dvNames")
+	F.Data.DataTable.Close("dtRouters")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkScreens.checkedAsBoolean.Not)
+		GUI.FormConfiguratorPurge.lblProgress.Caption("Finishing up...")
+		GUI.FormConfiguratorPurge.progressBar1.Value(1)
+		F.ODBC.Connection!Con.Close
+		F.Intrinsic.Control.CallSub(FormConfiguratorPurge_UnLoad)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'get files
+F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkScreens.checkedAsBoolean)
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Getting saved screens...")
+	F.Intrinsic.String.Build("{0}\Custom\4908\Screens\", V.Caller.GlobalDir, V.Local.sPath)
+	F.Intrinsic.File.DirExists(V.Local.sPath, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists.Not)
+		F.Intrinsic.File.CreateDir(V.Local.sPath)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.File.GetFileList(V.Local.sPath, V.Local.sFiles)
+	F.Intrinsic.Control.If(V.Local.sFiles.Trim, !=, "")
+		F.Intrinsic.String.Split(V.Local.sFiles, ":", V.Local.sFiles)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtNames.Exists)
+	F.Intrinsic.Math.Add(V.Local.sFiles.UBound, 1, V.DataTable.dtNames.RowCount, V.Local.iMax)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.Add(V.Local.sFiles.UBound, 1, V.Local.iMax)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.iMax, >, 0)
+	GUI.FormConfiguratorPurge.progressBar1.Max(V.Local.iMax)
+F.Intrinsic.Control.Else
+	GUI.FormConfiguratorPurge.progressBar1.Value(1)
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Finishing up...")
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.CallSub(FormConfiguratorPurge_UnLoad)
+F.Intrinsic.Control.EndIf
+
+GUI.FormConfiguratorPurge.lblProgress.Caption("Getting orders...")
+F.Intrinsic.Control.If(V.DataTable.dtNames.Exists)
+	V.Local.sSQL.Set("select distinct RTRIM(PART) as PART from V_ORDER_LINES where PART like 'Z%'")
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Checking order lines...")
+	
+	F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataTable.dtNames.RowCount--, 1)
+		GUI.FormConfiguratorPurge.progressBar1.Value(V.Local.iCounter)
+		
+		F.Intrinsic.String.IsInString(V.Local.sRet, V.DataTable.dtNames(V.Local.iCounter).Name!FieldValTrim, True, V.Local.bInString)
+		F.Intrinsic.Control.If(V.Local.bInString.Not)
+			F.Intrinsic.Control.If(V.Local.sFilter.Trim, =, "")
+				F.Intrinsic.String.Build("PART = '{0}'", V.DataTable.dtNames(V.Local.iCounter).Name!FieldValTrim, V.Local.sFilter)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0} or PART = '{1}'", V.Local.sFilter, V.DataTable.dtNames(V.Local.iCounter).Name!FieldValTrim, V.Local.sFilter)
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCounter)
+	F.Data.DataTable.Close("dtNames")
+	
+	F.Intrinsic.Control.If(V.Local.sFilter.Trim, !=, "")
+		'delete parts
+		F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkParts.checkedAsBoolean)
+			GUI.FormConfiguratorPurge.lblProgress.Caption("Deleting parts...")
+			F.Intrinsic.String.Build("delete from INVENTORY_MSTR where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INVENTORY_MST2 where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INVENTORY_MST3 where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INV_ALT_PRICE where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INV_CROSS_REF where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INVENTORY_COST where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from PART_XREF_USER where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from INV_EXTRA_TEXT where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)	
+		F.Intrinsic.Control.EndIf
+		
+		'delete routers
+		F.Intrinsic.Control.If(V.Screen.FormConfiguratorPurge!chkRouters.checkedAsBoolean)
+			GUI.FormConfiguratorPurge.lblProgress.Caption("Deleting routers...")
+			F.Intrinsic.String.Replace(V.Local.sFilter, "PART", "ROUTER", V.Local.sFilter)
+			
+			F.Intrinsic.String.Build("delete from ROUTER_HEADER where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from ROUTER_LINE where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from ROUTER_XREF where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from ROUTER_DESC where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from RTR_PRICE_1_4 where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from RTR_PRICE_5_8 where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from RTR_PRICE_9_10 where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Replace(V.Local.sFilter, "ROUTER", "RTR_NUM", V.Local.sFilter)
+			F.Intrinsic.String.Build("delete from ROUTER_SUPP_HDR where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Build("delete from ROUTER_SUPP_LINE where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+			
+			F.Intrinsic.String.Replace(V.Local.sFilter, "RTR_NUM", "RTR_NUMBER", V.Local.sFilter)
+			F.Intrinsic.String.Build("delete from RTR_SEQ_COMMENTS where ({0})", V.Local.sFilter, V.Local.sSQL)
+			F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sFiles.Trim, !=, "")
+	GUI.FormConfiguratorPurge.lblProgress.Caption("Deleting saved screens...")
+	V.Local.sSQL.Set("select distinct ORDER_NO from V_ORDER_HEADER")
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+		F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sFiles.UBound, 1)
+			F.Intrinsic.Math.Add(V.Screen.FormConfiguratorPurge!progressBar1.Value, 1, V.Local.iMax)
+			GUI.FormConfiguratorPurge.progressBar1.Value(V.Local.iMax)
+			F.Intrinsic.String.Split(V.Local.sFiles(V.Local.iCounter), "-", V.Local.sTemp)
+			F.Intrinsic.String.Replace(V.Local.sTemp(2), ".txt", "", V.Local.sTemp(2))
+			F.Intrinsic.String.IsInString(V.Local.sRet, V.Local.sTemp(2), True, V.Local.bInString)
+			F.Intrinsic.Control.If(V.Local.bInString.Not)
+				F.Intrinsic.String.Join(V.Local.sTemp, "-", V.Local.sTemp)
+				F.Intrinsic.String.Build("{0}{1}.txt", V.Local.sPath, V.Local.sTemp, V.Local.sTemp)
+				F.Intrinsic.File.DeleteFile(V.Local.sTemp)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCounter)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+GUI.FormConfiguratorPurge.lblProgress.Caption("Finishing up...")
+F.Intrinsic.UI.Msgbox("Purge successful")
+F.ODBC.Connection!Con.Close
+GUI.FormConfiguratorPurge..Enabled(True)
+F.Intrinsic.Control.CallSub(FormConfiguratorPurge_UnLoad)
+Program.Sub.Purge.End
