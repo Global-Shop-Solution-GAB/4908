@@ -1,0 +1,245 @@
+Program.Sub.ScreenSU.Start
+Gui.FormSOWOAR..Create
+Gui.FormSOWOAR..Caption("Sales Order\Work Order Action Required")
+Gui.FormSOWOAR..Size(15360,10500)
+Gui.FormSOWOAR..MinX(0)
+Gui.FormSOWOAR..MinY(0)
+Gui.FormSOWOAR..Position(0,0)
+Gui.FormSOWOAR..BackColor(-2147483633)
+Gui.FormSOWOAR..MousePointer(0)
+Gui.FormSOWOAR..Event(UnLoad,FormSOWOAR_UnLoad)
+Gui.FormSOWOAR.gsgcWOs.Create(GsGridControl)
+Gui.FormSOWOAR.gsgcWOs.Size(15360,9735)
+Gui.FormSOWOAR.gsgcWOs.Position(0,540)
+Gui.FormSOWOAR.gsgcWOs.Event(RowCellClick,gsgcWOs_RowCellClick)
+Gui.FormSOWOAR.gsgcWOs.Anchor(15)
+Gui.FormSOWOAR.cmdRefresh.Create(Button)
+Gui.FormSOWOAR.cmdRefresh.Size(855,375)
+Gui.FormSOWOAR.cmdRefresh.Position(75,75)
+Gui.FormSOWOAR.cmdRefresh.Caption("Refresh")
+Gui.FormSOWOAR.cmdRefresh.DisableOnClick(10)
+Gui.FormSOWOAR.cmdRefresh.Event(Click,cmdRefresh_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+'GCG_4908_ActionRequired.g2u
+'Trey S
+'2-27-2019
+'For Mercedes Textiles
+'This program will allow the user to view and delete work orders that have had their parent sales orders deleted
+
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+GUI.FormSOWOAR..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.LoadData.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.sSQL.Declare(String)
+
+F.ODBC.Connection!Con.OpenCompanyConnection
+
+F.Data.DataTable.CreateFromSQL("dtWOs", "Con", "Select RTRIM(SO) as SO, RTRIM(LINE) as Line, Rtrim(WO) as WO, RTRIM(USERNAME) as USERNAME, Delete_Date, Delete_Time from GCG_4908_DELETEDSOWO", True)
+
+F.Data.Dictionary.CreateFromSQL("dictParts", "Con", "Select A.JOB + '-' + A.SUFFIX as WO, RTRIM(PART) as Part from V_JOB_HEADER A where WO in (select WO as JOB from GCG_4908_DELETEDSOWO)")
+F.Data.Dictionary.SetDefaultReturn("dictParts", "")
+F.Data.DataTable.AddColumn("dtWOs", "Part", "String")
+F.Data.DataTable.FillFromDictionary("dtWOs", "dictParts", "WO", "Part")
+F.Data.Dictionary.Close("dictParts")
+
+F.Data.DataTable.AddColumn("dtWOs", "Delete", "Boolean")
+
+F.ODBC.Connection!Con.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadData.End
+
+Program.Sub.LoadGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+GUI.FormSOWOAR.gsgcWOs.AddGridviewFromDatatable("gvWOs", "dtWOs")
+
+GUI.FormSOWOAR.gsgcWOs.SetGridviewProperty("gvWOs", "Editable", False)
+GUI.FormSOWOAR.gsgcWOs.SetGridviewProperty("gvWOs", "MultiSelect", False)
+GUI.FormSOWOAR.gsgcWOs.SetGridviewProperty("gvWOs", "ReadOnly", True)
+GUI.FormSOWOAR.gsgcWOs.SetGridviewProperty("gvWOs", "EnableAppearanceOddRow", True)
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "Caption", "Sales Order")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "Caption", "Line")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "Caption", "Work Order")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "Caption", "User")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "Caption", "Date")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "Caption", "Time")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "Caption", "Part")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "Caption", " ")
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "HeaderFontBold", True)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "HeaderFontBold", True)
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "HeaderHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "HeaderHAlignment", "Center")
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "CellHAlignment", "Center")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "CellHAlignment", "Center")
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "MinWidth", 75)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "MinWidth", 120)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "MinWidth", 75)
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "SO", "VisibleIndex", 0)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Line", "VisibleIndex", 1)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "VisibleIndex", 2)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Username", "VisibleIndex", 4)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "VisibleIndex", 5)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Time", "VisibleIndex", 6)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Part", "VisibleIndex", 3)
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete", "VisibleIndex", 7)
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "CellForeColor", "Blue")
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "WO", "CellFontUnderline", True)
+
+GUI.FormSOWOAR.gsgcWOs.SetColumnProperty("gvWOs", "Delete_Date", "DisplayCustomDateTime", "d")
+
+GUI.FormSOWOAR.gsgcWOs.ColumnEdit("gvWOs", "Delete", "EditorButton", "Delete")
+
+GUI.FormSOWOAR.gsgcWOs.MainView("gvWOs")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadGrid.End
+
+Program.Sub.gsgcWOs_RowCellClick.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.sJob.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.iRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.If(V.Args.Column, =, "WO", and, V.Args.Clicks, >, 1)
+	
+	GUI.FormSOWOAR.gsgcWOs.GetCellValueByColumnName("gvWOs", "WO", V.Args.RowIndex, V.Local.sJob)
+	F.Intrinsic.String.Split(V.Local.sJob, "-", V.Local.sJob)
+	F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A",V.Local.sJob(0), V.Local.sJob(1), V.Local.sParams)
+	GUI.FormSOWOAR..Enabled(False)
+	F.Global.General.CallWrapperSync(450000,V.Local.sParams)
+	GUI.FormSOWOAR..Enabled(True)
+	GUI.FormSOWOAR..AlwaysOnTop(True)
+	GUI.FormSOWOAR..AlwaysOnTop(False)
+
+F.Intrinsic.Control.ElseIf(V.Args.Column, =, "Delete")
+
+	GUI.FormSOWOAR..Enabled(False)
+	F.Intrinsic.UI.Msgbox("Are you sure you want to delete this Work Order?", "Delete", 4, V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet, !=, 6)
+		GUI.FormSOWOAR..Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	GUI.FormSOWOAR.gsgcWOs.GetCellValueByColumnName("gvWOs", "WO", V.Args.RowIndex, V.Local.sJob)
+	F.Intrinsic.String.Split(V.Local.sJob, "-", V.Local.sJob)
+	F.Intrinsic.String.Build("{0}!*!{1}!*!{0}!*!{1}", V.Local.sJob(0), V.Local.sJob(1), V.Local.sParams)
+	F.Global.General.CallWrapperSync(2070, V.Local.sParams)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	F.Intrinsic.String.Build("delete from GCG_4908_DELETEDSOWO where WO = '{0}-{1}'", V.Local.sJob(0), V.Local.sJob(1), V.Local.sSQL)
+	F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+	F.ODBC.Connection!Con.Close
+	
+	GUI.FormSOWOAR..Enabled(True)
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcWOs_RowCellClick.End
+
+Program.Sub.FormSOWOAR_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtWOs.Exists)
+	F.Data.DataTable.Close("dtWOs")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.FormSOWOAR_UnLoad.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+GUI.FormSOWOAR.gsgcWOs.Visible(False)
+GUI.FormSOWOAR.gsgcWOs.SuspendLayout
+
+F.Intrinsic.Control.If(V.DataTable.dtWOs.Exists)
+	F.Data.DataTable.Close("dtWOs")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(LoadData)
+F.Intrinsic.Control.CallSub(LoadGrid)
+
+GUI.FormSOWOAR.gsgcWOs.ResumeLayout
+GUI.FormSOWOAR.gsgcWOs.Visible(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
