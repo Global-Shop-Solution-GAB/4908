@@ -1,0 +1,158 @@
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'GCG_4908_OrderLineDeleteCheck.g2u
+'Trey S
+'2-25-19
+'For Mercedes Textiles
+'This script will check if there is a COGS WO for an item on a Sales order when it is deleted
+'and notify the user, save it to a log, and send an email
+
+'11881 - Pre delete
+	'3 Order
+
+'12241 Line pre delete
+	'51 Line
+	'60 ORDER
+
+V.Local.sOrder.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sEmails.Declare(String)
+V.Local.sEmailMessage.Declare(String)
+V.Local.sSender.Declare(String)
+V.Local.sSenderName.Declare(String)
+V.Local.iUserID.Declare(Long)
+V.Local.sSenderEmail.Declare(String)
+V.Local.sBody.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sWOs.Declare(String)
+V.Local.sEmailsAndNames.Declare(String)
+V.Local.sNoSender.Declare(String)
+V.Local.sNoRecipient.Declare(String)
+
+F.Data.DataTable.Create("dtWOs", True)
+F.Data.DataTable.AddColumn("dtWOs", "SO", "String")
+F.Data.DataTable.AddColumn("dtWOs", "Line", "String")
+F.Data.DataTable.AddColumn("dtWOs", "WO", "String")
+
+F.ODBC.Connection!Con.OpenCompanyConnection
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	F.Intrinsic.Control.Case(12241)
+		V.Local.sOrder.Set(V.Passed.000060)
+		F.Intrinsic.String.LPad(V.Local.sOrder, "0", 7, V.Local.sOrder)
+		V.Local.sLine.Set(V.Passed.000051)
+		F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+		F.Intrinsic.Control.CallSub(CheckLine, "Order", V.Local.sOrder, "Line", V.Local.sLine)
+		
+	F.Intrinsic.Control.Case(11881)
+		V.Local.sOrder.Set(V.Passed.000003)
+		F.Intrinsic.String.LPad(V.Local.sOrder, "0", 7, V.Local.sOrder)
+		F.Intrinsic.Control.CallSub(CheckOrder, "Order", V.Local.sOrder)
+		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.If(V.DataTable.dtWOs.RowCount, =, 0)
+	F.Data.DataTable.Close("dtWOs")
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataTable.dtWOs.RowCount--, 1)
+	F.Intrinsic.Control.If(V.Local.iCounter, =, 0)
+		F.Intrinsic.String.Build("SO: {0}, Line: {1}, WO: {2}", V.DataTable.dtWOs(V.Local.iCounter).SO!FieldValTrim, V.DataTable.dtWOs(V.Local.iCounter).Line!FieldValTrim, V.DataTable.dtWOs(V.Local.iCounter).WO!FieldValTrim, V.Local.sWOs)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{4}{3}SO: {0}, Line: {1}, WO: {2}", V.DataTable.dtWOs(V.Local.iCounter).SO!FieldValTrim, V.DataTable.dtWOs(V.Local.iCounter).Line!FieldValTrim, V.DataTable.dtWOs(V.Local.iCounter).WO!FieldValTrim, V.Ambient.NewLine, V.Local.sWOs, V.Local.sWOs)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.String.Build("The following Sales Orders/Sales Order lines with Work Orders were deleted by user {2} on {3}: {0}{1}{0}These work orders will need to be deleted as well. They can be viewed in Order Entry > Administration > Deleted SO/WO Action Required.", V.Ambient.NewLine, V.Local.sWOs, V.Caller.User, V.Ambient.Date.FormatMM-DD-YYYY, V.Local.sBody)
+
+F.Global.Security.GetGroupEmails("4908", V.Caller.CompanyCode, V.Local.sEmails)
+F.Intrinsic.String.Split(V.Local.sEmails, "*!*", V.Local.sEmailsAndNames)
+F.Intrinsic.String.Join(V.Local.sEmailsAndNames, "@!@*!*", V.Local.sEmailsAndNames)
+F.Global.Security.GetUserId(V.Caller.User, V.Caller.CompanyCode, V.Local.iUserID)
+F.Global.Security.GetFullName(V.Caller.User, V.Caller.CompanyCode, V.Local.sSenderName)
+F.Global.Security.GetUserEmail(V.Caller.User, V.Caller.CompanyCode, V.Local.sSenderEmail)
+F.Intrinsic.String.Build("{0}*!*{1}", V.Local.sSenderEmail, V.Local.sSenderName, V.Local.sSender)
+
+F.Intrinsic.Control.If(V.Local.sEmails.Trim, =, "")
+	V.Local.sMessage.Set("The deleted line(s) had Work Orders attached. These can be viewed in Order Entry > Administration > Deleted SO/WO Action Required. No email addresses were set up in the 4908 security group so no notification emails were sent.")
+F.Intrinsic.Control.ElseIf(V.Local.sSenderEmail.Trim, =, "")
+	V.Local.sMessage.Set("The deleted line(s) had Work Orders attached. These can be viewed in Order Entry > Administration > Deleted SO/WO Action Required. No email address is set up for this user so no notification emails were sent.")
+F.Intrinsic.Control.Else
+	V.Local.sMessage.Set("The deleted line(s) had Work Orders attached. These can be viewed in Order Entry > Administration > Deleted SO/WO Action Required. A notification email was sent out to the 4908 security group.")
+	F.Global.Messaging.QueueMessage(V.Caller.CompanyCode, V.Local.iUserID, "4908", "4908 - Sales Order with Work Order Deletion", V.Local.sSender, V.Local.sEmailsAndNames, V.Local.sBody)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.AddColumn("dtWOs", "USERNAME", "String", V.Caller.User)
+F.Data.DataTable.AddColumn("dtWOs", "DELETE_DATE", "String", V.Ambient.Date)
+F.Data.DataTable.AddColumn("dtWOs", "DELETE_TIME", "String", V.Ambient.Time)
+F.Data.DataTable.SaveToDB("dtWOs", "Con", "GCG_4908_DELETEDSOWO", "SO*!*LINE*!*WO", 128)
+F.Data.DataTable.Close("dtWOs")
+
+F.ODBC.Connection!Con.Close
+F.Intrinsic.UI.Msgbox(V.Local.sMessage, "Warning")
+Program.Sub.Main.End
+
+Program.Sub.CheckLine.Start
+V.Local.sOrder.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sWO.Declare(String)
+V.Local.sSelect.Declare(String)
+
+V.Local.sOrder.Set(V.Args.Order.Trim)
+V.Local.sLine.Set(V.Args.Line.Trim)
+
+F.Intrinsic.String.Build("select RTRIM(JOB) as WO, RTRIM(SUFFIX) as SUFFIX from V_JOB_HEADER where SALES_ORDER = '{0}' and SALES_ORDER_LINE = '{1}'", V.Local.sOrder, V.Local.sLine, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtTemp", "Con", V.Local.sSQL)
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataTable.dtTemp.RowCount--, 1)
+	F.Intrinsic.String.Build("{0}-{1}", V.DataTable.dtTemp(V.Local.iCounter).WO!FieldValTrim, V.DataTable.dtTemp(V.Local.iCounter).SUFFIX!FieldValTrim, V.Local.sWO)
+	F.Data.DataTable.AddRow("dtWOs", "SO", V.Local.sOrder, "Line", V.Local.sLine, "WO", V.Local.sWO)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+F.Data.DataTable.Close("dtTemp")
+
+F.Intrinsic.String.Build("select RTRIM(WO) as WO, RTRIM(SUFFIX) as SUFFIX from V_COST_GOODS_SOLD where ORDER_NO = '{0}' and ORDER_LINE = '{1}0'", V.Local.sOrder, V.Local.sLine, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtTemp", "Con", V.Local.sSQL)
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataTable.dtTemp.RowCount--, 1)
+	F.Intrinsic.String.Build("{0}-{1}", V.DataTable.dtTemp(V.Local.iCounter).WO!FieldValTrim, V.DataTable.dtTemp(V.Local.iCounter).SUFFIX!FieldValTrim, V.Local.sWO)
+	F.Intrinsic.String.Build("WO = '{0}'", V.Local.sWO, V.Local.sSelect)
+	F.Data.DataTable.Select("dtWOs", V.Local.sSelect, V.Local.sSelect)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim, =, "***NORETURN***")
+		F.Data.DataTable.AddRow("dtWOs", "SO", V.Local.sOrder, "Line", V.Local.sLine, "WO", V.Local.sWO)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCounter)
+F.Data.DataTable.Close("dtTemp")
+Program.Sub.CheckLine.End
+
+Program.Sub.CheckOrder.Start
+V.Local.sOrder.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sLines.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sLine.Declare(String)
+
+V.Local.sOrder.Set(V.Args.Order)
+
+F.Intrinsic.String.Build("select RTRIM(RECORD_NO) as LINE from V_ORDER_LINES where ORDER_NO = '{0}'", V.Local.sOrder, V.Local.sSQL)
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.Local.sRet, "#$#", V.Local.sLines)
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sLines.UBound, 1)
+	V.Local.sLine.Set(V.Local.sLines(V.Local.iCounter).Trim)
+	F.Intrinsic.Control.CallSub(CheckLine, "Order", V.Local.sOrder, "Line", V.Local.sLine.Left3)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+Program.Sub.CheckOrder.End
