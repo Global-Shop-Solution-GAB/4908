@@ -1,0 +1,2484 @@
+Program.Sub.ScreenSU.Start
+Gui.FHCMaint..Create
+Gui.FHCMaint..Caption("Hose and Coupling Data Maintenance")
+Gui.FHCMaint..Size(15120,11595)
+Gui.FHCMaint..MinX(0)
+Gui.FHCMaint..MinY(0)
+Gui.FHCMaint..Position(0,330)
+Gui.FHCMaint..BackColor(-2147483633)
+Gui.FHCMaint..MousePointer(0)
+Gui.FHCMaint..MaxButton(False)
+Gui.FHCMaint..Sizeable(False)
+Gui.FHCMaint..Event(UnLoad,FHCMaint_UnLoad)
+Gui.FHCMaint.tabHCData.Create(Tab)
+Gui.FHCMaint.tabHCData.Size(14970,10890)
+Gui.FHCMaint.tabHCData.Position(60,75)
+Gui.FHCMaint.tabHCData.Tabs(6)
+Gui.FHCMaint.tabHCData.SetTab(0)
+Gui.FHCMaint.tabHCData.Caption("Coupling")
+Gui.FHCMaint.tabHCData.SetTab(1)
+Gui.FHCMaint.tabHCData.Caption("Hose Stencil Info")
+Gui.FHCMaint.tabHCData.SetTab(2)
+Gui.FHCMaint.tabHCData.Caption("Hose to Coupling Association")
+Gui.FHCMaint.tabHCData.SetTab(3)
+Gui.FHCMaint.tabHCData.Caption("Hose Part Details")
+Gui.FHCMaint.tabHCData.SetTab(4)
+Gui.FHCMaint.tabHCData.Caption("Customer Logo Association")
+Gui.FHCMaint.tabHCData.SetTab(5)
+Gui.FHCMaint.tabHCData.Caption("Customer ST/TN Override")
+Gui.FHCMaint.frameSvcTst.Create(Frame)
+Gui.FHCMaint.frameSvcTst.Size(14880,6735)
+Gui.FHCMaint.frameSvcTst.Position(60,3690)
+Gui.FHCMaint.frameSvcTst.Parent("tabHCData",1)
+Gui.FHCMaint.frameSvcTst.Caption("Service Test and Trade Name Information")
+Gui.FHCMaint.GsGCSvcTst.Create(GsGridControl)
+Gui.FHCMaint.GsGCSvcTst.Size(14580,5715)
+Gui.FHCMaint.GsGCSvcTst.Position(75,975)
+Gui.FHCMaint.GsGCSvcTst.Parent("frameSvcTst")
+Gui.FHCMaint.GsGCSvcTst.Event(RowCellClick,DeleteSvcTst)
+Gui.FHCMaint.cmdSaveSvcTst.Create(Button)
+Gui.FHCMaint.cmdSaveSvcTst.Size(855,330)
+Gui.FHCMaint.cmdSaveSvcTst.Position(8250,615)
+Gui.FHCMaint.cmdSaveSvcTst.Parent("frameSvcTst")
+Gui.FHCMaint.cmdSaveSvcTst.Caption("Save")
+Gui.FHCMaint.cmdSaveSvcTst.Event(Click,cmdSaveSvcTst_Click)
+Gui.FHCMaint.cmdSaveSvcTst.TabStop(True)
+Gui.FHCMaint.cmdSaveSvcTst.TabIndex(20)
+Gui.FHCMaint.txtServiceTest.Create(TextBox,"",True,2835,300,0,1350,630,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtServiceTest.Parent("frameSvcTst")
+Gui.FHCMaint.txtServiceTest.MaxLength(80)
+Gui.FHCMaint.txtServiceTest.ControlGroup(5)
+Gui.FHCMaint.txtServiceTest.TabStop(True)
+Gui.FHCMaint.txtServiceTest.TabIndex(18)
+Gui.FHCMaint.lbl4.Create(Label,"Class",True,540,255,0,165,360,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl4.Parent("frameSvcTst")
+Gui.FHCMaint.lbl6.Create(Label,"Diameter",True,750,255,0,1485,360,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl6.Parent("frameSvcTst")
+Gui.FHCMaint.lbl7.Create(Label,"Assy",True,525,240,0,3015,360,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl7.Parent("frameSvcTst")
+Gui.FHCMaint.txtTradeName.Create(TextBox,"",True,2820,300,0,5370,630,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtTradeName.Parent("frameSvcTst")
+Gui.FHCMaint.txtTradeName.MaxLength(80)
+Gui.FHCMaint.txtTradeName.ControlGroup(5)
+Gui.FHCMaint.txtTradeName.TabStop(True)
+Gui.FHCMaint.txtTradeName.TabIndex(19)
+Gui.FHCMaint.lbl8.Create(Label,"Service Test",True,1050,255,0,165,720,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl8.Parent("frameSvcTst")
+Gui.FHCMaint.lbl9.Create(Label,"Trade Name",True,1050,255,0,4245,720,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl9.Parent("frameSvcTst")
+Gui.FHCMaint.txtCDA.Create(TextBox,"",True,1410,300,0,5370,285,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCDA.Parent("frameSvcTst")
+Gui.FHCMaint.txtCDA.MaxLength(6)
+Gui.FHCMaint.txtCDA.Locked(True)
+Gui.FHCMaint.txtCDA.ControlGroup(5)
+Gui.FHCMaint.txtCDA.TabStop(True)
+Gui.FHCMaint.txtCDA.TabIndex(17)
+Gui.FHCMaint.lbl10.Create(Label,"Key",True,840,240,0,4290,375,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl10.Parent("frameSvcTst")
+Gui.FHCMaint.ddlSvcClass.Create(DropDownList)
+Gui.FHCMaint.ddlSvcClass.Size(765,330)
+Gui.FHCMaint.ddlSvcClass.Position(705,255)
+Gui.FHCMaint.ddlSvcClass.Parent("frameSvcTst")
+Gui.FHCMaint.ddlSvcClass.ControlGroup(5)
+Gui.FHCMaint.ddlSvcClass.Event(Click,Txt_change)
+Gui.FHCMaint.ddlSvcClass.TabStop(True)
+Gui.FHCMaint.ddlSvcClass.TabIndex(14)
+Gui.FHCMaint.ddlSvcDiam.Create(DropDownList)
+Gui.FHCMaint.ddlSvcDiam.Size(705,330)
+Gui.FHCMaint.ddlSvcDiam.Position(2265,255)
+Gui.FHCMaint.ddlSvcDiam.Parent("frameSvcTst")
+Gui.FHCMaint.ddlSvcDiam.ControlGroup(5)
+Gui.FHCMaint.ddlSvcDiam.Event(Click,Txt_change)
+Gui.FHCMaint.ddlSvcDiam.TabStop(True)
+Gui.FHCMaint.ddlSvcDiam.TabIndex(15)
+Gui.FHCMaint.ddlSvcAssy.Create(DropDownList)
+Gui.FHCMaint.ddlSvcAssy.Size(600,330)
+Gui.FHCMaint.ddlSvcAssy.Position(3570,255)
+Gui.FHCMaint.ddlSvcAssy.Parent("frameSvcTst")
+Gui.FHCMaint.ddlSvcAssy.ControlGroup(5)
+Gui.FHCMaint.ddlSvcAssy.Event(Click,Txt_change)
+Gui.FHCMaint.ddlSvcAssy.TabStop(True)
+Gui.FHCMaint.ddlSvcAssy.TabIndex(16)
+Gui.FHCMaint.frameLogoBrand.Create(Frame)
+Gui.FHCMaint.frameLogoBrand.Size(9720,3525)
+Gui.FHCMaint.frameLogoBrand.Position(5655,45)
+Gui.FHCMaint.frameLogoBrand.Parent("tabHCData",1)
+Gui.FHCMaint.frameLogoBrand.Caption("Brand Logo")
+Gui.FHCMaint.GsGCLogo.Create(GsGridControl)
+Gui.FHCMaint.GsGCLogo.Size(8955,2895)
+Gui.FHCMaint.GsGCLogo.Position(90,555)
+Gui.FHCMaint.GsGCLogo.Parent("frameLogoBrand")
+Gui.FHCMaint.GsGCLogo.Event(RowCellClick,DeleteKeyVal)
+Gui.FHCMaint.txtBKey.Create(TextBox,"",True,450,300,0,735,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtBKey.Parent("frameLogoBrand")
+Gui.FHCMaint.txtBKey.MaxLength(1)
+Gui.FHCMaint.txtBKey.ControlGroup(4)
+Gui.FHCMaint.txtBKey.TabStop(True)
+Gui.FHCMaint.txtBKey.TabIndex(10)
+Gui.FHCMaint.lbl1.Create(Label,"Key ",True,600,255,0,120,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl1.Parent("frameLogoBrand")
+Gui.FHCMaint.lbl1.Event(Click,lbl1_Click)
+Gui.FHCMaint.txtBrand.Create(TextBox,"",True,1785,300,0,1980,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtBrand.Parent("frameLogoBrand")
+Gui.FHCMaint.txtBrand.MaxLength(30)
+Gui.FHCMaint.txtBrand.ControlGroup(4)
+Gui.FHCMaint.txtBrand.TabStop(True)
+Gui.FHCMaint.txtBrand.TabIndex(11)
+Gui.FHCMaint.lbl.Create(Label,"Brand",True,660,255,0,1305,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl.Parent("frameLogoBrand")
+Gui.FHCMaint.txtLogoPath.Create(TextBox,"",True,3480,300,0,4650,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtLogoPath.Parent("frameLogoBrand")
+Gui.FHCMaint.txtLogoPath.MaxLength(80)
+Gui.FHCMaint.txtLogoPath.ControlGroup(4)
+Gui.FHCMaint.txtLogoPath.TabStop(True)
+Gui.FHCMaint.txtLogoPath.TabIndex(12)
+Gui.FHCMaint.lbl3.Create(Label,"File Path",True,810,255,0,3810,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl3.Parent("frameLogoBrand")
+Gui.FHCMaint.cmdBrw.Create(Button)
+Gui.FHCMaint.cmdBrw.Size(330,330)
+Gui.FHCMaint.cmdBrw.Position(7815,195)
+Gui.FHCMaint.cmdBrw.Parent("frameLogoBrand")
+Gui.FHCMaint.cmdBrw.Caption("^")
+Gui.FHCMaint.cmdBrw.Event(Click,cmdBrw_Click)
+Gui.FHCMaint.cmdBrw.Visible(False)
+Gui.FHCMaint.cmdSaveBrand.Create(Button)
+Gui.FHCMaint.cmdSaveBrand.Size(855,330)
+Gui.FHCMaint.cmdSaveBrand.Position(8190,195)
+Gui.FHCMaint.cmdSaveBrand.Parent("frameLogoBrand")
+Gui.FHCMaint.cmdSaveBrand.Caption("Save")
+Gui.FHCMaint.cmdSaveBrand.Event(Click,cmdSaveBrand_Click)
+Gui.FHCMaint.cmdSaveBrand.TabStop(True)
+Gui.FHCMaint.cmdSaveBrand.TabIndex(13)
+Gui.FHCMaint.frameApproval.Create(Frame)
+Gui.FHCMaint.frameApproval.Size(5505,3555)
+Gui.FHCMaint.frameApproval.Position(75,45)
+Gui.FHCMaint.frameApproval.Parent("tabHCData",1)
+Gui.FHCMaint.frameApproval.Caption("Approval Type")
+Gui.FHCMaint.GsGCApproval.Create(GsGridControl)
+Gui.FHCMaint.GsGCApproval.Size(5385,2895)
+Gui.FHCMaint.GsGCApproval.Position(105,585)
+Gui.FHCMaint.GsGCApproval.Parent("frameApproval")
+Gui.FHCMaint.GsGCApproval.Event(RowCellClick,DeleteKeyVal)
+Gui.FHCMaint.cmdSaveApproval.Create(Button)
+Gui.FHCMaint.cmdSaveApproval.Size(900,330)
+Gui.FHCMaint.cmdSaveApproval.Position(4590,225)
+Gui.FHCMaint.cmdSaveApproval.Parent("frameApproval")
+Gui.FHCMaint.cmdSaveApproval.Caption("Save")
+Gui.FHCMaint.cmdSaveApproval.Event(Click,cmdSaveApproval_Click)
+Gui.FHCMaint.cmdSaveApproval.TabStop(True)
+Gui.FHCMaint.cmdSaveApproval.TabIndex(9)
+Gui.FHCMaint.txtApproval.Create(TextBox,"",True,2115,300,0,2415,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtApproval.Parent("frameApproval")
+Gui.FHCMaint.txtApproval.MaxLength(30)
+Gui.FHCMaint.txtApproval.ControlGroup(2)
+Gui.FHCMaint.txtApproval.TabStop(True)
+Gui.FHCMaint.txtApproval.TabIndex(8)
+Gui.FHCMaint.lbl13.Create(Label,"Key",True,645,255,0,105,285,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl13.Parent("frameApproval")
+Gui.FHCMaint.txtAKey.Create(TextBox,"",True,690,300,0,795,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtAKey.Parent("frameApproval")
+Gui.FHCMaint.txtAKey.MaxLength(1)
+Gui.FHCMaint.txtAKey.ControlGroup(2)
+Gui.FHCMaint.txtAKey.TabStop(True)
+Gui.FHCMaint.txtAKey.TabIndex(7)
+Gui.FHCMaint.lbl14.Create(Label,"Approval ",True,855,255,0,1530,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl14.Parent("frameApproval")
+Gui.FHCMaint.frameSlotType.Create(Frame)
+Gui.FHCMaint.frameSlotType.Size(7260,10230)
+Gui.FHCMaint.frameSlotType.Position(7500,75)
+Gui.FHCMaint.frameSlotType.Parent("tabHCData",0)
+Gui.FHCMaint.frameSlotType.Caption("Slot type")
+Gui.FHCMaint.GsGCCStencil.Create(GsGridControl)
+Gui.FHCMaint.GsGCCStencil.Size(7020,9615)
+Gui.FHCMaint.GsGCCStencil.Position(120,615)
+Gui.FHCMaint.GsGCCStencil.Parent("frameSlotType")
+Gui.FHCMaint.GsGCCStencil.Event(RowCellClick,DeleteKeyVal)
+Gui.FHCMaint.txtCSlotType.Create(TextBox,"",True,2010,300,0,3195,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCSlotType.Parent("frameSlotType")
+Gui.FHCMaint.txtCSlotType.MaxLength(30)
+Gui.FHCMaint.txtCSlotType.ControlGroup(8)
+Gui.FHCMaint.txtCSlotType.TabStop(True)
+Gui.FHCMaint.txtCSlotType.TabIndex(5)
+Gui.FHCMaint.lbl18.Create(Label,"Type",True,945,255,0,2130,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl18.Parent("frameSlotType")
+Gui.FHCMaint.txtCSlotKey.Create(TextBox,"",True,1050,300,0,960,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCSlotKey.Parent("frameSlotType")
+Gui.FHCMaint.txtCSlotKey.MaxLength(1)
+Gui.FHCMaint.txtCSlotKey.ControlGroup(8)
+Gui.FHCMaint.txtCSlotKey.TabStop(True)
+Gui.FHCMaint.txtCSlotKey.TabIndex(4)
+Gui.FHCMaint.lbl17.Create(Label,"Key",True,810,255,0,105,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl17.Parent("frameSlotType")
+Gui.FHCMaint.cmdSaveCSlot.Create(Button)
+Gui.FHCMaint.cmdSaveCSlot.Size(1185,330)
+Gui.FHCMaint.cmdSaveCSlot.Position(5280,225)
+Gui.FHCMaint.cmdSaveCSlot.Parent("frameSlotType")
+Gui.FHCMaint.cmdSaveCSlot.Caption("Save")
+Gui.FHCMaint.cmdSaveCSlot.Event(Click,cmdSaveCStencil_Click)
+Gui.FHCMaint.cmdSaveCSlot.TabStop(True)
+Gui.FHCMaint.cmdSaveCSlot.TabIndex(6)
+Gui.FHCMaint.frameCColor.Create(Frame)
+Gui.FHCMaint.frameCColor.Size(7260,10230)
+Gui.FHCMaint.frameCColor.Position(30,75)
+Gui.FHCMaint.frameCColor.Parent("tabHCData",0)
+Gui.FHCMaint.frameCColor.Caption("Cover Type")
+Gui.FHCMaint.lbl2.Create(Label,"Key",True,945,255,0,105,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl2.Parent("frameCColor")
+Gui.FHCMaint.txtCCover.Create(TextBox,"",True,2010,300,0,3255,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCCover.Parent("frameCColor")
+Gui.FHCMaint.txtCCover.MaxLength(30)
+Gui.FHCMaint.txtCCover.ControlGroup(6)
+Gui.FHCMaint.txtCCover.TabStop(True)
+Gui.FHCMaint.txtCCover.TabIndex(2)
+Gui.FHCMaint.cmdSaveCCmd.Create(Button)
+Gui.FHCMaint.cmdSaveCCmd.Size(1185,330)
+Gui.FHCMaint.cmdSaveCCmd.Position(5370,225)
+Gui.FHCMaint.cmdSaveCCmd.Parent("frameCColor")
+Gui.FHCMaint.cmdSaveCCmd.Caption("Save")
+Gui.FHCMaint.cmdSaveCCmd.Event(Click,cmdSaveCColor_Click)
+Gui.FHCMaint.cmdSaveCCmd.TabStop(True)
+Gui.FHCMaint.cmdSaveCCmd.TabIndex(3)
+Gui.FHCMaint.txtCCoverKey.Create(TextBox,"",True,1050,300,0,1065,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCCoverKey.Parent("frameCColor")
+Gui.FHCMaint.txtCCoverKey.MaxLength(1)
+Gui.FHCMaint.txtCCoverKey.ControlGroup(6)
+Gui.FHCMaint.txtCCoverKey.TabStop(True)
+Gui.FHCMaint.txtCCoverKey.TabIndex(1)
+Gui.FHCMaint.lbl12.Create(Label,"Type",True,945,255,0,2280,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl12.Parent("frameCColor")
+Gui.FHCMaint.GsGCCColor.Create(GsGridControl)
+Gui.FHCMaint.GsGCCColor.Size(7020,9615)
+Gui.FHCMaint.GsGCCColor.Position(120,600)
+Gui.FHCMaint.GsGCCColor.Parent("frameCColor")
+Gui.FHCMaint.GsGCCColor.Event(RowCellClick,DeleteKeyVal)
+Gui.FHCMaint.ddlDiameter.Create(DropDownList)
+Gui.FHCMaint.ddlDiameter.Size(960,330)
+Gui.FHCMaint.ddlDiameter.Position(1080,465)
+Gui.FHCMaint.ddlDiameter.Parent("tabHCData",2)
+Gui.FHCMaint.ddlDiameter.ControlGroup(9)
+Gui.FHCMaint.ddlDiameter.TabStop(True)
+Gui.FHCMaint.ddlDiameter.TabIndex(22)
+Gui.FHCMaint.lbl212.Create(Label,"Class",True,870,255,0,30,150,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl212.Parent("tabHCData",2)
+Gui.FHCMaint.ddlAClass.Create(DropDownList)
+Gui.FHCMaint.ddlAClass.Size(960,330)
+Gui.FHCMaint.ddlAClass.Position(30,465)
+Gui.FHCMaint.ddlAClass.Parent("tabHCData",2)
+Gui.FHCMaint.ddlAClass.ControlGroup(9)
+Gui.FHCMaint.ddlAClass.TabStop(True)
+Gui.FHCMaint.ddlAClass.TabIndex(21)
+Gui.FHCMaint.lbl20.Create(Label,"Diameter",True,870,255,0,1080,150,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl20.Parent("tabHCData",2)
+Gui.FHCMaint.lbl22.Create(Label,"Hose Bowl",True,945,255,0,2145,150,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl22.Parent("tabHCData",2)
+Gui.FHCMaint.ddlHoseBowl.Create(DropDownList)
+Gui.FHCMaint.ddlHoseBowl.Size(960,330)
+Gui.FHCMaint.ddlHoseBowl.Position(2145,465)
+Gui.FHCMaint.ddlHoseBowl.Parent("tabHCData",2)
+Gui.FHCMaint.ddlHoseBowl.ControlGroup(9)
+Gui.FHCMaint.ddlHoseBowl.TabStop(True)
+Gui.FHCMaint.ddlHoseBowl.TabIndex(23)
+Gui.FHCMaint.GsGCCDHB.Create(GsGridControl)
+Gui.FHCMaint.GsGCCDHB.Size(4290,9450)
+Gui.FHCMaint.GsGCCDHB.Position(30,870)
+Gui.FHCMaint.GsGCCDHB.Parent("tabHCData",2)
+Gui.FHCMaint.GsGCCDHB.Event(RowCellClick,GsGCCDHB_RowCellClick)
+Gui.FHCMaint.lbl19.Create(Label,"Part Association",True,3135,255,0,4395,150,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl19.Parent("tabHCData",2)
+Gui.FHCMaint.GsGCCDHBPart.Create(GsGridControl)
+Gui.FHCMaint.GsGCCDHBPart.Size(10335,9855)
+Gui.FHCMaint.GsGCCDHBPart.Position(4395,465)
+Gui.FHCMaint.GsGCCDHBPart.Parent("tabHCData",2)
+Gui.FHCMaint.cmdSaveParts.Create(Button)
+Gui.FHCMaint.cmdSaveParts.Size(1590,390)
+Gui.FHCMaint.cmdSaveParts.Position(13125,30)
+Gui.FHCMaint.cmdSaveParts.Parent("tabHCData",2)
+Gui.FHCMaint.cmdSaveParts.Caption("Save Association")
+Gui.FHCMaint.cmdSaveParts.Event(Click,cmdSaveParts_Click)
+Gui.FHCMaint.cmdSaveParts.TabStop(True)
+Gui.FHCMaint.cmdSaveParts.TabIndex(25)
+Gui.FHCMaint.cmdSaveHB.Create(Button)
+Gui.FHCMaint.cmdSaveHB.Size(1140,375)
+Gui.FHCMaint.cmdSaveHB.Position(3195,450)
+Gui.FHCMaint.cmdSaveHB.Parent("tabHCData",2)
+Gui.FHCMaint.cmdSaveHB.Caption("Save ")
+Gui.FHCMaint.cmdSaveHB.Event(Click,cmdSaveHB_Click)
+Gui.FHCMaint.cmdSaveHB.TabStop(True)
+Gui.FHCMaint.cmdSaveHB.TabIndex(24)
+Gui.FHCMaint.frameLength.Create(Frame)
+Gui.FHCMaint.frameLength.Size(5670,3495)
+Gui.FHCMaint.frameLength.Position(9075,0)
+Gui.FHCMaint.frameLength.Parent("tabHCData",3)
+Gui.FHCMaint.frameLength.Caption("Standard Length")
+Gui.FHCMaint.GsGCLength.Create(GsGridControl)
+Gui.FHCMaint.GsGCLength.Size(5505,2865)
+Gui.FHCMaint.GsGCLength.Position(105,540)
+Gui.FHCMaint.GsGCLength.Parent("frameLength")
+Gui.FHCMaint.GsGCLength.Event(RowCellClick,ModHoseSetting)
+Gui.FHCMaint.lbl16.Create(Label,"Description",True,1035,255,0,1545,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl16.Parent("frameLength")
+Gui.FHCMaint.txtLCode.Create(TextBox,"",True,690,300,0,780,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtLCode.Parent("frameLength")
+Gui.FHCMaint.txtLCode.MaxLength(3)
+Gui.FHCMaint.txtLCode.ControlGroup(1)
+Gui.FHCMaint.txtLCode.TabStop(True)
+Gui.FHCMaint.txtLCode.TabIndex(29)
+Gui.FHCMaint.cmdSaveLength.Create(Button)
+Gui.FHCMaint.cmdSaveLength.Size(900,330)
+Gui.FHCMaint.cmdSaveLength.Position(4725,195)
+Gui.FHCMaint.cmdSaveLength.Parent("frameLength")
+Gui.FHCMaint.cmdSaveLength.Caption("Save")
+Gui.FHCMaint.cmdSaveLength.Event(Click,cmdSaveLength_Click)
+Gui.FHCMaint.cmdSaveLength.TabStop(True)
+Gui.FHCMaint.cmdSaveLength.TabIndex(31)
+Gui.FHCMaint.txtLength.Create(TextBox,"",True,2025,300,0,2640,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtLength.Parent("frameLength")
+Gui.FHCMaint.txtLength.MaxLength(30)
+Gui.FHCMaint.txtLength.ControlGroup(1)
+Gui.FHCMaint.txtLength.TabStop(True)
+Gui.FHCMaint.txtLength.TabIndex(30)
+Gui.FHCMaint.lbl15.Create(Label,"Length",True,645,255,0,75,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl15.Parent("frameLength")
+Gui.FHCMaint.frameClass.Create(Frame)
+Gui.FHCMaint.frameClass.Size(9000,10485)
+Gui.FHCMaint.frameClass.Position(45,0)
+Gui.FHCMaint.frameClass.Parent("tabHCData",3)
+Gui.FHCMaint.frameClass.Caption("Class")
+Gui.FHCMaint.cmdSaveClass.Create(Button)
+Gui.FHCMaint.cmdSaveClass.Size(900,330)
+Gui.FHCMaint.cmdSaveClass.Position(8010,225)
+Gui.FHCMaint.cmdSaveClass.Parent("frameClass")
+Gui.FHCMaint.cmdSaveClass.Caption("Save")
+Gui.FHCMaint.cmdSaveClass.Event(Click,cmdSaveClass_Click)
+Gui.FHCMaint.cmdSaveClass.TabStop(True)
+Gui.FHCMaint.cmdSaveClass.TabIndex(28)
+Gui.FHCMaint.txtClassDesc.Create(TextBox,"",True,5250,300,0,2655,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtClassDesc.Parent("frameClass")
+Gui.FHCMaint.txtClassDesc.MaxLength(30)
+Gui.FHCMaint.txtClassDesc.ControlGroup(12)
+Gui.FHCMaint.txtClassDesc.TabStop(True)
+Gui.FHCMaint.txtClassDesc.TabIndex(27)
+Gui.FHCMaint.lbl5.Create(Label,"Code",True,645,255,0,60,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl5.Parent("frameClass")
+Gui.FHCMaint.txtClassCode.Create(TextBox,"",True,690,300,0,750,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtClassCode.Parent("frameClass")
+Gui.FHCMaint.txtClassCode.MaxLength(3)
+Gui.FHCMaint.txtClassCode.ControlGroup(12)
+Gui.FHCMaint.txtClassCode.TabStop(True)
+Gui.FHCMaint.txtClassCode.TabIndex(26)
+Gui.FHCMaint.lbl23.Create(Label,"Description",True,1005,255,0,1605,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl23.Parent("frameClass")
+Gui.FHCMaint.GsGCClass.Create(GsGridControl)
+Gui.FHCMaint.GsGCClass.Size(8850,9810)
+Gui.FHCMaint.GsGCClass.Position(90,600)
+Gui.FHCMaint.GsGCClass.Parent("frameClass")
+Gui.FHCMaint.GsGCClass.Event(RowCellClick,ModHoseClass)
+Gui.FHCMaint.frameColor.Create(Frame)
+Gui.FHCMaint.frameColor.Size(5670,3495)
+Gui.FHCMaint.frameColor.Position(9075,3495)
+Gui.FHCMaint.frameColor.Parent("tabHCData",3)
+Gui.FHCMaint.frameColor.Caption("Color")
+Gui.FHCMaint.GsGCColor.Create(GsGridControl)
+Gui.FHCMaint.GsGCColor.Size(5505,2865)
+Gui.FHCMaint.GsGCColor.Position(105,555)
+Gui.FHCMaint.GsGCColor.Parent("frameColor")
+Gui.FHCMaint.GsGCColor.Event(RowCellClick,ModHoseSetting)
+Gui.FHCMaint.txtColor.Create(TextBox,"",True,2250,300,0,2415,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtColor.Parent("frameColor")
+Gui.FHCMaint.txtColor.MaxLength(30)
+Gui.FHCMaint.txtColor.ControlGroup(3)
+Gui.FHCMaint.txtColor.TabStop(True)
+Gui.FHCMaint.txtColor.TabIndex(33)
+Gui.FHCMaint.lbl11.Create(Label,"Color",True,630,255,0,1545,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl11.Parent("frameColor")
+Gui.FHCMaint.txtColCode.Create(TextBox,"",True,690,300,0,780,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtColCode.Parent("frameColor")
+Gui.FHCMaint.txtColCode.MaxLength(3)
+Gui.FHCMaint.txtColCode.ControlGroup(3)
+Gui.FHCMaint.txtColCode.TabStop(True)
+Gui.FHCMaint.txtColCode.TabIndex(32)
+Gui.FHCMaint.cmdSaveColor.Create(Button)
+Gui.FHCMaint.cmdSaveColor.Size(900,330)
+Gui.FHCMaint.cmdSaveColor.Position(4725,195)
+Gui.FHCMaint.cmdSaveColor.Parent("frameColor")
+Gui.FHCMaint.cmdSaveColor.Caption("Save")
+Gui.FHCMaint.cmdSaveColor.Event(Click,cmdSaveColor_Click)
+Gui.FHCMaint.cmdSaveColor.TabStop(True)
+Gui.FHCMaint.cmdSaveColor.TabIndex(34)
+Gui.FHCMaint.lbl21.Create(Label,"Code",True,645,255,0,75,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl21.Parent("frameColor")
+Gui.FHCMaint.frameDiameter.Create(Frame)
+Gui.FHCMaint.frameDiameter.Size(5670,3495)
+Gui.FHCMaint.frameDiameter.Position(9075,6990)
+Gui.FHCMaint.frameDiameter.Parent("tabHCData",3)
+Gui.FHCMaint.frameDiameter.Caption("Standard Diameter")
+Gui.FHCMaint.GsGCDiam.Create(GsGridControl)
+Gui.FHCMaint.GsGCDiam.Size(5505,2865)
+Gui.FHCMaint.GsGCDiam.Position(105,585)
+Gui.FHCMaint.GsGCDiam.Parent("frameDiameter")
+Gui.FHCMaint.GsGCDiam.Event(RowCellClick,ModHoseSetting)
+Gui.FHCMaint.cmdSaveDiam.Create(Button)
+Gui.FHCMaint.cmdSaveDiam.Size(900,330)
+Gui.FHCMaint.cmdSaveDiam.Position(4725,195)
+Gui.FHCMaint.cmdSaveDiam.Parent("frameDiameter")
+Gui.FHCMaint.cmdSaveDiam.Caption("Save")
+Gui.FHCMaint.cmdSaveDiam.Event(Click,cmdSaveDiam_Click)
+Gui.FHCMaint.cmdSaveDiam.TabStop(True)
+Gui.FHCMaint.cmdSaveDiam.TabIndex(37)
+Gui.FHCMaint.txtDiamCode.Create(TextBox,"",True,690,300,0,780,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtDiamCode.Parent("frameDiameter")
+Gui.FHCMaint.txtDiamCode.MaxLength(3)
+Gui.FHCMaint.txtDiamCode.ControlGroup(11)
+Gui.FHCMaint.txtDiamCode.TabStop(True)
+Gui.FHCMaint.txtDiamCode.TabIndex(35)
+Gui.FHCMaint.lbl25.Create(Label,"Color",True,630,255,0,1545,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl25.Parent("frameDiameter")
+Gui.FHCMaint.lbl24.Create(Label,"Code",True,645,255,0,75,300,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl24.Parent("frameDiameter")
+Gui.FHCMaint.txtDiam.Create(TextBox,"",True,2250,300,0,2415,210,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtDiam.Parent("frameDiameter")
+Gui.FHCMaint.txtDiam.MaxLength(30)
+Gui.FHCMaint.txtDiam.ControlGroup(11)
+Gui.FHCMaint.txtDiam.TabStop(True)
+Gui.FHCMaint.txtDiam.TabIndex(36)
+Gui.FHCMaint.frameCustLogo.Create(Frame)
+Gui.FHCMaint.frameCustLogo.Size(14775,10425)
+Gui.FHCMaint.frameCustLogo.Position(0,0)
+Gui.FHCMaint.frameCustLogo.Parent("tabHCData",4)
+Gui.FHCMaint.cmdBrwCust.Create(Button)
+Gui.FHCMaint.cmdBrwCust.Size(360,330)
+Gui.FHCMaint.cmdBrwCust.Position(4200,225)
+Gui.FHCMaint.cmdBrwCust.Parent("frameCustLogo")
+Gui.FHCMaint.cmdBrwCust.Caption("^")
+Gui.FHCMaint.cmdBrwCust.Event(Click,cmdBrwCust_Click)
+Gui.FHCMaint.cmdBrwCust.TabStop(True)
+Gui.FHCMaint.cmdBrwCust.TabIndex(40)
+Gui.FHCMaint.txtCUstID.Create(TextBox,"",True,810,300,0,900,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCUstID.Parent("frameCustLogo")
+Gui.FHCMaint.txtCUstID.Locked(True)
+Gui.FHCMaint.txtCUstID.ControlGroup(10)
+Gui.FHCMaint.txtCUstID.TabStop(True)
+Gui.FHCMaint.txtCUstID.TabIndex(38)
+Gui.FHCMaint.lbl26.Create(Label,"Customer",True,810,255,0,75,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl26.Parent("frameCustLogo")
+Gui.FHCMaint.cmdSaveCustLogo.Create(Button)
+Gui.FHCMaint.cmdSaveCustLogo.Size(975,330)
+Gui.FHCMaint.cmdSaveCustLogo.Position(10110,225)
+Gui.FHCMaint.cmdSaveCustLogo.Parent("frameCustLogo")
+Gui.FHCMaint.cmdSaveCustLogo.Caption("Save")
+Gui.FHCMaint.cmdSaveCustLogo.Event(Click,cmdSaveCustLogo_Click)
+Gui.FHCMaint.cmdSaveCustLogo.TabStop(True)
+Gui.FHCMaint.cmdSaveCustLogo.TabIndex(42)
+Gui.FHCMaint.txtCustName.Create(TextBox,"",True,2355,300,0,1785,240,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtCustName.Parent("frameCustLogo")
+Gui.FHCMaint.txtCustName.Locked(True)
+Gui.FHCMaint.txtCustName.ControlGroup(10)
+Gui.FHCMaint.txtCustName.TabStop(True)
+Gui.FHCMaint.txtCustName.TabIndex(39)
+Gui.FHCMaint.lbl27.Create(Label,"Logo",True,825,255,0,4665,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lbl27.Parent("frameCustLogo")
+Gui.FHCMaint.ddlLogo.Create(DropDownList)
+Gui.FHCMaint.ddlLogo.Size(2235,330)
+Gui.FHCMaint.ddlLogo.Position(5535,225)
+Gui.FHCMaint.ddlLogo.Parent("frameCustLogo")
+Gui.FHCMaint.ddlLogo.ControlGroup(10)
+Gui.FHCMaint.ddlLogo.TabStop(True)
+Gui.FHCMaint.ddlLogo.TabIndex(41)
+Gui.FHCMaint.GsGCCustLogo.Create(GsGridControl)
+Gui.FHCMaint.GsGCCustLogo.Size(14655,9795)
+Gui.FHCMaint.GsGCCustLogo.Position(60,615)
+Gui.FHCMaint.GsGCCustLogo.Parent("frameCustLogo")
+Gui.FHCMaint.GsGCCustLogo.Event(RowCellClick,ModCustLogo)
+Gui.FHCMaint.lblLogoClass.Create(Label,"Class",True,600,255,0,8055,330,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblLogoClass.Parent("frameCustLogo")
+Gui.FHCMaint.ddlLogoClass.Create(DropDownList)
+Gui.FHCMaint.ddlLogoClass.Size(1245,330)
+Gui.FHCMaint.ddlLogoClass.Position(8670,225)
+Gui.FHCMaint.ddlLogoClass.Parent("frameCustLogo")
+Gui.FHCMaint.gsgcOverride.Create(GsGridControl)
+Gui.FHCMaint.gsgcOverride.Size(14970,9420)
+Gui.FHCMaint.gsgcOverride.Position(0,1110)
+Gui.FHCMaint.gsgcOverride.Parent("tabHCData",5)
+Gui.FHCMaint.gsgcOverride.Event(RowCellClick,gsgcOverride_RowCellClick)
+Gui.FHCMaint.lblCustomer.Create(Label,"Customer",True,810,255,0,0,285,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblCustomer.Parent("tabHCData",5)
+Gui.FHCMaint.txtOVRCustomer.Create(TextBox,"",True,1215,300,0,825,195,False,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtOVRCustomer.Parent("tabHCData",5)
+Gui.FHCMaint.txtOVRCustomer.Locked(True)
+Gui.FHCMaint.txtOVRCustomerName.Create(TextBox,"",True,3390,300,0,2085,195,False,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtOVRCustomerName.Parent("tabHCData",5)
+Gui.FHCMaint.ddlOVRClass.Create(DropDownList)
+Gui.FHCMaint.ddlOVRClass.Size(1095,330)
+Gui.FHCMaint.ddlOVRClass.Position(6900,195)
+Gui.FHCMaint.ddlOVRClass.Parent("tabHCData",5)
+Gui.FHCMaint.cmdOVRCustBrowser.Create(Button)
+Gui.FHCMaint.cmdOVRCustBrowser.Size(405,405)
+Gui.FHCMaint.cmdOVRCustBrowser.Position(5520,150)
+Gui.FHCMaint.cmdOVRCustBrowser.Parent("tabHCData",5)
+Gui.FHCMaint.cmdOVRCustBrowser.Caption("^")
+Gui.FHCMaint.cmdOVRCustBrowser.DisableOnClick(10)
+Gui.FHCMaint.cmdOVRCustBrowser.Event(Click,cmdOVRCustBrowser_Click)
+Gui.FHCMaint.ddlOVRDiam.Create(DropDownList)
+Gui.FHCMaint.ddlOVRDiam.Size(1095,330)
+Gui.FHCMaint.ddlOVRDiam.Position(8970,195)
+Gui.FHCMaint.ddlOVRDiam.Parent("tabHCData",5)
+Gui.FHCMaint.lblClass.Create(Label,"Class",True,540,255,0,6330,285,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblClass.Parent("tabHCData",5)
+Gui.FHCMaint.lblDiam.Create(Label,"Diameter",True,735,255,0,8205,285,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblDiam.Parent("tabHCData",5)
+Gui.FHCMaint.lblAssembly.Create(Label,"Assembly",True,825,255,0,10245,285,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblAssembly.Parent("tabHCData",5)
+Gui.FHCMaint.ddlOVRAssembly.Create(DropDownList)
+Gui.FHCMaint.ddlOVRAssembly.Size(1095,330)
+Gui.FHCMaint.ddlOVRAssembly.Position(11115,195)
+Gui.FHCMaint.ddlOVRAssembly.Parent("tabHCData",5)
+Gui.FHCMaint.lblSVCTest.Create(Label,"Service Test",True,1020,255,0,0,795,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblSVCTest.Parent("tabHCData",5)
+Gui.FHCMaint.txtOVRServiceTest.Create(TextBox,"",True,3390,300,0,1035,705,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtOVRServiceTest.Parent("tabHCData",5)
+Gui.FHCMaint.lblTradeName.Create(Label,"Trade Name",True,1020,255,0,4560,795,True,0,"Arial",8,-2147483633,0)
+Gui.FHCMaint.lblTradeName.Parent("tabHCData",5)
+Gui.FHCMaint.txtOVRTradeName.Create(TextBox,"",True,3390,300,0,5565,705,True,0,"Arial",8,-2147483643,1)
+Gui.FHCMaint.txtOVRTradeName.Parent("tabHCData",5)
+Gui.FHCMaint.cmdOVRSave.Create(Button)
+Gui.FHCMaint.cmdOVRSave.Size(930,375)
+Gui.FHCMaint.cmdOVRSave.Position(13770,675)
+Gui.FHCMaint.cmdOVRSave.Parent("tabHCData",5)
+Gui.FHCMaint.cmdOVRSave.Caption("Save")
+Gui.FHCMaint.cmdOVRSave.DisableOnClick(10)
+Gui.FHCMaint.cmdOVRSave.Event(Click,cmdOVRSave_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.ODBC.Connection!conx.OpenCompanyConnection
+
+f.Intrinsic.Control.CallSub(LoadRest)
+f.Intrinsic.Control.CallSub(LoadAssoc)
+f.Intrinsic.Control.CallSub(LoadSVC)
+f.Intrinsic.Control.CallSub(LoadHose)
+f.Intrinsic.Control.CallSub(LoadCustLogo)
+F.Intrinsic.Control.CallSub(LoadOverrideGrid)
+
+gui.FHCMaint..Show
+Program.Sub.Main.End
+
+Program.Sub.cmdBrw_Click.Start
+'File browser?
+Program.Sub.cmdBrw_Click.End
+
+Program.Sub.cmdSaveBrand_Click.Start
+v.Local.sUNCPath.Declare
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+v.Local.bExists.Declare
+gui.FHCMaint.cmdSaveBrand.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtBKey.Text)
+v.Local.sUNCPath.set(v.Screen.FHCMaint!txtLogoPath.text)
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtBrand.text)
+
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sUNCPath.trim,=,"",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key, Brand and the File path of the logo has been entered before saving.")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.File.Exists(v.Local.sUNCPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.Local.bExists,=,False)
+	f.Intrinsic.UI.Msgbox("You have entered an invalid logo file path. Please enter a valid file path before saving.")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("CAT_TYPE = 'B' and HORC = 'H' and MKEY = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'B' and HORC = 'H' and MKEY = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("MarkDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The key exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.String.Build("CAT_TYPE = 'B' and HORC = 'H' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("MarkDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Logo exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_KEYVAL Values('B','{0}','{1}','{2}','H')",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sUNCPath,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("MarkDT","CAT_TYPE","B","MKEY",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE,"UNC_PATH",v.Local.sUNCPath,"HORC","H")
+	gui.FHCMaint..ClearGroup(4)
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveBrand.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveBrand_Click.End
+
+Program.Sub.cmdSaveSvcTst_Click.Start
+v.Local.sClass.Declare
+v.Local.sDiameter.Declare
+v.Local.sAssy.Declare
+v.Local.sKey.Declare
+v.Local.sSvcTest.Declare
+v.Local.sTrdName.Declare
+v.Local.sSql.Declare
+v.Local.sClass.Set(v.screen.FHCMaint!ddlSvcClass.Value)
+v.Local.sDiameter.Set(v.screen.FHCMaint!ddlSvcDiam.Value)
+v.Local.sAssy.Set(v.screen.FHCMaint!ddlSvcAssy.Value)
+v.Local.sFilter.Declare
+
+gui.FHCMaint.cmdSaveSvcTst.Enabled(False)
+f.Intrinsic.Control.If(v.Local.sClass.Trim,=,"","OR",v.Local.sDiameter.trim,=,"",v.Local.sAssy.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Class, Diameter and the assembly data has been entered before saving.")
+	gui.FHCMaint.cmdSaveSvcTst.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+'f.Intrinsic.String.LPad(v.Local.sClass,0,3,v.Local.sClass)
+'f.Intrinsic.String.LPad(v.Local.sDiameter,0,2,v.Local.sDiameter)
+
+f.Intrinsic.String.build("{0}{1}{2}",v.Local.sClass.Trim,v.Local.sDiameter.Trim,v.Local.sAssy.Trim,v.Local.sKey)
+
+gui.FHCMaint.txtCDA.Text(v.Local.sKey)
+
+v.Local.sSvcTest.Set(v.screen.FHCMaint!txtServiceTest.Text)
+v.Local.sTrdName.Set(v.screen.FHCMaint!txtTradeName.Text)
+
+f.Intrinsic.Control.If(v.Local.sSvcTest.Trim,=,"","OR",v.Local.sTrdName.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Service Test and Trade Name data has been entered before saving.")
+	gui.FHCMaint.cmdSaveSvcTst.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("MSVCKEY = '{0}'",v.Local.sKey,v.Local.sFilter)
+f.Data.Dataview.Create("SVCDt","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.SVCDt!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the Class, diameter and Assy in the database.")
+	f.Data.DataView.Close("SVCDt","CheckVw")
+	gui.FHCMaint.cmdSaveSvcTst.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("SVCDt","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_SVCTST Values('{0}','{1}','{2}','{3}','{4}','{5}')",v.Local.sClass,v.Local.sDiameter.trim,v.Local.sAssy,v.Local.sKey,v.Local.sSvcTest,v.Local.sTrdName,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("SVCDt","MCLASS",v.Local.sClass,"MDIAM",v.Local.sDiameter.trim,"MASSY",v.Local.sAssy,"MSVCKEY",v.Local.sKey,"SVC_TST",v.Local.sSvcTest,"TRD_NAME",v.Local.sTrdName)
+	gui.FHCMaint..ClearGroup(5)
+	gui.FHCMaint.cmdSaveSvcTst.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveSvcTst.Enabled(True)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdSaveSvcTst_Click.End
+
+Program.Sub.cmdSaveApproval_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveApproval.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtAKey.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtApproval.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Approval data has been entered before saving.")
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'A' and HORC = 'H' and MKEY = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'A' and HORC = 'H' and MKEY = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("MarkDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The key exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'A' and HORC = 'H' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("MarkDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Approval type exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_KEYVAL Values('A','{0}','{1}','','H')",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("MarkDT","CAT_TYPE","A","MKEY",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE,"HORC","H")
+	gui.FHCMaint..ClearGroup(2)
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveApproval.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveApproval_Click.End
+
+Program.Sub.cmdSaveLength_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveLength.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtLCode.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtLength.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Length data has been entered before saving.")
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+	
+'f.Intrinsic.Control.ElseIf(v.Local.sMVALUE.IsNumeric,=,False)
+f.Intrinsic.Control.ElseIf(v.Local.sMKEY.IsNumeric,=,False)
+	f.Intrinsic.UI.Msgbox("Please enter a valid Length before saving.")
+	gui.FHCMaint.txtLength.SetFocus
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Intrinsic.string.LPad(v.Local.sMKEY,"0",3,v.Local.sMKEY)
+f.Intrinsic.String.Build("CAT_TYPE = 'L' and MCODE = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("HOSEDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'L' and MCODE = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The code exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'L' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Length exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("HOSEDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_HOSEGEN Values('L','{0}','{1}')",v.Local.sMKEY,v.Local.sMVALUE.PSQLFriendly,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("HOSEDT","CAT_TYPE","L","MCODE",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE)
+	gui.FHCMaint..ClearGroup(1)
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveLength.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveLength_Click.End
+
+Program.Sub.cmdSaveColor_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveColor.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtColCode.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtColor.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Color data has been entered before saving.")
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and MCODE = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("HOSEDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+
+
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and MCODE = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The code exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Color exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("HOSEDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_HOSEGEN Values('C','{0}','{1}')",v.Local.sMKEY,v.Local.sMVALUE.PSQLFriendly,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("HOSEDT","CAT_TYPE","C","MCODE",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE)
+	gui.FHCMaint..ClearGroup(3)
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveColor.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveColor_Click.End
+
+Program.Sub.cmdSaveClass_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveClass.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtClassCode.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtClassDesc.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Color data has been entered before saving.")
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.string.LPad(v.Local.sMKEY,"0",3,v.Local.sMKEY)
+f.Intrinsic.String.Build("CAT_TYPE = 'K' and MCODE = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("HOSEDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.String.Build("CAT_TYPE = 'K' and MCODE = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The code exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'K' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Color exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("HOSEDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_HOSEGEN Values('K','{0}','{1}')",v.Local.sMKEY,v.Local.sMVALUE.PSQLFriendly,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("HOSEDT","CAT_TYPE","K","MCODE",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE.PSQLFriendly,"PINFOLD",false)
+	gui.FHCMaint..ClearGroup(12)
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveClass.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveClass_Click.End
+
+Program.Sub.cmdSaveDiam_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveDiam.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtDiamCode.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtDiam.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Color data has been entered before saving.")
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.string.LPad(v.Local.sMKEY,"0",2,v.Local.sMKEY)
+f.Intrinsic.String.Build("CAT_TYPE = 'D' and MCODE = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("HOSEDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'D' and MCODE = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The code exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'D' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.SetFilter("HOSEDT","CheckVw",v.Local.sFilter)
+f.Intrinsic.Control.If(v.DataView.HOSEDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The Diameter exists in the database")
+	f.Data.DataView.Close("HOSEDT","CheckVw")
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("HOSEDT","CheckVw")
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_HOSEGEN Values('D','{0}','{1}')",v.Local.sMKEY,v.Local.sMVALUE.PSQLFriendly,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("HOSEDT","CAT_TYPE","D","MCODE",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE.PSQLFriendly)
+	gui.FHCMaint..ClearGroup(12)
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveDiam.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveDiam_Click.End
+
+Program.Sub.cmdSaveCustLogo_Click.Start
+v.Local.sLogo.Declare
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+v.Local.bPri.Declare
+
+gui.FHCMaint.cmdSaveCustLogo.Enabled(False)
+
+f.Intrinsic.Control.If(v.Screen.FHCMaint!ddlLogo.Value.trim,=,"","OR",v.screen.FHCMaint!txtCUstID.text.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that a customer and their corresponding logo is selected before saving.")
+	gui.FHCMaint.cmdSaveCustLogo.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Data.Dictionary.ReturnKeyFromValue("LogoDict",v.Screen.FHCMaint!ddlLogo.Value,v.Local.sLogo)
+f.Intrinsic.String.Build("MKEY = '{0}' and CUSTOMER = '{1}' and CLASS = '{2}'",v.Local.sLogo,v.screen.FHCMaint!txtCUstID.text, V.Screen.FHCMaint!ddlLogoClass.Text.Trim,v.Local.sFilter)
+f.Data.Dataview.Create("CustLogoDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.CustLogoDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("CustLogoDT","CheckVw")
+	gui.FHCMaint.cmdSaveCustLogo.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("CustLogoDT","CheckVw")
+
+F.Intrinsic.Control.If(V.Screen.FHCMaint!ddlLogoClass.Text.Trim, !=, "")
+	f.Intrinsic.String.Build("CUSTOMER = '{1}' and CLASS = '{2}'",v.Local.sLogo,v.screen.FHCMaint!txtCUstID.text, V.Screen.FHCMaint!ddlLogoClass.Text.Trim,v.Local.sFilter)
+	f.Data.Dataview.Create("CustLogoDT","CheckVw",22,v.Local.sFilter,"")
+	f.Intrinsic.Control.If(v.DataView.CustLogoDT!CheckVw.RowCount,>,0)
+		f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+		f.Data.DataView.Close("CustLogoDT","CheckVw")
+		gui.FHCMaint.cmdSaveCustLogo.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("CustLogoDT","CheckVw")
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CUSTOMER = '{0}'",v.screen.FHCMaint!txtCUstID.text,v.Local.sFilter)
+f.Data.Dataview.Create("CustLogoDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.CustLogoDT!CheckVw.RowCount,=,0)
+	v.Local.bPri.Set(true)
+f.Intrinsic.Control.Else
+	v.Local.bPri.Set(False)
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("CustLogoDT","CheckVw")
+'f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_CUSTID Values ('{0}','{1}',{2},'{3}')",v.Local.sLogo,v.screen.FHCMaint!txtCUstID.text,v.Local.bPri.Long, V.Screen.FHCMaint!ddlLogoClass.Text.Trim,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("CustLogoDT","CUSTNAME",v.Screen.FHCMaint!txtCustName.text,"CUSTOMER",v.screen.FHCMaint!txtCUstID.text,"MKEY",v.Local.sLogo,"LOGO",v.Screen.FHCMaint!ddlLogo.Value,"PRILOGO",v.Local.bPri, "CLASS", V.Screen.FHCMaint!ddlLogoClass.Text.Trim)
+	gui.FHCMaint..ClearGroup(10)
+	gui.FHCMaint.cmdSaveCustLogo.Enabled(True)
+'f.Intrinsic.Control.Catch
+'	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+'	gui.FHCMaint.cmdSaveCustLogo.Enabled(True)
+'f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdSaveCustLogo_Click.End
+
+Program.Sub.ModHoseSetting.Start
+v.Local.sMKEY.Declare
+v.Local.sCatType.Declare
+v.Local.sSql.Declare
+v.Local.iRet.Declare
+
+f.Intrinsic.Control.if(v.Args.column.Ucase,=,"DELETE")
+	gui.FHCMaint..Enabled(false)
+	f.Intrinsic.ui.Msgbox("Are you sure you want to delete this record?","Delete Record?",4,v.Local.iRet)
+	f.Intrinsic.Control.if(v.Local.iRet,=,7)
+		gui.FHCMaint..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	gui.FHCMaint..Enabled(True)
+	v.Local.sMKEY.Set(v.DataTable.HOSEDT(v.Args.rowindex).MCODE!FieldVal)
+	v.Local.sCatType.Set(v.DataTable.HOSEDT(v.Args.rowindex).CAT_TYPE!FieldVal)
+	f.Intrinsic.Control.Try
+		f.Intrinsic.String.Build("Delete from GCG_4908_HOSEGEN where MCODE = '{0}' and CAT_TYPE = '{1}'",v.Local.sMKEY,v.Local.sCatType,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Data.DataTable.DeleteRow("HOSEDT",v.Args.rowindex)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.EndIf
+Program.Sub.ModHoseSetting.End
+
+Program.Sub.ModCustLogo.Start
+v.Local.sMKEY.Declare
+v.Local.sCustID.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+v.Local.iRet.Declare
+f.Intrinsic.Control.if(v.Args.column.Ucase,=,"DELETE")
+	
+	gui.FHCMaint..Enabled(false)
+	f.Intrinsic.ui.Msgbox("Are you sure you want to delete this record?","Delete Record?",4,v.Local.iRet)
+	f.Intrinsic.Control.if(v.Local.iRet,=,7)
+		gui.FHCMaint..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	gui.FHCMaint..Enabled(True)
+	v.Local.sMKEY.Set(v.DataTable.CustLogoDT(v.Args.rowindex).MKEY!FieldVal)
+	v.Local.sCustID.Set(v.DataTable.CustLogoDT(v.Args.rowindex).CUSTOMER!FieldVal)
+	f.Intrinsic.Control.Try
+		f.Intrinsic.String.Build("Delete from GCG_4908_CUSTID where MKEY = '{0}' and CUSTOMER = '{1}'",v.Local.sMKEY,v.Local.sCustID,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Data.DataTable.DeleteRow("CustLogoDT",v.Args.rowindex)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.ElseIf(v.Args.column.Ucase,=,"PRILOGO")
+	v.Local.sMKEY.Set(v.DataTable.CustLogoDT(v.Args.rowindex).MKEY!FieldVal)
+	v.Local.sCustID.Set(v.DataTable.CustLogoDT(v.Args.rowindex).CUSTOMER!FieldVal)
+	gui.FHCMaint.GsGCCustLogo.SuspendLayout
+	f.Intrinsic.Control.If(v.DataTable.CustLogoDT(v.Args.RowIndex).PRILOGO!FieldVal,=,false)
+		
+		f.Intrinsic.String.Build("CUSTOMER = '{0}'",v.Local.sCustID,v.Local.sFilter)
+		f.Data.DataView.SetFilter("CustLogoDT","CustLogoVw",v.Local.sFilter)
+		f.Data.DataView.SetValue("CustLogoDT","CustLogoVw",-1,"PRILOGO",False)
+		f.Data.DataTable.SetValue("CustLogoDT",v.Args.RowIndex,"PRILOGO",True)
+		
+	f.Intrinsic.Control.EndIf
+
+	f.Data.DataView.ToDataTable("CustLogoDT","CustLogoVw","TempSavDt")
+	f.Data.DataView.SetFilter("CustLogoDT","CustLogoVw","")
+	gui.FHCMaint.GsGCCustLogo.ResumeLayout
+	f.Data.DataTable.SaveToDB("TempSavDt","CONX","GCG_4908_CUSTID","CUSTOMER*!*MKEY",256,"MKEY@!@MKEY*!*CUSTOMER@!@CUSTOMER*!*PRILOGO@!@PRILOGO")
+	f.Data.DataTable.Close("TempSavDt")
+f.Intrinsic.Control.EndIf
+Program.Sub.ModCustLogo.End
+
+Program.Sub.FHCMaint_UnLoad.Start
+f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.End
+Program.Sub.FHCMaint_UnLoad.End
+
+Program.Sub.cmdSaveCCoup_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveCCoup.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtCCoupKey.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtCCoupType.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Coupling Type data has been entered before saving.")
+	f.Intrinsic.Control.ExitSub
+	gui.FHCMaint.cmdSaveCCoup.Enabled(True)
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("CAT_TYPE = 'T' and HORC = 'C' and MKEY = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The key exists in the database database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCCoup.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.String.Build("CAT_TYPE = 'T' and HORC = 'C' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The value exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCCoup.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_KEYVAL Values('T','{0}','{1}','','C')",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("MarkDT","CAT_TYPE","T","MKEY",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE,"HORC","C")
+	gui.FHCMaint..ClearGroup(7)
+	gui.FHCMaint.cmdSaveCCoup.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveCCoup.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveCCoup_Click.End
+
+Program.Sub.cmdSaveCStencil_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+gui.FHCMaint.cmdSaveCSlot.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtCSlotKey.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtCSlotType.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Stencil data has been entered before saving.")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+	
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("CAT_TYPE = 'S' and HORC = 'C' and MKEY = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.String.Build("CAT_TYPE = 'S' and HORC = 'C' and MKEY = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The key exists in the database database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+
+f.Intrinsic.String.Build("CAT_TYPE = 'S' and HORC = 'C' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The value exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_KEYVAL Values('S','{0}','{1}','','C')",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("MarkDT","CAT_TYPE","S","MKEY",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE,"HORC","C")
+	gui.FHCMaint..ClearGroup(8)
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveCStencil_Click.End
+
+Program.Sub.cmdSaveCColor_Click.Start
+v.Local.sMKEY.Declare
+v.Local.sMVALUE.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+
+gui.FHCMaint.cmdSaveCCmd.Enabled(False)
+v.Local.sMKEY.Set(v.Screen.FHCMaint!txtCCoverKey.Text)
+
+v.Local.sMVALUE.set(v.Screen.FHCMaint!txtCCover.text)
+
+f.Intrinsic.Control.If(v.Local.sMKEY.Trim,=,"","OR",v.Local.sMVALUE.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Key and Color data has been entered before saving.")
+	gui.FHCMaint.cmdSaveCSlot.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and HORC = 'C' and MKEY = '{0}' and MVALUE = '{1}'",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the pair in the database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCCmd.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and HORC = 'C' and MKEY = '{0}'",v.Local.sMKEY,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The key exists in the database database.")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCCmd.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.String.Build("CAT_TYPE = 'C' and HORC = 'C' and MVALUE = '{0}'",v.Local.sMVALUE,v.Local.sFilter)
+f.Data.Dataview.Create("MarkDT","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.MarkDT!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The value exists in the database")
+	f.Data.DataView.Close("MarkDT","CheckVw")
+	gui.FHCMaint.cmdSaveCCmd.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("MarkDT","CheckVw")
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_KEYVAL Values('C','{0}','{1}','','C')",v.Local.sMKEY,v.Local.sMVALUE,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("MarkDT","CAT_TYPE","C","MKEY",v.Local.sMKEY,"MVALUE",v.Local.sMVALUE,"HORC","C")
+	gui.FHCMaint..ClearGroup(6)
+	gui.FHCMaint.cmdSaveCCmd.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveCCmd.Enabled(True)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveCColor_Click.End
+
+Program.Sub.Txt_change.Start
+v.Local.sClass.Declare
+v.Local.sDiameter.Declare
+v.Local.sAssy.Declare
+v.Local.sKey.Declare
+
+v.Local.sClass.Set(v.screen.FHCMaint!ddlSvcClass.value)
+v.Local.sDiameter.Set(v.screen.FHCMaint!ddlSvcDiam.value)
+v.Local.sAssy.Set(v.screen.FHCMaint!ddlSvcAssy.value)
+
+
+f.Intrinsic.Control.If(v.Local.sClass.Trim,=,"","OR",v.Local.sDiameter.trim,=,"",v.Local.sAssy.Trim,=,"")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+
+
+'f.Intrinsic.String.LPad(v.Local.sClass,0,3,v.Local.sClass)
+'f.Intrinsic.String.LPad(v.Local.sDiameter,0,2,v.Local.sDiameter)
+
+f.Intrinsic.String.build("{0}{1}{2}",v.Local.sClass,v.Local.sDiameter.trim,v.Local.sAssy,v.Local.sKey)
+
+gui.FHCMaint.txtCDA.Text(v.Local.sKey)
+
+
+Program.Sub.Txt_change.End
+
+Program.Sub.LoadSVC.Start
+'load all service test and trade name data
+f.data.DataTable.CreateFromSQL("SVCDt","Conx","Select * from GCG_4908_SVCTST where IsNull(Customer, '') = ''",True)
+'add delete column to enable delete functionality
+f.Data.DataTable.AddColumn("SVCDt","Delete","String")
+f.Data.DataView.Create("SVCDt","SVCDtVw",22)
+
+gui.FHCMaint.GsGCSvcTst.AddGridviewFromDataview("SVC_Grid","SVCDt","SVCDtVw")
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "caption", "Class")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MCLASS", "MinWidth",45)
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "caption", "Diameter")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MDIAM", "MinWidth",60)
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "caption", "Assy")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MASSY", "MinWidth",45)
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "caption", "Key")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "MSVCKEY", "MinWidth",50)
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "caption", "Service Test")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "SVC_TST", "MinWidth",150)
+
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "caption", "Trade Name")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "TRD_NAME", "MinWidth",150)
+
+gui.FHCMaint.GsGCSvcTst.ColumnEdit("SVC_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCSvcTst.SetColumnProperty("SVC_Grid", "Delete", "MinWidth",60)
+
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","AllowSort",False)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCSvcTst.SetGridviewProperty("SVC_Grid","AllowColumnMoving",False)
+
+GUI.FHCMaint.gsgcSvcTst.SetColumnProperty("SVC_Grid", "CUSTOMER", "Visible", "False")
+
+gui.FHCMaint.GsGCSvcTst.MainView("SVC_Grid")
+Program.Sub.LoadSVC.End
+
+Program.Sub.LoadRest.Start
+'bring in all marking data for hose and coupling
+f.data.DataTable.CreateFromSQL("MarkDT","Conx","Select * from GCG_4908_KEYVAL",True)
+f.Data.DataTable.AddColumn("MarkDT","DELETE","String")
+
+'we are going to first fill all of the respective grids. It is distinguished by HORC(HOST or Coupling ) column 
+
+'Hose Approval
+f.Data.DataView.Create("MARKDt","HAVW",22,"HORC = 'H' AND CAT_TYPE = 'A'","")
+
+
+gui.FHCMaint.GsGCApproval.AddGridviewFromDataview("HA_Grid","MARKDt","HAVW")
+
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "headerfontbold", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "ReadOnly", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "AllowEdit", False)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "caption", "Key")
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MKEY", "MinWidth",60)
+
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "caption", "Approval")
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "MVALUE", "MinWidth",200)
+
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "CAT_TYPE", "Visible", False)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "HORC", "Visible", False)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "UNC_PATH", "Visible", False)
+
+
+gui.FHCMaint.GsGCApproval.ColumnEdit("HA_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCApproval.SetColumnProperty("HA_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","AllowSort",False)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCApproval.SetGridviewProperty("HA_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCApproval.MainView("HA_Grid")
+
+'Hose Logo(using B as Cat Type)
+f.Data.DataView.Create("MARKDt","HBVW",22,"HORC = 'H' AND CAT_TYPE = 'B'","")
+
+
+gui.FHCMaint.GsGCLogo.AddGridviewFromDataview("HB_Grid","MARKDt","HBVW")
+
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "headerfontbold", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "ReadOnly", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "AllowEdit", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "caption", "Key")
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MKEY", "MinWidth",60)
+
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "caption", "Brand")
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "MVALUE", "MinWidth",160)
+
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "CAT_TYPE", "Visible", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "HORC", "Visible", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "Visible", True)
+
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "headerfontbold", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "ReadOnly", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "AllowEdit", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "caption", "File Path")
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "UNC_PATH", "MinWidth",240)
+
+
+
+gui.FHCMaint.GsGCLogo.ColumnEdit("HB_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCLogo.SetColumnProperty("HB_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","AllowSort",False)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCLogo.SetGridviewProperty("HB_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCLogo.MainView("HB_Grid")
+
+'Now coupling stuff 
+'Coupling Cover
+f.Data.DataView.Create("MARKDt","CCVW",22,"HORC = 'C' AND CAT_TYPE = 'C'","")
+
+
+gui.FHCMaint.GsGCCColor.AddGridviewFromDataview("CC_Grid","MARKDt","CCVW")
+
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "headerfontbold", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "ReadOnly", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "AllowEdit", False)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "caption", "Key")
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MKEY", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "caption", "Value")
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "MVALUE", "MinWidth",240)
+
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "CAT_TYPE", "Visible", False)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "HORC", "Visible", False)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "UNC_PATH", "Visible", False)
+
+
+gui.FHCMaint.GsGCCColor.ColumnEdit("CC_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCCColor.SetColumnProperty("CC_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","AllowSort",False)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCCColor.SetGridviewProperty("CC_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCCColor.MainView("CC_Grid")
+
+
+'Coupling Slot 
+f.Data.DataView.Create("MARKDt","CSVW",22,"HORC = 'C' AND CAT_TYPE = 'S'","")
+
+
+gui.FHCMaint.GsGCCStencil.AddGridviewFromDataview("CS_Grid","MARKDt","CSVW")
+
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "headerfontbold", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "ReadOnly", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "AllowEdit", False)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "caption", "Key")
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MKEY", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "caption", "Value")
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "MVALUE", "MinWidth",240)
+
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "CAT_TYPE", "Visible", False)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "HORC", "Visible", False)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "UNC_PATH", "Visible", False)
+
+
+gui.FHCMaint.GsGCCStencil.ColumnEdit("CS_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCCStencil.SetColumnProperty("CS_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","AllowSort",False)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCCStencil.SetGridviewProperty("CS_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCCStencil.MainView("CS_Grid")
+
+Program.Sub.LoadRest.End
+
+Program.Sub.LoadAssoc.Start
+f.data.DataTable.CreateFromSQL("INVDT","Conx","select distinct RTRIM(' ') as MCLASS,RTRIM(' ') as MDIAM,Substring(Part,7,2) as MHB,Part,Substring(Part,5,2) as MCTYPE,cast(0 as BIT) as Enabled from V_INVENTORY_MSTR where product_line = 'CP'",true)
+f.Data.DataTable.Create("ClassDT",True)
+f.Data.DataTable.AddColumn("ClassDT","MCODE","String")
+f.Data.DataTable.AddRow("ClassDT","MCODE","")
+f.Data.DataTable.CreateFromSQL("TempDT","Conx","Select Distinct MCODE from GCG_4908_HOSEGEN where CAT_TYPE = 'K'")
+f.Data.DataTable.Merge("TempDT","ClassDT",True,2)
+gui.FHCMaint.ddlAClass.addItems("DataTable","ClassDT","MCODE","MCODE")
+gui.FHCMaint.ddlSvcClass.addItems("DataTable","ClassDT","MCODE","MCODE")
+GUI.FHCMaint.ddlLogoClass.AddItems("DataTable","ClassDT","MCODE","MCODE")
+gui.FHCMaint.ddlOVRClass.addItems("DataTable","ClassDT","MCODE","MCODE")
+f.Data.DataTable.Close("TempDT")
+
+f.Data.DataTable.Create("DiamDT",True)
+f.Data.DataTable.AddColumn("DiamDT","MCODE","String")
+f.Data.DataTable.AddRow("DiamDT","MCODE","")
+f.Data.DataTable.CreateFromSQL("TempDT","Conx","Select Distinct MCODE from GCG_4908_HOSEGEN where CAT_TYPE = 'D'")
+f.Data.DataTable.Merge("TempDT","DiamDT",True,2)
+gui.FHCMaint.ddlDiameter.addItems("DataTable","DiamDT","MCODE","MCODE")
+gui.FHCMaint.ddlSvcDiam.addItems("DataTable","DiamDT","MCODE","MCODE")
+gui.FHCMaint.ddlOVRDiam.addItems("DataTable","DiamDT","MCODE","MCODE")
+f.Data.DataTable.Close("TempDT")
+gui.FHCMaint.ddlSvcAssy.addItem("")
+gui.FHCMaint.ddlSvcAssy.addItem("0")
+gui.FHCMaint.ddlSvcAssy.addItem("1")
+gui.FHCMaint.ddlSvcAssy.addItem("A")
+gui.FHCMaint.ddlOVRAssembly.addItem("")
+gui.FHCMaint.ddlOVRAssembly.addItem("0")
+gui.FHCMaint.ddlOVRAssembly.addItem("1")
+gui.FHCMaint.ddlOVRAssembly.addItem("A")
+
+f.Data.DataTable.Create("HoseBowlDT",True)
+f.Data.DataTable.AddColumn("HoseBowlDT","HB","String")
+f.Data.DataTable.AddRow("HoseBowlDT","HB","")
+f.Data.DataTable.CreateFromSQL("TempDT","Conx","select distinct Substring(a.Part,7,2) as HB from V_INVENTORY_MSTR a inner Join V_INVENTORY_MST2 b on a.part = b.part where RTRIM(b.TEXT_INFO1) = '' and Product_line = 'CP'")
+f.Data.DataTable.Merge("TempDT","HoseBowlDT",True,2)
+gui.FHCMaint.ddlHoseBowl.addItems("DataTable","HoseBowlDT","HB","HB")
+f.Data.DataTable.Close("TempDT")
+
+f.Data.DataTable.CreateFromSQL("HBPartData","Conx","Select Distinct MCLASS, MDIAM, MHB from GCG_4908_CDHB order by MCLASS,MDIAM",True)
+
+
+
+f.Data.DataTable.CreateFromSQL("CDHBDt","Conx","Select Distinct MCLASS, MDIAM, MHB from GCG_4908_CDHB order by MCLASS,MDIAM",True)
+f.Data.DataTable.AddColumn("CDHBDt","Delete","String")
+f.Data.Dataview.Create("CDHBDT","CDHBDv",22)
+
+gui.FHCMaint.GsGCCDHB.AddGridviewFromDataview("CDHBGrid","CDHBDT","CDHBDv")
+
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "caption", "Class")
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MCLASS", "MinWidth",60)
+
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "caption", "Diameter")
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MDIAM", "MinWidth",60)
+
+
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "caption", "Hose Bowl")
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "MHB", "MinWidth",60)
+
+gui.FHCMaint.GsGCCDHB.ColumnEdit("CDHBGrid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCCDHB.SetColumnProperty("CDHBGrid", "Delete", "MinWidth",60)
+
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","Showgrouppanel",False)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","OptionsViewShowAutoFilterRow",True)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","AllowSort",False)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","AllowFilter",True)
+gui.FHCMaint.GsGCCDHB.SetGridviewProperty("CDHBGrid","AllowColumnMoving",False)
+
+gui.FHCMaint.GsGCCDHB.MainView("CDHBGrid")
+
+f.Data.DataTable.Create("CHDBPartDT",true)
+f.Data.DataTable.AddColumn("CHDBPartDT","MCLASS","STRING")
+f.Data.DataTable.AddColumn("CHDBPartDT","MDIAM","STRING")
+f.Data.DataTable.AddColumn("CHDBPartDT","MHB","STRING")
+f.Data.DataTable.AddColumn("CHDBPartDT","PART","STRING")
+f.Data.DataTable.AddColumn("CHDBPartDT","MCTYPE","STRING")
+f.Data.DataTable.AddColumn("CHDBPartDT","ENABLED","Boolean")
+f.Data.DataTable.AddColumn("CHDBPartDT","CDHBPartAsoc","STRING")
+
+gui.FHCMaint.GsGCCDHBPart.AddGridviewFromDatatable("CDHBPartGrid","CHDBPartDT")
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "caption", "Class")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCLASS", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "caption", "Diameter")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MDIAM", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "caption", "Hose Bowl")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MHB", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "caption", "Part")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "PART", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "ReadOnly", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "AllowEdit", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "caption", "Coupling Type")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "MCTYPE", "MinWidth",80)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "headerfontbold", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "ReadOnly", False)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "AllowEdit", True)
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "caption", "Enabled")
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "Enabled", "MinWidth",60)
+
+Gui.FHCMaint.GsGCCDHBPart.SetColumnProperty("CDHBPartGrid", "CDHBPartAsoc", "Visible", False)
+
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","Showgrouppanel",False)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","OptionsViewShowAutoFilterRow",True)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","AllowSort",False)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","AllowFilter",True)
+gui.FHCMaint.GsGCCDHBPart.SetGridviewProperty("CDHBPartGrid","AllowColumnMoving",False)
+
+gui.FHCMaint.GsGCCDHBPart.MainView("CDHBPartGrid")
+Program.Sub.LoadAssoc.End
+
+Program.Sub.LoadHose.Start
+'bring in all marking data for hose and coupling
+f.data.DataTable.CreateFromSQL("HOSEDT","Conx","Select * from GCG_4908_HOSEGEN",True)
+f.Data.DataTable.AddColumn("HOSEDT","PINFOLD","Boolean")
+f.Data.DataTable.AddColumn("HOSEDT","DELETE","String")
+
+f.Data.Dictionary.CreateFromSQL("PinDict","Conx","Select Class, Enabled from GCG_4908_PINFOLD")
+f.Data.Dictionary.SetDefaultReturn("PinDict",False)
+f.Data.DataTable.FillFromDictionary("HOSEDT","PinDict","MCODE","PINFOLD")
+f.Data.dictionary.Close("PinDict")
+'First we create views for Host Type and all of the assoiciated categories
+'starting with length
+f.Data.DataView.Create("HOSEDT","HoLVW",22,"CAT_TYPE = 'L'","")
+
+
+gui.FHCMaint.GsGCLength.AddGridviewFromDataview("HL_Grid","HOSEDT","HoLVW")
+
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "headerfontbold", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "ReadOnly", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "AllowEdit", False)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "caption", "Code")
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MCODE", "MinWidth",60)
+
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "caption", "Length")
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "MVALUE", "MinWidth",200)
+
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "CAT_TYPE", "Visible", False)
+
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "PINFOLD", "Visible", False)
+
+
+gui.FHCMaint.GsGCLength.ColumnEdit("HL_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCLength.SetColumnProperty("HL_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","AllowSort",False)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCLength.SetGridviewProperty("HL_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCLength.MainView("HL_Grid")
+
+'Hose color
+
+f.Data.DataView.Create("HOSEDT","HoCVW",22,"CAT_TYPE = 'C'","")
+
+
+gui.FHCMaint.GsGCColor.AddGridviewFromDataview("HC_Grid","HOSEDT","HoCVW")
+
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "headerfontbold", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "ReadOnly", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "AllowEdit", False)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "caption", "Code")
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MCODE", "MinWidth",60)
+
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "caption", "Color")
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "MVALUE", "MinWidth",200)
+
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "CAT_TYPE", "Visible", False)
+
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "PINFOLD", "Visible", False)
+
+
+gui.FHCMaint.GsGCColor.ColumnEdit("HC_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCColor.SetColumnProperty("HC_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","AllowSort",False)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCColor.SetGridviewProperty("HC_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCColor.MainView("HC_Grid")
+'K For Class
+f.Data.DataView.Create("HOSEDT","HoKVW",22,"CAT_TYPE = 'K'","")
+
+
+gui.FHCMaint.GsGCClass.AddGridviewFromDataview("HK_Grid","HOSEDT","HoKVW")
+
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "headerfontbold", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "ReadOnly", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "AllowEdit", False)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "caption", "Class")
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MCODE", "MinWidth",60)
+
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "caption", "Description")
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "MVALUE", "MinWidth",200)
+
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "CAT_TYPE", "Visible", False)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "Visible", True)
+
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "headerfontbold", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "ReadOnly", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "AllowEdit", False)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "caption", "Pinfold")
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "PINFOLD", "MinWidth",80)
+
+gui.FHCMaint.GsGCClass.ColumnEdit("HK_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCClass.SetColumnProperty("HK_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","AllowSort",False)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCClass.SetGridviewProperty("HK_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCClass.MainView("HK_Grid")
+
+'D for Diameter 
+f.Data.DataView.Create("HOSEDT","HoDVW",22,"CAT_TYPE = 'D'","")
+
+
+gui.FHCMaint.GsGCDiam.AddGridviewFromDataview("HD_Grid","HOSEDT","HoDVW")
+
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "headerfontbold", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "ReadOnly", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "AllowEdit", False)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "caption", "Code")
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MCODE", "MinWidth",60)
+
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "headerfontbold", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "ReadOnly", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "AllowEdit", False)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "caption", "Diameter")
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "MVALUE", "MinWidth",200)
+
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "CAT_TYPE", "Visible", False)
+
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "PINFOLD", "Visible", False)
+
+gui.FHCMaint.GsGCDiam.ColumnEdit("HD_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCDiam.SetColumnProperty("HD_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","AllowSort",False)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCDiam.SetGridviewProperty("HD_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCDiam.MainView("HD_Grid")
+
+Program.Sub.LoadHose.End
+
+Program.Sub.LoadCustLogo.Start
+f.Data.Dictionary.CreateFromSQL("CustDict","Conx","select customer, Name_Customer from V_CUSTOMER_MASTER")
+f.Data.Dictionary.SetDefaultReturn("CustDict","")
+f.Data.Dictionary.CreateFromSQL("LogoDict","Conx","select MKEY, MVALUE from GCG_4908_KeyVal where cat_type = 'B' and HORC = 'H'")
+f.Data.Dictionary.SetDefaultReturn("LogoDict","")
+gui.FHCMaint.ddlLogo.addItems("Dictionary","LogoDict")
+
+f.Data.DataTable.CreateFromSQL("CustLogoDT","Conx","select Customer,RTRIM(' ') as CUSTNAME, RTRIM(' ') as LOGO, MKEY, CLASS, PRILOGO from GCG_4908_CUSTID",true)
+f.Data.DataTable.AddColumn("CustLogoDT","DELETE","String")
+f.Data.DataTable.FillFromDictionary("CustLogoDT","CustDict","Customer","CUSTNAME")
+f.Data.DataTable.FillFromDictionary("CustLogoDT","LogoDict","MKEY","LOGO")
+
+f.Data.Dataview.Create("CustLogoDT","CustLogoVw",22)
+gui.FHCMaint.GsGCCustLogo.AddGridviewFromDataview("CL_Grid","CustLogoDT","CustLogoVw")
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "caption", "Customer ID")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Customer", "MinWidth",100)
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "caption", "Customer Name")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CUSTNAME", "MinWidth",200)
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "caption", "Logo")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "LOGO", "MinWidth",200)
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "caption", "Primary Logo")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "PRILOGO", "MinWidth",120)
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "caption", "Class")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "CLASS", "MinWidth",120)
+
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "MKEY", "Visible", False)
+
+gui.FHCMaint.GsGCCustLogo.ColumnEdit("CL_Grid","Delete","EditorButton","Delete")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "headerfontbold", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "ReadOnly", True)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "AllowEdit", False)
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "caption", "Delete")
+Gui.FHCMaint.GsGCCustLogo.SetColumnProperty("CL_Grid", "Delete", "MinWidth",80)
+
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","Enableappearanceoddrow",True)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","Showgrouppanel",False)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","AllowSort",False)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","AllowFilter",False)
+gui.FHCMaint.GsGCCustLogo.SetGridviewProperty("CL_Grid","AllowColumnMoving",False)
+
+
+gui.FHCMaint.GsGCCustLogo.MainView("CL_Grid")
+
+Program.Sub.LoadCustLogo.End
+
+Program.Sub.cmdSaveHB_Click.Start
+v.Local.sSQL.Declare
+v.Local.sClass.Declare
+v.Local.sDiam.Declare
+v.Local.sHB.Declare
+v.Local.sFilter.Declare
+
+gui.FHCMaint.cmdSaveHB.Enabled(False)
+v.Local.sClass.Set(v.Screen.FHCMaint!ddlAClass.text)
+v.Local.sDiam.Set(v.Screen.FHCMaint!ddlDiameter.text)
+v.Local.sHB.Set(v.Screen.FHCMaint!ddlHoseBowl.text)
+gui.FHCMaint.cmdSaveHB.Enabled(False)
+f.Intrinsic.Control.If(v.Local.sClass.Trim,=,"","OR",v.Local.sDiam.Trim,=,"",v.Local.sHB.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Class, Diameter and Hose Bowl drop downs have a valid selection before saving.")
+	gui.FHCMaint.cmdSaveHB.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("MCLASS = '{0}' AND MDIAM = '{1}' AND MHB = '{2}'",V.Local.sClass,v.Local.sDiam,v.Local.sHB,v.Local.sFilter)
+f.Data.DataView.Create("CDHBDT","TmpVw",22,v.Local.sFilter,"")
+
+f.Intrinsic.Control.If(v.DataView.CDHBDt!TmpVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("The association currently exists in the database.")
+	gui.FHCMaint.cmdSaveHB.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+	
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("CDHBDT","TmpVw")
+
+
+f.Intrinsic.Control.Try
+
+	
+	f.Intrinsic.String.Build("Insert Into GCG_4908_CDHB Values('{0}','{1}','{2}')",v.Local.sClass,v.Local.sDiam,v.Local.sHB,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("CDHBDT","MCLASS",v.Local.sClass,"MDIAM",v.Local.sDiam,"MHB",v.Local.sHB)
+	gui.FHCMaint..ClearGroup(9)
+	gui.FHCMaint.cmdSaveHB.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	gui.FHCMaint.cmdSaveHB.Enabled(True)
+f.Intrinsic.Control.EndTry
+
+
+
+Program.Sub.cmdSaveHB_Click.End
+
+Program.Sub.GsGCCDHB_RowCellClick.Start
+v.Local.sSQL.Declare
+v.Local.sClass.Declare
+v.Local.sFilter.Declare
+v.Local.sDiam.Declare
+v.Local.sHB.Declare
+v.Local.iRet.Declare
+v.Local.iCount.Declare
+gui.FHCMaint.GsGCCDHB.enabled(False)
+v.Local.sClass.Set(v.DataTable.CDHBDT(v.Args.rowindex).MCLASS!FieldVal)
+v.Local.sDiam.Set(v.DataTable.CDHBDT(v.Args.rowindex).MDIAM!FieldVal)
+v.Local.sHB.Set(v.DataTable.CDHBDT(v.Args.rowindex).MHB!FieldVal)
+
+
+f.Intrinsic.Control.If(v.Args.Column.UCase,=,"DELETE")
+	f.Intrinsic.UI.Msgbox("Are you sure you want to delete this association? Doing so will delete all corresponding part association data as well","Delete Association?",4,v.Local.iRet)
+	f.Intrinsic.control.If(v.Local.iRet,=, 7)
+		gui.FHCMaint.GsGCCDHB.enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("Delete from GCG_4908_CDHB where MCLASS = '{0}' and MDIAM = '{1}' and MHB = '{2}'",v.Local.sClass,v.Local.sDiam,v.Local.sHB,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.String.Build("Delete from GCG_4908_CDHBPART where MCLASS = '{0}' and MDIAM = '{1}' and MHB = '{2}'",v.Local.sClass,v.Local.sDiam,v.Local.sHB,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.DeleteRow("CDHBDT",v.Args.rowindex)
+	gui.FHCMaint.GsGCCDHB.enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.ElseIf(v.Args.Column.UCase,=,"MCLASS","OR",v.Args.Column.UCase,=,"MDIAM")
+	gui.FHCMaint..Enabled(False)
+	gui.FHCMaint.GsGCCDHBPart.SuspendLayout
+	f.Data.Datatable.DeleteRow("CHDBPartDT")
+	f.Data.Dictionary.CreateFromSQL("CHDBPartDict","Conx","Select MCLASS + MDIAM + MHB + PART,Enabled from GCG_4908_CDHBPART")
+	f.Data.Dictionary.SetDefaultReturn("CHDBPartDict",False)
+	f.Intrinsic.String.Build("Select Distinct MHB from GCG_4908_CDHB where MCLASS = '{0}' and MDIAM = '{1}'",v.Local.sClass,v.Local.sDiam,v.Local.sSQL)
+	f.ODBC.Connection!conx.OpenLocalRecordSetRO("RstHB",v.Local.sSQL)
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conx!RstHB.EOF,=,True)
+		f.Intrinsic.String.Build("MHB = '{0}'",v.ODBC.conx!RstHB.FieldVal!MHB,v.Local.sFilter)
+		f.Data.DataView.Create("INVDT","TempVw",22,v.Local.sFilter,"")
+		f.Data.DataView.ToDataTable("INVDT","TempVw","TempInvDT")
+		f.Data.DataView.Close("INVDT","TempVw")
+		f.Data.DataTable.SetValue("TempInvDT",-1,"MCLASS",v.Local.sClass)
+		f.Data.DataTable.SetValue("TempInvDT",-1,"MDIAM",v.Local.sDiam)
+		f.Data.DataTable.AddExpressionColumn("TempInvDT","CDHBPartAsoc","String","MCLASS + MDIAM + MHB + PART")
+		f.Data.DataTable.Merge("TempInvDT","CHDBPartDT",true,2)
+		f.Data.DataTable.Close("TempInvDT")
+		F.ODBC.Conx!RstHB.MoveNext
+	F.Intrinsic.Control.Loop
+	f.ODBC.conx!RstHB.Close
+	f.Data.DataTable.FillFromDictionary("CHDBPartDT","CHDBPartDict","CDHBPartAsoc","Enabled")
+
+	f.Data.Dictionary.Close("CHDBPartDict")	
+	gui.FHCMaint.GsGCCDHBPart.ResumeLayout	
+	gui.FHCMaint.GsGCCDHB.enabled(True)
+	gui.FHCMaint..Enabled(True)
+f.Intrinsic.Control.ElseIf(v.Args.Column.UCase,=,"MHB")
+	gui.FHCMaint..Enabled(False)
+	gui.FHCMaint.GsGCCDHBPart.SuspendLayout
+	f.Data.Datatable.DeleteRow("CHDBPartDT")
+	f.Data.Dictionary.CreateFromSQL("CHDBPartDict","Conx","Select MCLASS + MDIAM + MHB + PART,Enabled from GCG_4908_CDHBPART")
+	f.Data.Dictionary.SetDefaultReturn("CHDBPartDict",False)
+
+	f.Intrinsic.String.Build("MHB = '{0}'",v.Local.sHB,v.Local.sFilter)
+	f.Data.DataView.Create("INVDT","TempVw",22,v.Local.sFilter,"")
+	f.Data.DataView.ToDataTable("INVDT","TempVw","TempInvDT")
+	f.Data.DataView.Close("INVDT","TempVw")
+	f.Data.DataTable.SetValue("TempInvDT",-1,"MCLASS",v.Local.sClass)
+	f.Data.DataTable.SetValue("TempInvDT",-1,"MDIAM",v.Local.sDiam)
+	f.Data.DataTable.AddExpressionColumn("TempInvDT","CDHBPartAsoc","String","MCLASS + MDIAM + MHB + PART")
+	f.Data.DataTable.Merge("TempInvDT","CHDBPartDT",true,2)
+	f.Data.DataTable.Close("TempInvDT")
+	f.Data.DataTable.FillFromDictionary("CHDBPartDT","CHDBPartDict","CDHBPartAsoc","Enabled")
+	f.Data.Dictionary.Close("CHDBPartDict")
+	gui.FHCMaint.GsGCCDHBPart.ResumeLayout	
+	gui.FHCMaint.GsGCCDHB.enabled(True)
+	gui.FHCMaint..Enabled(True)
+
+f.Intrinsic.Control.EndIf
+gui.FHCMaint.GsGCCDHB.enabled(True)
+Program.Sub.GsGCCDHB_RowCellClick.End
+
+Program.Sub.cmdSaveParts_Click.Start
+gui.FHCMaint..Enabled(False)
+'f.Data.DataView.Create("CHDBPartDT","SaveVw",22,"Enabled = True","")
+f.Data.DataView.Create("CHDBPartDT","SaveVw",22)
+f.Data.DataView.ToDataTable("CHDBPartDT","SaveVw","SaveDT")
+f.Data.DataView.Close("CHDBPartDT","SaveVw")
+f.Data.DataTable.RemoveColumn("SaveDT","CDHBPartAsoc")
+f.Data.DataTable.RemoveColumn("SaveDT","MCTYPE")
+
+f.Data.DataTable.SaveToDB("SaveDT","Conx","GCG_4908_CDHBPART","MCLASS*!*MDIAM*!*MHB*!*PART",256)
+
+f.Data.DataTable.Close("SaveDT")
+gui.FHCMaint..Enabled(True)
+
+Program.Sub.cmdSaveParts_Click.End
+
+Program.Sub.DeleteKeyVal.Start
+v.Local.sHORC.Declare
+v.Local.sMKEY.Declare
+v.Local.sCatType.Declare
+v.Local.sSql.Declare
+v.Local.iRet.Declare
+f.Intrinsic.Control.if(v.Args.column.Ucase,=,"DELETE")
+	
+	gui.FHCMaint..Enabled(false)
+	f.Intrinsic.ui.Msgbox("Are you sure you want to delete this record?","Delete Record?",4,v.Local.iRet)
+	f.Intrinsic.Control.if(v.Local.iRet,=,7)
+		gui.FHCMaint..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	gui.FHCMaint..Enabled(True)
+	v.Local.sHORC.Set(v.DataTable.MarkDT(v.Args.rowindex).HORC!FieldVal)
+	v.Local.sMKEY.Set(v.DataTable.MarkDT(v.Args.rowindex).MKEY!FieldVal)
+	v.Local.sCatType.Set(v.DataTable.MarkDT(v.Args.rowindex).CAT_TYPE!FieldVal)
+	f.Intrinsic.Control.Try
+		f.Intrinsic.String.Build("Delete from GCG_4908_KEYVAL where HORC = '{0}' and MKEY = '{1}' and CAT_TYPE = '{2}'",v.Local.sHORC,v.Local.sMKEY,v.Local.sCatType,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Data.DataTable.DeleteRow("MarkDT",v.Args.rowindex)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.EndIf
+Program.Sub.DeleteKeyVal.End
+
+Program.Sub.DeleteSvcTst.Start
+v.Local.sSVCKey.Declare
+v.Local.sSql.Declare
+v.Local.iRet.Declare
+f.Intrinsic.Control.if(v.Args.column.Ucase,=,"DELETE")
+	
+	gui.FHCMaint..Enabled(false)
+	f.Intrinsic.ui.Msgbox("Are you sure you want to delete this record?","Delete Record?",4,v.Local.iRet)
+	f.Intrinsic.Control.if(v.Local.iRet,=,7)
+		gui.FHCMaint..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	gui.FHCMaint..Enabled(True)
+	v.Local.sSVCKey.Set(v.DataTable.SVCDt(v.Args.rowindex).MSVCKEY!FieldVal)
+	f.Intrinsic.Control.Try
+		f.Intrinsic.String.Build("Delete from GCG_4908_SVCTST where MSVCKEY = '{0}' ",v.Local.sSVCKey,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Data.DataTable.DeleteRow("SVCDt",v.Args.rowindex)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.EndIf
+
+Program.Sub.DeleteSvcTst.End
+
+Program.Sub.lbl1_Click.Start
+Program.Sub.lbl1_Click.End
+
+Program.Sub.cmdBrwCust_Click.Start
+v.Local.sSql.Declare
+v.local.sTitles.Declare
+v.Local.iWidths.Declare
+v.Local.sRet.Declare
+v.Local.sDisp.Declare
+
+'create browser
+v.Local.sSql.Set("select Customer, Name_customer from V_CUSTOMER_MASTER")
+F.Intrinsic.String.Split("CUstomer ID*!*Customer Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("600*!*600","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+f.Intrinsic.UI.Browser("Select Customer","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.else
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.local.sRet)
+	gui.FHCMaint.txtCUstID.Text(v.Local.sRet(0))	
+	gui.FHCMaint.txtCustName.Text(v.Local.sRet(1))
+f.Intrinsic.Control.EndIf
+
+Program.Sub.cmdBrwCust_Click.End
+
+Program.Sub.ModHoseClass.Start
+v.Local.sMKEY.Declare
+v.Local.sCatType.Declare
+v.Local.sSql.Declare
+v.Local.iRet.Declare
+
+f.Intrinsic.Control.if(v.Args.column.UCase,=,"DELETE")
+	
+	gui.FHCMaint..Enabled(false)
+	f.Intrinsic.ui.Msgbox("Are you sure you want to delete this record?","Delete Record?",4,v.Local.iRet)
+	f.Intrinsic.Control.if(v.Local.iRet,=,7)
+		gui.FHCMaint..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	gui.FHCMaint..Enabled(True)
+	v.Local.sMKEY.Set(v.DataTable.HOSEDT(v.Args.rowindex).MCODE!FieldVal)
+	v.Local.sCatType.Set(v.DataTable.HOSEDT(v.Args.rowindex).CAT_TYPE!FieldVal)
+	f.Intrinsic.Control.Try
+		f.Intrinsic.String.Build("Delete from GCG_4908_HOSEGEN where MCODE = '{0}' and CAT_TYPE = '{1}'",v.Local.sMKEY,v.Local.sCatType,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Intrinsic.String.Build("Delete from GCG_4908_PINFOLD where CLASS = '{0}'",v.Local.sMKEY,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Data.DataTable.DeleteRow("HOSEDT",v.Args.rowindex)
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.Elseif(v.Args.column.Ucase,=,"PINFOLD")
+	f.Intrinsic.Control.If(v.DataTable.HOSEDT(v.Args.RowIndex).PINFOLD!FieldVal)
+		f.Data.DataTable.SetValue("HOSEDT",v.Args.RowIndex,"PINFOLD",False)
+	f.Intrinsic.Control.Else
+		f.Data.DataTable.SetValue("HOSEDT",v.Args.RowIndex,"PINFOLD",True)
+	f.Intrinsic.Control.EndIf
+
+	f.Data.DataView.ToDataTable("HOSEDT","HoKVW","TempSavDt")
+	f.Data.DataTable.SaveToDB("TempSavDt","CONX","GCG_4908_PINFOLD","MCODE",256,"MCODE@!@CLASS*!*PINFOLD@!@ENABLED")
+	f.Data.DataTable.Close("TempSavDt")
+f.Intrinsic.Control.EndIf
+Program.Sub.ModHoseClass.End
+
+Program.Sub.cmdOVRCustBrowser_Click.Start
+v.Local.sSql.Declare
+v.local.sTitles.Declare
+v.Local.iWidths.Declare
+v.Local.sRet.Declare
+v.Local.sDisp.Declare
+
+'create browser
+v.Local.sSql.Set("select Customer, Name_customer from V_CUSTOMER_MASTER")
+F.Intrinsic.String.Split("CUstomer ID*!*Customer Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("600*!*600","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+f.Intrinsic.UI.Browser("Select Customer","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.else
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.local.sRet)
+	gui.FHCMaint.txtOVRCustomer.Text(v.Local.sRet(0).Trim)	
+	gui.FHCMaint.txtOVRCustomerName.Text(v.Local.sRet(1).Trim)
+f.Intrinsic.Control.EndIf
+Program.Sub.cmdOVRCustBrowser_Click.End
+
+Program.Sub.cmdOVRSave_Click.Start
+v.Local.sClass.Declare
+v.Local.sDiameter.Declare
+v.Local.sAssy.Declare
+v.Local.sKey.Declare
+v.Local.sSvcTest.Declare
+v.Local.sTrdName.Declare
+v.Local.sSql.Declare
+v.Local.sFilter.Declare
+V.Local.sCustomer.Declare(String)
+
+v.Local.sClass.Set(v.screen.FHCMaint!ddlOVRClass.Value)
+v.Local.sDiameter.Set(v.screen.FHCMaint!ddlOVRDiam.Value)
+v.Local.sAssy.Set(v.screen.FHCMaint!ddlOVRAssembly.Value)
+
+f.Intrinsic.Control.If(v.Local.sClass.Trim,=,"","OR",v.Local.sDiameter.trim,=,"",v.Local.sAssy.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Class, Diameter and the assembly data has been entered before saving.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.build("{0}{1}{2}",v.Local.sClass.Trim,v.Local.sDiameter.Trim,v.Local.sAssy.Trim,v.Local.sKey)
+
+v.Local.sSvcTest.Set(v.screen.FHCMaint!txtOVRServiceTest.Text)
+v.Local.sTrdName.Set(v.screen.FHCMaint!txtOVRTradeName.Text)
+
+f.Intrinsic.Control.If(v.Local.sSvcTest.Trim,=,"","OR",v.Local.sTrdName.trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Service Test and Trade Name data has been entered before saving.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+V.Local.sCustomer.Set(V.Screen.FHCMaint!txtOVRCustomer.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sCustomer.Trim, =, "")
+	f.Intrinsic.UI.Msgbox("Please make sure that the Customer has been entered before saving.")
+	f.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("MSVCKEY = '{0}' and Customer = '{1}'",v.Local.sKey, V.Local.sCustomer.Trim, v.Local.sFilter)
+f.Data.Dataview.Create("dtOverride","CheckVw",22,v.Local.sFilter,"")
+f.Intrinsic.Control.If(v.DataView.dtOverride!CheckVw.RowCount,>,0)
+	f.Intrinsic.UI.Msgbox("There is an existing association for the Customer, Class, diameter and Assy in the database.")
+	f.Data.DataView.Close("dtOverride","CheckVw")
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Close("dtOverride","CheckVw")
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("Insert Into GCG_4908_SVCTST Values('{0}','{1}','{2}','{3}','{4}','{5}', '{6}')",v.Local.sClass,v.Local.sDiameter.trim,v.Local.sAssy,v.Local.sKey,v.Local.sSvcTest,v.Local.sTrdName, V.Local.sCustomer.Trim, v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Data.DataTable.AddRow("dtOverride","MCLASS",v.Local.sClass,"MDIAM",v.Local.sDiameter.trim,"MASSY",v.Local.sAssy,"MSVCKEY",v.Local.sKey,"SVC_TST",v.Local.sSvcTest,"TRD_NAME",v.Local.sTrdName, "Customer", V.Local.sCustomer.Trim, "Customer_Name", V.Screen.FHCMaint!txtOVRCustomerName.Text.Trim)
+	GUI.FHCMaint.txtOVRCustomer.Text("")
+	GUI.FHCMaint.txtOVRCustomerName.Text("")
+	GUI.FHCMaint.txtOVRServiceTest.Text("")
+	GUI.FHCMaint.txtOVRTradeName.Text("")
+	GUI.FHCMaint.ddlOVRAssembly.ListIndex(-1)
+	GUI.FHCMaint.ddlOVRClass.ListIndex(-1)
+	GUI.FHCMaint.ddlOVRDiam.ListIndex(-1)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox("Oops! Something went wrong. You may try again or contact Global Shop Solutions for assistance.")
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdOVRSave_Click.End
+
+Program.Sub.LoadOverrideGrid.Start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.If(V.DataTable.dtOverride.Exists)
+	F.Data.DataTable.Close("dtOverride")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtOverride", "Conx", "select * from GCG_4908_SVCTST where IsNull(Customer, '') <> ''", True)
+F.Data.DataTable.AddColumn("dtOverride", "Delete", "String")
+F.Data.DataTable.AddColumn("dtOverride", "Customer_Name", "String")
+
+F.Data.Dictionary.CreateFromSQL("dictCustomers", "Conx", "select CUSTOMER, NAME_CUSTOMER from V_CUSTOMER_MASTER")
+F.Data.Dictionary.SetDefaultReturn("dictCustomers", "")
+F.Data.DataTable.FillFromDictionary("dtOverride", "dictCustomers", "Customer", "Customer_Name")
+F.Data.Dictionary.Close("dictCustomers")
+
+GUI.FHCMaint.gsgcOverride.AddGridviewFromDatatable("gvOverride", "dtOverride")
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "caption", "Class")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "MinWidth",45)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "caption", "Diameter")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "MinWidth",60)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "caption", "Assy")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "MinWidth",45)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "caption", "Key")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MSVCKEY", "MinWidth",50)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "caption", "Service Test")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "MinWidth",150)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "caption", "Trade Name")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "MinWidth",150)
+
+gui.FHCMaint.gsgcOverride.ColumnEdit("gvOverride","Delete","EditorButton","Delete")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "caption", "Delete")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Delete", "MinWidth",60)
+
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","Enableappearanceoddrow",True)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","OptionsFindAlwaysVisible",False)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","Showgrouppanel",False)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","OptionsViewShowAutoFilterRow",False)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","AllowSort",False)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","AllowFilter",False)
+gui.FHCMaint.gsgcOverride.SetGridviewProperty("gvOverride","AllowColumnMoving",False)
+
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "VisibleIndex", 0)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "VisibleIndex", 1)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MCLASS", "VisibleIndex", 2)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MDIAM", "VisibleIndex", 3)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "MASSY", "VisibleIndex", 4)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "SVC_TST", "VisibleIndex", 5)
+GUI.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "TRD_NAME", "VisibleIndex", 6)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "caption", "Customer")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "MinWidth", 90)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer", "Visible", False)
+
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "headerfontbold", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "ReadOnly", True)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "AllowEdit", False)
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "caption", "Name")
+Gui.FHCMaint.gsgcOverride.SetColumnProperty("gvOverride", "Customer_Name", "MinWidth", 120)
+
+GUI.FHCMaint.gsgcOverride.MainView("gvOverride")
+Program.Sub.LoadOverrideGrid.End
+
+Program.Sub.gsgcOverride_RowCellClick.Start
+F.Intrinsic.Control.If(V.Args.Column.Trim, =, "Delete")
+	F.Intrinsic.Control.If(V.Args.RowIndex, >, -1)
+		F.Data.DataTable.DeleteRow("dtOverride", V.Args.RowIndex)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.gsgcOverride_RowCellClick.End
+
+
