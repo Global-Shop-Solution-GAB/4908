@@ -1,0 +1,3913 @@
+Program.Sub.ScreenSU.Start
+Gui.Form_Main..Create
+Gui.Form_Main..Size(10665,10710)
+Gui.Form_Main..MinX(0)
+Gui.Form_Main..MinY(0)
+Gui.Form_Main..Position(0,0)
+Gui.Form_Main..BackColor(-2147483633)
+Gui.Form_Main..MousePointer(0)
+Gui.Form_Main..Caption("Assembly Configurator")
+Gui.Form_Main..Event(UnLoad,Form_Main_UnLoad)
+Gui.Form_Main..MaxButton(False)
+Gui.Form_Main..Sizeable(False)
+Gui.Form_Main.lblClass.Create(Label,"Class",True,765,255,0,2085,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblDiameter.Create(Label,"Diameter",True,840,255,0,3645,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblLength.Create(Label,"Length",True,780,255,0,5340,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblColor.Create(Label,"Color",True,660,255,0,8730,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.txtHose.Create(TextBox,"",True,1770,300,0,240,435,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtHose.MaxLength(17)
+Gui.Form_Main.txtHose.Event(LostFocus,txtHose_LostFocus)
+Gui.Form_Main.txtHose.TabStop(True)
+Gui.Form_Main.txtHose.TabIndex(6)
+Gui.Form_Main.lblHose.Create(Label,"Hose",True,780,255,0,240,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.txtHoseQty.Create(TextBox,"",True,930,300,0,9390,2895,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtHoseQty.NumericOnly(2)
+Gui.Form_Main.txtHoseQty.TabStop(True)
+Gui.Form_Main.txtHoseQty.TabIndex(15)
+Gui.Form_Main.txtHoseQty.Event(Change,txtHoseQty_Change)
+Gui.Form_Main.lblQty.Create(Label,"Quantity",True,915,255,0,9405,2670,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lbl8.Create(Label,"Primary Logo",True,2430,255,0,240,1065,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblServTest.Create(Label,"Service Test",True,1110,255,0,240,2670,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblApproval.Create(Label,"Approval",True,1005,255,0,7155,2670,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.frameCpl.Create(Frame)
+Gui.Form_Main.frameCpl.Size(10080,945)
+Gui.Form_Main.frameCpl.Position(240,4815)
+Gui.Form_Main.frameCpl.Caption("Coupling Details")
+Gui.Form_Main.lblPartCpl1.Create(Label,"Part",True,435,255,0,105,240,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblPartCpl1.Parent("frameCpl")
+Gui.Form_Main.lblCpl1Qty.Create(Label,"Qty Per Part",True,1020,255,0,3165,240,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblCpl1Qty.Parent("frameCpl")
+Gui.Form_Main.lblCplType.Create(Label,"Coupling Ends",True,1245,255,0,5430,255,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblCplType.Parent("frameCpl")
+Gui.Form_Main.txtPartCpl1.Create(TextBox,"",True,1770,300,0,105,465,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtPartCpl1.Parent("frameCpl")
+Gui.Form_Main.txtPartCpl1.TabStop(True)
+Gui.Form_Main.txtPartCpl1.TabIndex(23)
+Gui.Form_Main.txtPartCpl1.Event(LostFocus,txtPartCpl1_LostFocus)
+Gui.Form_Main.cmdCpl1.Create(Button)
+Gui.Form_Main.cmdCpl1.Size(360,360)
+Gui.Form_Main.cmdCpl1.Position(1920,435)
+Gui.Form_Main.cmdCpl1.Parent("frameCpl")
+Gui.Form_Main.cmdCpl1.Caption("^")
+Gui.Form_Main.cmdCpl1.Event(Click,cmdCpl1_Click)
+Gui.Form_Main.chkStamp.Create(CheckBox)
+Gui.Form_Main.chkStamp.Size(2205,330)
+Gui.Form_Main.chkStamp.Position(7545,165)
+Gui.Form_Main.chkStamp.Parent("frameCpl")
+Gui.Form_Main.chkStamp.Caption("Requires Stamping")
+Gui.Form_Main.chkStamp.Event(Click,chkStamp_Click)
+Gui.Form_Main.chkStamp.TabStop(True)
+Gui.Form_Main.chkStamp.TabIndex(21)
+Gui.Form_Main.chkIdentify.Create(CheckBox)
+Gui.Form_Main.chkIdentify.Size(2040,330)
+Gui.Form_Main.chkIdentify.Position(7545,510)
+Gui.Form_Main.chkIdentify.Parent("frameCpl")
+Gui.Form_Main.chkIdentify.Caption("Requires Identify")
+Gui.Form_Main.chkIdentify.Event(Click,chkIdentify_Click)
+Gui.Form_Main.chkIdentify.TabStop(True)
+Gui.Form_Main.chkIdentify.TabIndex(22)
+Gui.Form_Main.chkIdentify.Enabled(False)
+Gui.Form_Main.ddlQtyPP1.Create(DropDownList)
+Gui.Form_Main.ddlQtyPP1.Size(915,330)
+Gui.Form_Main.ddlQtyPP1.Position(3165,450)
+Gui.Form_Main.ddlQtyPP1.Parent("frameCpl")
+Gui.Form_Main.ddlQtyPP1.DefaultValue("1")
+Gui.Form_Main.ddlQtyPP1.Event(Click,ddlQtyPP1_Click)
+Gui.Form_Main.ddlQtyPP1.TabStop(True)
+Gui.Form_Main.ddlQtyPP1.TabIndex(24)
+Gui.Form_Main.txtCpl1UM.Create(TextBox,"",True,690,300,0,2370,465,True,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtCpl1UM.Parent("frameCpl")
+Gui.Form_Main.txtCpl1UM.TabStop(True)
+Gui.Form_Main.txtCpl1UM.TabIndex(23)
+Gui.Form_Main.txtCpl1UM.Locked(True)
+Gui.Form_Main.lblPartCpl2.Create(Label,"UM",True,570,255,0,2340,240,True,0,"Arial",8,15790320,0)
+Gui.Form_Main.lblPartCpl2.Parent("frameCpl")
+Gui.Form_Main.lblPartCpl4.Create(Label,"Qty on Order",True,1110,255,0,4185,240,True,0,"Arial",8,15790320,0)
+Gui.Form_Main.lblPartCpl4.Parent("frameCpl")
+Gui.Form_Main.txtCpl1OrderQty.Create(TextBox,"",True,1110,300,0,4170,465,True,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtCpl1OrderQty.Parent("frameCpl")
+Gui.Form_Main.txtCpl1OrderQty.TabStop(True)
+Gui.Form_Main.txtCpl1OrderQty.TabIndex(23)
+Gui.Form_Main.txtCpl1OrderQty.NumericOnly(1)
+Gui.Form_Main.txtCplType.Create(TextBox,"",True,1830,300,0,5430,465,True,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtCplType.Parent("frameCpl")
+Gui.Form_Main.txtCplType.TabStop(True)
+Gui.Form_Main.txtCplType.TabIndex(23)
+Gui.Form_Main.txtCplType.Locked(True)
+Gui.Form_Main.lblCplAssocError.Create(Label,"Not Associated!",False,1380,255,0,495,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblCplAssocError.Parent("frameCpl")
+Gui.Form_Main.lblCplAssocError.ForeColor(255)
+Gui.Form_Main.frameCpl2.Create(Frame)
+Gui.Form_Main.frameCpl2.Size(5340,1050)
+Gui.Form_Main.frameCpl2.Position(240,5745)
+Gui.Form_Main.frameCpl2.Caption("Second Coupling")
+Gui.Form_Main.frameCpl2.Enabled(False)
+Gui.Form_Main.frameCpl2.Anchor(6)
+Gui.Form_Main.lblCpl2Qty.Create(Label,"Qty Per Part",True,975,225,0,3165,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.lblCpl2Qty.Parent("frameCpl2")
+Gui.Form_Main.txtPartCpl2.Create(TextBox,"",True,1770,300,0,105,510,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtPartCpl2.Parent("frameCpl2")
+Gui.Form_Main.txtPartCpl2.TabStop(True)
+Gui.Form_Main.txtPartCpl2.TabIndex(25)
+Gui.Form_Main.txtPartCpl2.Event(LostFocus,txtPartCpl2_LostFocus)
+Gui.Form_Main.cmdCpl2.Create(Button)
+Gui.Form_Main.cmdCpl2.Size(360,360)
+Gui.Form_Main.cmdCpl2.Position(1920,495)
+Gui.Form_Main.cmdCpl2.Parent("frameCpl2")
+Gui.Form_Main.cmdCpl2.Caption("^")
+Gui.Form_Main.cmdCpl2.Event(Click,cmdCpl2_Click)
+Gui.Form_Main.ddlQtyPP2.Create(DropDownList)
+Gui.Form_Main.ddlQtyPP2.Size(915,330)
+Gui.Form_Main.ddlQtyPP2.Position(3165,495)
+Gui.Form_Main.ddlQtyPP2.Parent("frameCpl2")
+Gui.Form_Main.ddlQtyPP2.DefaultValue("1")
+Gui.Form_Main.ddlQtyPP2.TabStop(True)
+Gui.Form_Main.ddlQtyPP2.TabIndex(26)
+Gui.Form_Main.ddlQtyPP2.Event(Click,ddlQtyPP2_Click)
+Gui.Form_Main.lblCpl2Qty2.Create(Label,"Part",True,405,225,0,105,270,True,0,"Arial",8,15790320,0)
+Gui.Form_Main.lblCpl2Qty2.Parent("frameCpl2")
+Gui.Form_Main.lblCpl2Qty3.Create(Label,"UM",True,675,225,0,2355,270,True,0,"Arial",8,15790320,0)
+Gui.Form_Main.lblCpl2Qty3.Parent("frameCpl2")
+Gui.Form_Main.txtCpl2UM.Create(TextBox,"",True,705,300,0,2370,510,True,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtCpl2UM.Parent("frameCpl2")
+Gui.Form_Main.txtCpl2UM.TabStop(True)
+Gui.Form_Main.txtCpl2UM.TabIndex(25)
+Gui.Form_Main.txtCpl2UM.Locked(True)
+Gui.Form_Main.txtCpl2OrderQty.Create(TextBox,"",True,1110,300,0,4170,510,True,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtCpl2OrderQty.Parent("frameCpl2")
+Gui.Form_Main.txtCpl2OrderQty.TabStop(True)
+Gui.Form_Main.txtCpl2OrderQty.TabIndex(25)
+Gui.Form_Main.txtCpl2OrderQty.NumericOnly(1)
+Gui.Form_Main.lblCpl2Qty4.Create(Label,"Qty on Order",True,1080,225,0,4200,270,True,0,"Arial",8,15790320,0)
+Gui.Form_Main.lblCpl2Qty4.Parent("frameCpl2")
+Gui.Form_Main.lblCplAssocError2.Create(Label,"Not Associated!",False,1380,255,0,495,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblCplAssocError2.Parent("frameCpl2")
+Gui.Form_Main.lblCplAssocError2.ForeColor(255)
+Gui.Form_Main.lblTrName.Create(Label,"Trade Name",True,1035,255,0,3675,2670,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.frameMarking.Create(Frame)
+Gui.Form_Main.frameMarking.Size(4710,1050)
+Gui.Form_Main.frameMarking.Position(5610,5745)
+Gui.Form_Main.frameMarking.Caption("Stamping Instructions")
+Gui.Form_Main.frameMarking.Enabled(False)
+Gui.Form_Main.frameMarking.Anchor(6)
+Gui.Form_Main.txtMark.Create(TextboxM)
+Gui.Form_Main.txtMark.Size(3630,765)
+Gui.Form_Main.txtMark.Position(60,210)
+Gui.Form_Main.txtMark.Parent("frameMarking")
+Gui.Form_Main.txtMark.TabStop(True)
+Gui.Form_Main.txtMark.TabIndex(27)
+Gui.Form_Main.txtStampPrice.Create(TextBox,"",True,915,300,0,3750,585,False,1,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtStampPrice.Parent("frameMarking")
+Gui.Form_Main.txtStampPrice.NumericOnly(1)
+Gui.Form_Main.txtStampPrice.Event(LostFocus,txtStampPrice_LostFocus)
+Gui.Form_Main.chkStampPrice.Create(CheckBox)
+Gui.Form_Main.chkStampPrice.Size(750,360)
+Gui.Form_Main.chkStampPrice.Position(3855,195)
+Gui.Form_Main.chkStampPrice.Parent("frameMarking")
+Gui.Form_Main.chkStampPrice.Caption("Price")
+Gui.Form_Main.chkStampPrice.Event(Click,chkStampPrice_Click)
+Gui.Form_Main.chkSpec.Create(CheckBox)
+Gui.Form_Main.chkSpec.Size(1770,360)
+Gui.Form_Main.chkSpec.Position(1830,3240)
+Gui.Form_Main.chkSpec.Caption("Special Order Item")
+Gui.Form_Main.chkSpec.Event(Click,chkSpec_Click)
+Gui.Form_Main.chkSpec.TabStop(True)
+Gui.Form_Main.chkSpec.TabIndex(17)
+Gui.Form_Main.cmdOK.Create(Button)
+Gui.Form_Main.cmdOK.Size(3300,375)
+Gui.Form_Main.cmdOK.Position(195,10035)
+Gui.Form_Main.cmdOK.Caption("OK")
+Gui.Form_Main.cmdOK.Event(Click,cmdOK_Click)
+Gui.Form_Main.cmdOK.TabStop(True)
+Gui.Form_Main.cmdOK.TabIndex(42)
+Gui.Form_Main.cmdOK.Anchor(6)
+Gui.Form_Main.cmdCancel.Create(Button)
+Gui.Form_Main.cmdCancel.Size(3300,375)
+Gui.Form_Main.cmdCancel.Position(6990,10035)
+Gui.Form_Main.cmdCancel.Caption("Exit")
+Gui.Form_Main.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.Form_Main.cmdCancel.TabStop(True)
+Gui.Form_Main.cmdCancel.TabIndex(43)
+Gui.Form_Main.cmdCancel.Anchor(6)
+Gui.Form_Main.lblAsmType.Create(Label,"Assembly",True,1065,255,0,7035,270,True,0,"Arial",8,-986896,0)
+Gui.Form_Main.frameIdentify.Create(Frame)
+Gui.Form_Main.frameIdentify.Size(10065,2730)
+Gui.Form_Main.frameIdentify.Position(225,6780)
+Gui.Form_Main.frameIdentify.Caption("Identify Marking Configuration")
+Gui.Form_Main.frameIdentify.Enabled(False)
+Gui.Form_Main.frameIdentify.Anchor(6)
+Gui.Form_Main.ddlCode1.Create(DropDownList)
+Gui.Form_Main.ddlCode1.Size(1365,330)
+Gui.Form_Main.ddlCode1.Position(1155,255)
+Gui.Form_Main.ddlCode1.Parent("frameIdentify")
+Gui.Form_Main.ddlCode1.Event(Change,ddlCode1_Change)
+Gui.Form_Main.ddlCode1.Event(Click,ddlCode1_Change)
+Gui.Form_Main.ddlCode1.TabStop(True)
+Gui.Form_Main.ddlCode1.TabIndex(28)
+Gui.Form_Main.ddlC1S1.Create(DropDownList)
+Gui.Form_Main.ddlC1S1.Size(1365,330)
+Gui.Form_Main.ddlC1S1.Position(1155,765)
+Gui.Form_Main.ddlC1S1.Parent("frameIdentify")
+Gui.Form_Main.ddlC1S1.Event(Click,ddlC1S1_Click)
+Gui.Form_Main.ddlC1S1.TabStop(True)
+Gui.Form_Main.ddlC1S1.TabIndex(29)
+Gui.Form_Main.ddlC1S1Cover.Create(DropDownList)
+Gui.Form_Main.ddlC1S1Cover.Size(1365,330)
+Gui.Form_Main.ddlC1S1Cover.Position(1155,1290)
+Gui.Form_Main.ddlC1S1Cover.Parent("frameIdentify")
+Gui.Form_Main.ddlC1S1Cover.TabStop(True)
+Gui.Form_Main.ddlC1S1Cover.TabIndex(30)
+Gui.Form_Main.ddlC1S2.Create(DropDownList)
+Gui.Form_Main.ddlC1S2.Size(1365,330)
+Gui.Form_Main.ddlC1S2.Position(1155,1815)
+Gui.Form_Main.ddlC1S2.Parent("frameIdentify")
+Gui.Form_Main.ddlC1S2.Event(Click,ddlC1S2_Click)
+Gui.Form_Main.ddlC1S2.TabStop(True)
+Gui.Form_Main.ddlC1S2.TabIndex(31)
+Gui.Form_Main.ddlC1S2Cover.Create(DropDownList)
+Gui.Form_Main.ddlC1S2Cover.Size(1365,330)
+Gui.Form_Main.ddlC1S2Cover.Position(1155,2340)
+Gui.Form_Main.ddlC1S2Cover.Parent("frameIdentify")
+Gui.Form_Main.ddlC1S2Cover.TabStop(True)
+Gui.Form_Main.ddlC1S2Cover.TabIndex(32)
+Gui.Form_Main.ddlC2S1.Create(DropDownList)
+Gui.Form_Main.ddlC2S1.Size(1365,330)
+Gui.Form_Main.ddlC2S1.Position(6105,765)
+Gui.Form_Main.ddlC2S1.Parent("frameIdentify")
+Gui.Form_Main.ddlC2S1.ControlGroup(11)
+Gui.Form_Main.ddlC2S1.DefaultValue(" ")
+Gui.Form_Main.ddlC2S1.Event(Click,ddlC2S1_Click)
+Gui.Form_Main.ddlC2S1.TabStop(True)
+Gui.Form_Main.ddlC2S1.TabIndex(36)
+Gui.Form_Main.ddlC2S1Cover.Create(DropDownList)
+Gui.Form_Main.ddlC2S1Cover.Size(1365,330)
+Gui.Form_Main.ddlC2S1Cover.Position(6105,1290)
+Gui.Form_Main.ddlC2S1Cover.Parent("frameIdentify")
+Gui.Form_Main.ddlC2S1Cover.ControlGroup(11)
+Gui.Form_Main.ddlC2S1Cover.DefaultValue(" ")
+Gui.Form_Main.ddlC2S1Cover.TabStop(True)
+Gui.Form_Main.ddlC2S1Cover.TabIndex(37)
+Gui.Form_Main.ddlC2S2.Create(DropDownList)
+Gui.Form_Main.ddlC2S2.Size(1365,330)
+Gui.Form_Main.ddlC2S2.Position(6105,1815)
+Gui.Form_Main.ddlC2S2.Parent("frameIdentify")
+Gui.Form_Main.ddlC2S2.ControlGroup(11)
+Gui.Form_Main.ddlC2S2.DefaultValue(" ")
+Gui.Form_Main.ddlC2S2.Event(Click,ddlC2S2_Click)
+Gui.Form_Main.ddlC2S2.TabStop(True)
+Gui.Form_Main.ddlC2S2.TabIndex(38)
+Gui.Form_Main.ddlC2S2Cover.Create(DropDownList)
+Gui.Form_Main.ddlC2S2Cover.Size(1365,330)
+Gui.Form_Main.ddlC2S2Cover.Position(6105,2340)
+Gui.Form_Main.ddlC2S2Cover.Parent("frameIdentify")
+Gui.Form_Main.ddlC2S2Cover.ControlGroup(11)
+Gui.Form_Main.ddlC2S2Cover.DefaultValue(" ")
+Gui.Form_Main.ddlC2S2Cover.TabStop(True)
+Gui.Form_Main.ddlC2S2Cover.TabIndex(39)
+Gui.Form_Main.lbl1.Create(Label,"End Type",True,1005,255,0,120,315,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl1.Parent("frameIdentify")
+Gui.Form_Main.lbl2.Create(Label,"Cover 2",True,1005,255,0,5085,2400,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl2.Parent("frameIdentify")
+Gui.Form_Main.lbl3.Create(Label,"Slot 2",True,1005,255,0,5085,1875,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl3.Parent("frameIdentify")
+Gui.Form_Main.lbl4.Create(Label,"Cover 1",True,1005,255,0,5085,1350,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl4.Parent("frameIdentify")
+Gui.Form_Main.lbl5.Create(Label,"Slot 1",True,1005,255,0,5085,825,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl5.Parent("frameIdentify")
+Gui.Form_Main.lbl6.Create(Label,"Cover 2",True,1005,255,0,120,2400,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl6.Parent("frameIdentify")
+Gui.Form_Main.lbl7.Create(Label,"Slot 2",True,1005,255,0,120,1875,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl7.Parent("frameIdentify")
+Gui.Form_Main.lbl9.Create(Label,"Cover 1",True,1005,255,0,120,1350,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl9.Parent("frameIdentify")
+Gui.Form_Main.lbl10.Create(Label,"Slot 1",True,1005,255,0,120,825,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl10.Parent("frameIdentify")
+Gui.Form_Main.lbl11.Create(Label,"End Type",True,1005,255,0,5085,330,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lbl11.Parent("frameIdentify")
+Gui.Form_Main.ddlCode2.Create(DropDownList)
+Gui.Form_Main.ddlCode2.Size(1365,330)
+Gui.Form_Main.ddlCode2.Position(6105,225)
+Gui.Form_Main.ddlCode2.Parent("frameIdentify")
+Gui.Form_Main.ddlCode2.ControlGroup(11)
+Gui.Form_Main.ddlCode2.DefaultValue(" ")
+Gui.Form_Main.ddlCode2.TabStop(True)
+Gui.Form_Main.ddlCode2.TabIndex(35)
+Gui.Form_Main.txtC1S1.Create(TextboxM)
+Gui.Form_Main.txtC1S1.Size(2265,855)
+Gui.Form_Main.txtC1S1.Position(2670,765)
+Gui.Form_Main.txtC1S1.Parent("frameIdentify")
+Gui.Form_Main.txtC1S1.Enabled(False)
+Gui.Form_Main.txtC1S1.TabStop(True)
+Gui.Form_Main.txtC1S1.TabIndex(33)
+Gui.Form_Main.txtC1S2.Create(TextboxM)
+Gui.Form_Main.txtC1S2.Size(2265,855)
+Gui.Form_Main.txtC1S2.Position(2670,1815)
+Gui.Form_Main.txtC1S2.Parent("frameIdentify")
+Gui.Form_Main.txtC1S2.Enabled(False)
+Gui.Form_Main.txtC1S2.TabStop(True)
+Gui.Form_Main.txtC1S2.TabIndex(34)
+Gui.Form_Main.txtC2S1.Create(TextboxM)
+Gui.Form_Main.txtC2S1.Size(2265,855)
+Gui.Form_Main.txtC2S1.Position(7605,765)
+Gui.Form_Main.txtC2S1.Parent("frameIdentify")
+Gui.Form_Main.txtC2S1.Enabled(False)
+Gui.Form_Main.txtC2S1.ControlGroup(11)
+Gui.Form_Main.txtC2S1.TabStop(True)
+Gui.Form_Main.txtC2S1.TabIndex(40)
+Gui.Form_Main.txtC2S2.Create(TextboxM)
+Gui.Form_Main.txtC2S2.Size(2265,855)
+Gui.Form_Main.txtC2S2.Position(7605,1815)
+Gui.Form_Main.txtC2S2.Parent("frameIdentify")
+Gui.Form_Main.txtC2S2.Enabled(False)
+Gui.Form_Main.txtC2S2.ControlGroup(11)
+Gui.Form_Main.txtC2S2.TabStop(True)
+Gui.Form_Main.txtC2S2.TabIndex(41)
+Gui.Form_Main.txtSrvTst.Create(TextBox,"",True,3405,300,0,240,2895,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtSrvTst.TabStop(True)
+Gui.Form_Main.txtSrvTst.TabIndex(12)
+Gui.Form_Main.txtTrName.Create(TextBox,"",True,3405,300,0,3690,2895,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtTrName.TabStop(True)
+Gui.Form_Main.txtTrName.TabIndex(13)
+Gui.Form_Main.chk1.Create(CheckBox)
+Gui.Form_Main.chk1.Size(1560,360)
+Gui.Form_Main.chk1.Position(240,3240)
+Gui.Form_Main.chk1.Caption("Made in Canada")
+Gui.Form_Main.chk1.DefaultValue("")
+Gui.Form_Main.chk1.Value(1)
+Gui.Form_Main.chk1.TabStop(True)
+Gui.Form_Main.chk1.TabIndex(16)
+Gui.Form_Main.txtPinfold.Create(TextBox,"",True,1215,300,0,4605,3270,False,0,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtPinfold.TabStop(True)
+Gui.Form_Main.txtPinfold.TabIndex(18)
+Gui.Form_Main.txtPinfold.NumericOnly(2)
+Gui.Form_Main.frameSpclSten.Create(Frame)
+Gui.Form_Main.frameSpclSten.Size(10080,1260)
+Gui.Form_Main.frameSpclSten.Position(240,3570)
+Gui.Form_Main.frameSpclSten.Caption("Special Stencil Instructions")
+Gui.Form_Main.frameSpclSten.Enabled(False)
+Gui.Form_Main.txtSpecIns.Create(TextboxM)
+Gui.Form_Main.txtSpecIns.Size(9000,945)
+Gui.Form_Main.txtSpecIns.Position(45,225)
+Gui.Form_Main.txtSpecIns.Parent("frameSpclSten")
+Gui.Form_Main.txtSpecIns.TabStop(True)
+Gui.Form_Main.txtSpecIns.TabIndex(19)
+Gui.Form_Main.chkStencilPrice.Create(CheckBox)
+Gui.Form_Main.chkStencilPrice.Size(750,360)
+Gui.Form_Main.chkStencilPrice.Position(9210,345)
+Gui.Form_Main.chkStencilPrice.Parent("frameSpclSten")
+Gui.Form_Main.chkStencilPrice.Caption("Price")
+Gui.Form_Main.chkStencilPrice.Event(Click,chkStencilPrice_Click)
+Gui.Form_Main.txtStencilPrice.Create(TextBox,"",True,915,300,0,9105,720,False,1,"Arial",8,-2147483626,1)
+Gui.Form_Main.txtStencilPrice.Parent("frameSpclSten")
+Gui.Form_Main.txtStencilPrice.NumericOnly(1)
+Gui.Form_Main.txtStencilPrice.Event(LostFocus,txtStencilPrice_LostFocus)
+Gui.Form_Main.ddlDiam.Create(DropDownList)
+Gui.Form_Main.ddlDiam.Size(1590,330)
+Gui.Form_Main.ddlDiam.Position(3645,420)
+Gui.Form_Main.ddlDiam.TabStop(True)
+Gui.Form_Main.ddlDiam.TabIndex(2)
+Gui.Form_Main.ddlDiam.Event(Click,ChangeHoseDetail)
+Gui.Form_Main.ddlAssy.Create(DropDownList)
+Gui.Form_Main.ddlAssy.Size(1590,330)
+Gui.Form_Main.ddlAssy.Position(7035,420)
+Gui.Form_Main.ddlAssy.TabStop(True)
+Gui.Form_Main.ddlAssy.TabIndex(4)
+Gui.Form_Main.ddlAssy.Event(Click,ChangeHoseDetail)
+Gui.Form_Main.ddlColor.Create(DropDownList)
+Gui.Form_Main.ddlColor.Size(1590,330)
+Gui.Form_Main.ddlColor.Position(8730,420)
+Gui.Form_Main.ddlColor.TabStop(True)
+Gui.Form_Main.ddlColor.TabIndex(5)
+Gui.Form_Main.ddlColor.Event(Click,ChangeHoseDetail)
+Gui.Form_Main.ddlLogo1.Create(DropDownList)
+Gui.Form_Main.ddlLogo1.Size(3285,330)
+Gui.Form_Main.ddlLogo1.Position(240,1305)
+Gui.Form_Main.ddlLogo1.TabStop(True)
+Gui.Form_Main.ddlLogo1.TabIndex(7)
+Gui.Form_Main.ddlLogo1.Event(Click,ddlLogo1_Click)
+Gui.Form_Main.chkLogo2.Create(CheckBox)
+Gui.Form_Main.chkLogo2.Size(3240,360)
+Gui.Form_Main.chkLogo2.Position(3660,945)
+Gui.Form_Main.chkLogo2.Caption("Additional Logo 1")
+Gui.Form_Main.chkLogo2.Event(Click,chkLogo2_Click)
+Gui.Form_Main.chkLogo2.TabStop(True)
+Gui.Form_Main.chkLogo2.TabIndex(8)
+Gui.Form_Main.ddlLogo2.Create(DropDownList)
+Gui.Form_Main.ddlLogo2.Enabled(False)
+Gui.Form_Main.ddlLogo2.Size(3285,330)
+Gui.Form_Main.ddlLogo2.Position(3645,1305)
+Gui.Form_Main.ddlLogo2.TabStop(True)
+Gui.Form_Main.ddlLogo2.TabIndex(9)
+Gui.Form_Main.ddlLogo2.Event(Click,ddlLogo2_Click)
+Gui.Form_Main.chkLogo3.Create(CheckBox)
+Gui.Form_Main.chkLogo3.Enabled(False)
+Gui.Form_Main.chkLogo3.Size(3255,360)
+Gui.Form_Main.chkLogo3.Position(7035,945)
+Gui.Form_Main.chkLogo3.Caption("Additional Logo 2")
+Gui.Form_Main.chkLogo3.Event(Click,chkLogo3_Click)
+Gui.Form_Main.chkLogo3.TabStop(True)
+Gui.Form_Main.chkLogo3.TabIndex(10)
+Gui.Form_Main.ddlLogo3.Create(DropDownList)
+Gui.Form_Main.ddlLogo3.Enabled(False)
+Gui.Form_Main.ddlLogo3.Size(3285,330)
+Gui.Form_Main.ddlLogo3.Position(7035,1305)
+Gui.Form_Main.ddlLogo3.TabStop(True)
+Gui.Form_Main.ddlLogo3.TabIndex(11)
+Gui.Form_Main.ddlLogo3.Event(Click,ddlLogo3_Click)
+Gui.Form_Main.ddlApproval.Create(DropDownList)
+Gui.Form_Main.ddlApproval.Size(2175,330)
+Gui.Form_Main.ddlApproval.Position(7155,2880)
+Gui.Form_Main.ddlApproval.TabStop(True)
+Gui.Form_Main.ddlApproval.TabIndex(14)
+Gui.Form_Main.cmdBrClass.Create(Button)
+Gui.Form_Main.cmdBrClass.Size(360,360)
+Gui.Form_Main.cmdBrClass.Position(3180,405)
+Gui.Form_Main.cmdBrClass.Caption("^")
+Gui.Form_Main.cmdBrClass.Event(Click,cmdBrClass_Click)
+Gui.Form_Main.cboLength.Create(ComboBox)
+Gui.Form_Main.cboLength.Size(1590,330)
+Gui.Form_Main.cboLength.Position(5340,420)
+Gui.Form_Main.cboLength.Event(LostFocus,cboLength_LostFocus)
+Gui.Form_Main.cboLength.TabStop(True)
+Gui.Form_Main.cboLength.TabIndex(3)
+Gui.Form_Main.ddlClass.Create(DropDownList)
+Gui.Form_Main.ddlClass.Size(1050,330)
+Gui.Form_Main.ddlClass.Position(2085,420)
+Gui.Form_Main.ddlClass.Event(Click,ddlClass_Click)
+Gui.Form_Main.ddlClass.TabStop(True)
+Gui.Form_Main.ddlClass.TabIndex(1)
+Gui.Form_Main.lblPin.Create(Label,"Pinfold Qty",True,885,255,0,3660,3360,False,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblAssocError.Create(Label,"Invalid Selection!",False,5025,255,0,2085,60,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblAssocError.ForeColor(255)
+Gui.Form_Main.lblHoseError.Create(Label,"Invalid Selection!",False,1725,255,0,240,60,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblHoseError.ForeColor(255)
+Gui.Form_Main.picLogo1.Create(PictureBox)
+Gui.Form_Main.picLogo1.Size(3285,945)
+Gui.Form_Main.picLogo1.Position(240,1680)
+Gui.Form_Main.picLogo2.Create(PictureBox)
+Gui.Form_Main.picLogo2.Size(3285,945)
+Gui.Form_Main.picLogo2.Position(3645,1680)
+Gui.Form_Main.picLogo2.Enabled(False)
+Gui.Form_Main.picLogo3.Create(PictureBox)
+Gui.Form_Main.picLogo3.Size(3285,945)
+Gui.Form_Main.picLogo3.Position(7035,1695)
+Gui.Form_Main.picLogo3.Enabled(False)
+Gui.Form_Main.chkNoCoupling.Create(CheckBox)
+Gui.Form_Main.chkNoCoupling.Size(1320,360)
+Gui.Form_Main.chkNoCoupling.Position(8970,3240)
+Gui.Form_Main.chkNoCoupling.Caption("No Coupling")
+Gui.Form_Main.chkNoCoupling.Event(Click,chkNoCoupling_Click)
+Gui.Form_Main.lblHoseDate.Create(Label,"Hose Date",True,915,255,0,7110,3360,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.txtHoseDateMonth.Create(TextBox,"",True,240,300,0,8040,3270,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtHoseDateMonth.MaxLength(2)
+Gui.Form_Main.txtHoseDateMonth.NumericOnly(2)
+Gui.Form_Main.txtHoseDateMonth.Event(LostFocus,txtHoseDateMonth_LostFocus)
+Gui.Form_Main.lblDateSlash.Create(Label,"/",True,180,255,0,8295,3360,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.txtHoseDateyear.Create(TextBox,"",True,240,300,0,8430,3270,True,0,"Arial",8,-2147483643,1)
+Gui.Form_Main.txtHoseDateyear.MaxLength(2)
+Gui.Form_Main.txtHoseDateyear.NumericOnly(2)
+Gui.Form_Main.txtHoseDateyear.Event(LostFocus,txtHoseDateyear_LostFocus)
+Gui.Form_Main.progressBar1.Create(ProgressBar)
+Gui.Form_Main.progressBar1.Size(10065,255)
+Gui.Form_Main.progressBar1.Position(210,9750)
+Gui.Form_Main.progressBar1.Visible(False)
+Gui.Form_Main.progressBar1.Anchor(6)
+Gui.Form_Main.lblStatus.Create(Label,"",False,1935,255,0,240,9555,True,0,"Arial",8,-2147483633,0)
+Gui.Form_Main.lblStatus.Anchor(6)
+Gui.Form_Main.cmdClear.Create(Button)
+Gui.Form_Main.cmdClear.Size(3300,375)
+Gui.Form_Main.cmdClear.Position(3585,10035)
+Gui.Form_Main.cmdClear.TabStop(True)
+Gui.Form_Main.cmdClear.TabIndex(43)
+Gui.Form_Main.cmdClear.Anchor(6)
+Gui.Form_Main.cmdClear.Caption("Clear")
+Gui.Form_Main.cmdClear.Event(Click,cmdClear_Click)
+Gui.Form_Main.chkPinFold.Create(CheckBox)
+Gui.Form_Main.chkPinFold.Enabled(False)
+Gui.Form_Main.chkPinFold.Size(1125,360)
+Gui.Form_Main.chkPinFold.Position(5970,3255)
+Gui.Form_Main.chkPinFold.Caption("No Pinfold")
+Gui.Form_Main.chkPinFold.Value(1)
+Gui.Form_Main.chkPinFold.Event(Click,chkPinFold_Click)
+Gui.Form_Main.chkCouplingOnly.Create(CheckBox)
+Gui.Form_Main.chkCouplingOnly.Size(1560,270)
+Gui.Form_Main.chkCouplingOnly.Position(240,735)
+Gui.Form_Main.chkCouplingOnly.Caption("Coupling Only")
+Gui.Form_Main.chkCouplingOnly.Event(Click,chkCouplingOnly_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sCustomer.Declare
+Program.External.Include.Library("GCG_4908_ORDUPL.lib")
+Program.External.Include.Library("6021.lib")
+V.Global.sOrder.Declare(String)
+V.Global.bStop.Declare(Boolean, False)
+V.Global.bTwoCouplings.Declare(Boolean)
+V.Global.sHose.Declare(String)
+V.Global.bPinFold.Declare(Boolean)
+V.Global.bBrowser.Declare(Boolean, False)
+V.Global.bLoadScreen.Declare(Boolean)
+V.Global.bHoseDetail.Declare(Boolean)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'GCG_4908_Configurator.g2u
+'Created by Ashwin D
+'Modified / Finished by Trey S
+'11/28/2018
+'For Mercedes
+
+'order lines
+F.Intrinsic.Control.If(V.Caller.hook,=,12010)
+	V.Passed.000162.Set("Configurator")
+F.Intrinsic.Control.ElseIf(V.Caller.hook,=,12410)
+	F.Intrinsic.string.LPad(V.Passed.000060, "0", 7, V.Global.sOrder)
+	F.ODBC.Connection!conx.OpenCompanyConnection
+	F.Intrinsic.Control.CallSub(GetData)
+	F.Intrinsic.Control.CallSub(PopScreen)
+	F.Intrinsic.Control.CallSub(txtHoseDateMonth_LostFocus)
+	F.Intrinsic.Control.CallSub(txtHoseDateYear_LostFocus)
+	F.Intrinsic.Control.CallSub(LoadSavedScreen)
+	GUI.Form_Main..Show
+F.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.GetData.Start
+V.Local.sSQL.declare
+V.Local.sRet.declare
+V.Local.sOrd.declare
+V.Local.sSelect.Declare(String)
+
+F.Data.DataTable.CreateFromSQL("CDHBPartDT","Conx","Select * from GCG_4908_CDHBPART",true)
+
+F.Data.DataTable.CreateFromSQL("HOSEGenDT","Conx","Select * from GCG_4908_HOSEGEN",true)
+F.Data.DataTable.AddRow("HOSEGenDT","CAT_TYPE","C","MCODE","   ","MVALUE","No Color" )
+F.Data.DataTable.AddRow("HOSEGenDT","CAT_TYPE","L","MCODE","   ","MVALUE","No Length" )
+F.Data.DataTable.AddRow("HOSEGenDT","CAT_TYPE","K","MCODE","   ","MVALUE","No Class" )
+F.Data.DataTable.AddRow("HOSEGenDT","CAT_TYPE","D","MCODE","   ","MVALUE","No Diam" )
+F.Data.DataView.Create("HOSEGenDT","LengthVW",22,"CAT_TYPE = 'L'","MCODE ASC")
+F.Data.DataView.Create("HOSEGenDT","ColorVW",22,"CAT_TYPE = 'C'","MCODE ASC")
+F.Data.DataView.Create("HOSEGenDT","ClassVW",22,"CAT_TYPE = 'K'","MCODE ASC")
+F.Data.DataView.Create("HOSEGenDT","DiamVW",22,"CAT_TYPE = 'D'","MCODE ASC")
+
+F.Data.DataTable.CreateFromSQL("KeyValDT","Conx","Select * from GCG_4908_KeyVal",true)
+F.Data.DataTable.AddRow("KeyValDT","HORC","H","CAT_TYPE","A","MKEY","N","MVALUE","   ")
+F.Data.DataTable.AddRow("KeyValDT","HORC","C","CAT_TYPE","S","MKEY","N","MVALUE","   ")
+F.Data.DataView.Create("KeyValDT","ApprovVw",22,"HORC = 'H' AND CAT_TYPE = 'A'","MVALUE ASC")
+F.Data.DataView.Create("KeyValDT","LogoVw",22,"HORC = 'H' AND CAT_TYPE = 'B'","")
+F.Data.DataView.Create("KeyValDT","CoverVw",22,"HORC = 'C' AND CAT_TYPE = 'C'","")
+F.Data.DataView.Create("KeyValDT","SlotVw",22,"HORC = 'C' AND CAT_TYPE = 'S'","")
+
+'order number
+F.Intrinsic.string.LPad(V.passed.000060,"0",7,V.Local.sOrd)
+
+F.Intrinsic.String.build("Select CUSTOMER from V_ORDER_HEADER where ORDER_NO = '{0}'",V.Local.sOrd,V.Local.sSQL)
+F.ODBC.Connection!conx.executeandreturn(V.Local.sSQL,V.Local.sRet)
+V.Global.sCustomer.Set(V.Local.sRet)
+
+F.Intrinsic.String.Build("Select * from GCG_4908_KeyVal where CAT_TYPE = 'B' and HORC = 'H' and MKEY in (Select distinct MKEY from GCG_4908_CUSTID where customer = '{0}')",V.Local.sRet,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("CustLogoAssocDT","Conx",V.Local.sSQL,true)
+F.Data.DataView.Create("CustLogoAssocDT","TempCustLogoVw",22)
+F.Data.DataView.ToDataTable("CustLogoAssocDT","TempCustLogoVw","CustLAChkDT",True)
+F.Data.DataView.Create("CustLAChkDT","CustLAChkVw",22)
+F.Data.DataView.Close("CustLogoAssocDT","TempCustLogoVw")
+
+F.Data.DataTable.Select("CustLAChkDT", "MVALUE = 'MERCEDES'", V.Local.sSelect)
+F.Intrinsic.Control.IF(V.Local.sSelect.Trim, =, "***NORETURN***")
+	V.Local.sSQL.Set("Select UNC_PATH from GCG_4908_KeyVal where MVALUE = 'MERCEDES'")
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	'GUI.Form_Main.ddlLogo1.AddItem("MERCEDES")
+	F.Data.DataTable.AddRow("CustLAChkDT", "MVALUE", "MERCEDES", "UNC_PATH", V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("CustIdDT","Conx","Select * from GCG_4908_CUSTID",true)
+
+F.Data.Linq.Join("leftJoin","DataTable","CustIdDT*!*A","DataView","KeyValDT","LogoVw*!*B","A.MKEY = B.MKEY","A.MKEY*!*B.MVALUE*!*A.CUSTOMER*!*A.PRILOGO*!*A.CLASS","","","","CustLogoDT",True)
+
+F.Data.DataTable.CreateFromSQL("PinFoldDT","Conx","Select * from GCG_4908_PINFOLD",true)
+
+F.Data.DataTable.CreateFromSQL("SvcTstDt","Conx","Select MCLASS, MDIAM, MASSY, MSVCKEY, SVC_TST, TRD_NAME, ISNULL(CUSTOMER, '') as CUSTOMER from GCG_4908_SvcTst",true)
+F.Data.DataTable.CreateFromSQL("InvDT","Conx","Select Part,Location,Product_line,UM_INVENTORY,CODE_SORT from V_INVENTORY_MSTR",true)
+Program.Sub.GetData.End
+
+Program.Sub.PopScreen.Start
+V.Local.sFilter.Declare
+V.Local.bExists.Declare
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+
+GUI.Form_Main.ddlApproval.addItems("DataView","KeyValDT","ApprovVw","MKEY","MVALUE")
+GUI.Form_Main.ddlColor.addItems("DataView","HOSEGenDT","ColorVW","MCODE","MCODE")
+
+GUI.Form_Main.ddlDiam.addItems("DataView","HOSEGenDT","DiamVW","MCODE","MCODE")
+GUI.Form_Main.cboLength.addItems("DataView","HOSEGenDT","LengthVW","MCODE","MCODE")
+GUI.Form_Main.ddlClass.addItems("DataView","HOSEGenDT","ClassVW","MCODE","MCODE")
+GUI.Form_Main.ddlLogo1.addItems("DataTable","CustLogoAssocDT","MKEY","MVALUE")
+
+F.Data.DataView.Create("CustLogoAssocDT","TempCustLogoVw",22)
+
+F.Data.DataView.ToDataTable("CustLogoAssocDT","TempCustLogoVw","CustLogoAssocDT2",true)
+F.Data.DataTable.AddRow("CustLogoAssocDT2","MKEY","0","MVALUE","")
+F.Data.DataView.ToDataTable("CustLogoAssocDT","TempCustLogoVw","CustLogoAssocDT3",true)
+F.Data.DataTable.AddRow("CustLogoAssocDT3","MKEY","0","MVALUE","")
+GUI.Form_Main.ddlLogo2.addItems("DataTable","CustLogoAssocDT2","MKEY","MVALUE")
+GUI.Form_Main.ddlLogo3.addItems("DataTable","CustLogoAssocDT2","MKEY","MVALUE")
+
+GUI.Form_Main.ddlLogo1.AddItem("MERCEDES")
+'F.Intrinsic.String.Build("PRILOGO = True and customer = '{0}' and CLASS = ''",V.Global.sCustomer,V.Local.sFilter)
+'F.Data.DataView.Create("CustLogoDT","TempCustLogoVw",22,V.Local.sFilter,"")
+'F.Intrinsic.Control.If(V.DataView.CustLogoDT!TempCustLogoVw.RowCount,>,0)
+'	GUI.Form_Main.ddlLogo1.text(V.DataView.CustLogoDT!TempCustLogoVw(0).MVALUE!fieldval)
+'	GUI.Form_Main.ddlLogo2.text("")
+'	GUI.Form_Main.ddlLogo3.text("")
+'	F.Intrinsic.string.Build("MVALUE = '{0}'",V.DataView.CustLogoDT!TempCustLogoVw(0).MVALUE!fieldval,V.Local.sFilter)
+'	F.Data.DataView.Setfilter("CustLAChkDT","CustLAChkVw",V.Local.sFilter)
+'	F.Intrinsic.Control.If(V.DataView.CustLAChkDT!CustLAChkVw.RowCount,>,0)
+'		F.Intrinsic.file.Exists(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!fieldvalTrim,V.Local.bExists)
+'		F.Intrinsic.Control.If(V.Local.bExists)
+'			GUI.Form_Main.picLogo1.Picture(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!fieldvalTrim)
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.EndIf
+'	F.Data.DataView.Setfilter("CustLAChkDT","CustLAChkVw","")
+'F.Intrinsic.Control.Else
+''	V.Local.sSQL.Set("Select UNC_PATH from GCG_4908_KeyVal where MVALUE = 'MERCEDES'")
+''	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+'	GUI.Form_Main.ddlLogo1.AddItem("MERCEDES")
+''	GUI.Form_Main.ddlLogo1.text("MERCEDES")
+''	F.Intrinsic.file.Exists(V.Local.sRet,V.Local.bExists)
+''	F.Intrinsic.Control.If(V.Local.bExists)
+''		GUI.Form_Main.picLogo1.Picture(V.Local.sRet)
+''	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+'F.Data.DataView.Close("CustLogoDT","TempCustLogoVw")
+
+GUI.Form_Main.ddlAssy.AddItem("")
+GUI.Form_Main.ddlAssy.AddItem("0")
+GUI.Form_Main.ddlAssy.AddItem("1")
+GUI.Form_Main.ddlAssy.AddItem("A")
+'GUI.Form_Main.ddlCplType.AddItem("Different")
+'GUI.Form_Main.ddlCplType.AddItem("Unique")
+F.Data.DataView.ToDataTable("KeyValDT","SlotVw","C1S1DT",true)
+GUI.Form_Main.ddlC1S1.AddItems("Datatable","C1S1DT","MKEY","MVALUE")
+F.Data.DataView.ToDataTable("KeyValDT","SlotVw","C1S2DT",true)
+GUI.Form_Main.ddlC1S2.AddItems("Datatable","C1S2DT","MKEY","MVALUE")
+F.Data.DataView.ToDataTable("KeyValDT","SlotVw","C2S1DT",true)
+GUI.Form_Main.ddlC2S1.AddItems("Datatable","C2S1DT","MKEY","MVALUE")
+F.Data.DataView.ToDataTable("KeyValDT","SlotVw","C2S2DT",true)
+GUI.Form_Main.ddlC2S2.AddItems("Datatable","C2S2DT","MKEY","MVALUE")
+GUI.Form_Main.ddlC1S1.Text("   ")
+GUI.Form_Main.ddlC1S2.Text("   ")
+GUI.Form_Main.ddlC2S1.Text("   ")
+GUI.Form_Main.ddlC2S2.Text("   ")
+
+GUI.Form_Main.ddlCode1.AddItem("Both Ends")
+GUI.Form_Main.ddlCode1.AddItem("Female")
+GUI.Form_Main.ddlCode1.AddItem("Male")
+ 
+GUI.Form_Main.ddlCode2.AddItem(" ")
+GUI.Form_Main.ddlCode2.AddItem("Male")
+GUI.Form_Main.ddlCode2.AddItem("Female")
+
+GUI.Form_Main.ddlQtyPP1.AddItem(0)
+GUI.Form_Main.ddlQtyPP1.AddItem(0.5)
+GUI.Form_Main.ddlQtyPP1.AddItem(1)
+GUI.Form_Main.ddlQtyPP1.AddItem(2)
+GUI.Form_Main.ddlQtyPP2.AddItem(0)
+GUI.Form_Main.ddlQtyPP2.AddItem(0.5)
+GUI.Form_Main.ddlQtyPP2.AddItem(1)
+
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.PopScreen.End
+
+'Program.Sub.ddlCplType_Change.Start
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCplType.Value,=,"Unique")
+'	GUI.Form_Main.ddlQtyPP1.ClearItems
+'	GUI.Form_Main.ddlQtyPP1.AddItem(0)
+'	GUI.Form_Main.ddlQtyPP1.AddItem(1)
+'	GUI.Form_Main.ddlQtyPP1.AddItem(2)
+'	GUI.Form_Main.ddlQtyPP2.ClearItems
+'	GUI.Form_Main.ddlQtyPP2.AddItem(0)
+'	GUI.Form_Main.ddlQtyPP2.AddItem(1)
+'	GUI.Form_Main.txtPartCpl1.Text("")
+'	GUI.Form_Main.txtPartCpl2.Text("")
+'	GUI.Form_Main.ddlQtyPP1.Text(1)
+'	GUI.Form_Main.ddlQtyPP2.Text(1)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.ddlQtyPP1.ClearItems
+'	GUI.Form_Main.ddlQtyPP1.AddItem(0)
+'	GUI.Form_Main.ddlQtyPP1.AddItem(0.5)
+'	GUI.Form_Main.ddlQtyPP1.AddItem(1)	
+'	GUI.Form_Main.ddlQtyPP2.ClearItems
+'	GUI.Form_Main.ddlQtyPP2.AddItem(0)
+'	GUI.Form_Main.ddlQtyPP2.AddItem(0.5)
+'	GUI.Form_Main.txtPartCpl1.Text("")
+'	GUI.Form_Main.txtPartCpl2.Text("")
+'	GUI.Form_Main.ddlQtyPP1.Text(1)
+'	GUI.Form_Main.ddlQtyPP2.Text(0)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+'Program.Sub.ddlCplType_Change.End
+
+Program.Sub.Form_Main_UnLoad.Start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.CallSub(SaveScreen)
+F.Intrinsic.control.End
+'Here can we make the order lines screen update or go to new line?
+Program.Sub.Form_Main_UnLoad.End
+
+Program.Sub.cmdBrClass_Click.Start
+V.Local.sSql.Declare
+V.local.sTitles.Declare
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sDisp.Declare
+
+'create browser
+V.Local.sSql.Set("select MCODE, MVALUE from GCG_4908_HOSEGEN where CAT_TYPE = 'K'")
+F.Intrinsic.String.Split("Class*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("300*!*600","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Class","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,V.Ambient.Cancel)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.local.sRet)
+	GUI.Form_Main.ddlClass.Text(V.Local.sRet(0))	
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdBrClass_Click.End
+
+Program.Sub.txtHose_LostFocus.Start
+V.Local.sClass.Declare
+V.Local.sLength.Declare
+V.Local.sDiam.Declare
+V.Local.sAssy.Declare
+V.Local.sColor.Declare
+V.Local.sHose.Declare
+
+F.Intrinsic.Control.If(V.screen.Form_Main!txtHose.text.trim,=,"")
+	
+	GUI.Form_Main.ddlClass.ListIndex(-1)
+	GUI.Form_Main.ddlDiam.ListIndex(-1)
+	GUI.Form_Main.cboLength.Text("")
+	GUI.Form_Main.ddlAssy.ListIndex(-1)
+	GUI.Form_Main.ddlColor.ListIndex(-1)
+	F.Intrinsic.Control.CallSub(ClearHose)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	V.Local.sHose.Set(V.screen.Form_Main!txtHose.text)
+	F.Intrinsic.String.RPad(V.Local.sHose," ",17,V.Local.sHose)
+	
+	F.Intrinsic.String.Mid(V.Local.sHose,1,3,V.Local.sClass)
+	F.Intrinsic.String.Mid(V.Local.sHose,4,2,V.Local.sDiam)
+	F.Intrinsic.String.Mid(V.Local.sHose,6,3,V.Local.sLength)
+	F.Intrinsic.String.Mid(V.Local.sHose,9,1,V.Local.sAssy)
+	F.Intrinsic.String.Mid(V.Local.sHose,10,3,V.Local.sColor)
+	F.Intrinsic.String.RPad(V.Local.sDiam," ",3,V.Local.sDiam)
+	
+	F.Intrinsic.Control.BlockEvents
+	F.Intrinsic.Control.Try
+		GUI.Form_Main.ddlClass.Text(V.Local.sClass)
+		GUI.Form_Main.ddlDiam.Text(V.Local.sDiam)
+		GUI.Form_Main.cboLength.Text(V.Local.sLength)
+		GUI.Form_Main.ddlAssy.Text(V.Local.sAssy)
+		GUI.Form_Main.ddlColor.Text(V.Local.sColor)
+		GUI.Form_Main.ddlLogo1.SetFocus
+	F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.EndTry
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(ChangeHoseDetail)
+F.Intrinsic.Control.CallSub(ddlClass_Click)
+F.Intrinsic.Control.UnBlockEvents
+Program.Sub.txtHose_LostFocus.End
+
+Program.Sub.ChangeHoseDetail.Start
+V.Local.sFilter.Declare
+V.Local.sClass.Declare
+V.Local.sLength.Declare
+V.Local.sDiam.Declare
+V.Local.sAssy.Declare
+V.Local.sColor.Declare
+V.Local.sHose.Declare
+V.Local.sSvcTst.Declare
+V.Local.sTrdName.Declare
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.text)
+V.Local.sLength.Set(V.Screen.Form_Main!cboLength.text)
+V.Local.sDiam.Set(V.Screen.Form_Main!ddlDiam.text)
+V.Local.sAssy.Set(V.Screen.Form_Main!ddlAssy.text)
+V.Local.sColor.Set(V.Screen.Form_Main!ddlColor.text)
+
+F.Intrinsic.Control.If(V.Local.sClass.Trim,=,"","OR",V.Local.sDiam.Trim,=,"",V.Local.sLength.Trim,=,"",V.Local.sAssy.Trim,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bHoseDetail)
+	V.Global.bHoseDetail.Set(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Global.bHoseDetail.Set(True)
+
+'F.Intrinsic.Control.If(V.Local.sClass.Trim,=,"","OR",V.Local.sDiam.Trim,=,"",V.Local.sAssy.Trim,=,"")
+'	F.Intrinsic.Control.CallSub(ClearHose)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'check if override
+F.Intrinsic.String.Build("MCLASS = '{0}' and MDIAM = '{1}' and MASSY = '{2}' and CUSTOMER = '{3}'",V.Local.sClass,V.local.sDiam.Trim,V.Local.sAssy.trim, V.Global.sCustomer.Trim, V.Local.sFilter)
+
+F.Data.DataView.Create("SvcTstDt","TempSvcVw",22,V.Local.sFilter,"")
+F.Intrinsic.Control.If(V.DataView.SvcTstDt!TempSvcVw.RowCount,>,0)
+	V.Local.sSvcTst.Set(V.DataView.SvcTstDt!TempSvcVw(0).SVC_TST!fieldval)
+	V.Local.sTrdName.Set(V.DataView.SvcTstDt!TempSvcVw(0).TRD_NAME!fieldval)
+	GUI.Form_Main.txtSrvTst.Text(V.Local.sSvcTst)
+	GUI.Form_Main.txtTrName.Text(V.Local.sTrdName)
+	GUI.Form_Main.lblAssocError.text("")
+	GUI.Form_Main.lblAssocError.visible(False)
+	GUI.Form_Main.cmdOK.Enabled(True)
+F.Intrinsic.Control.Else
+'	GUI.Form_Main.lblAssocError.text("Invalid Class, Diameter and Assembly combination!")
+'	GUI.Form_Main.lblAssocError.visible(True)
+'	GUI.Form_Main.cmdOK.Enabled(False)
+'	GUI.Form_Main.txtSrvTst.Text("")
+'	GUI.Form_Main.txtTrName.Text("")
+	F.Intrinsic.String.Build("MCLASS = '{0}' and MDIAM = '{1}' and MASSY = '{2}' and [CUSTOMER] = ''",V.Local.sClass, V.local.sDiam.Trim, V.Local.sAssy.trim, V.Local.sFilter)
+
+	'F.Data.DataView.Create("SvcTstDt","TempSvcVw",22,V.Local.sFilter,"")
+	F.Data.DataView.SetFilter("SvcTstDt", "TempSvcVw", V.Local.sFilter)
+	F.Intrinsic.Control.If(V.DataView.SvcTstDt!TempSvcVw.RowCount,>,0)
+		V.Local.sSvcTst.Set(V.DataView.SvcTstDt!TempSvcVw(0).SVC_TST!fieldval)
+		V.Local.sTrdName.Set(V.DataView.SvcTstDt!TempSvcVw(0).TRD_NAME!fieldval)
+		GUI.Form_Main.txtSrvTst.Text(V.Local.sSvcTst)
+		GUI.Form_Main.txtTrName.Text(V.Local.sTrdName)
+		GUI.Form_Main.lblAssocError.text("")
+		GUI.Form_Main.lblAssocError.visible(False)
+		GUI.Form_Main.cmdOK.Enabled(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.lblAssocError.text("Invalid Class, Diameter and Assembly combination!")
+		GUI.Form_Main.lblAssocError.visible(True)
+		GUI.Form_Main.cmdOK.Enabled(False)
+		GUI.Form_Main.txtSrvTst.Text("")
+		GUI.Form_Main.txtTrName.Text("")
+		
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Close("SvcTstDt","TempSvcVw")
+
+F.Intrinsic.String.Build("{0}{1}{2}{3}{4}",V.Local.sClass,V.Local.sDiam.Trim,V.Local.sLength,V.Local.sAssy,V.Local.sColor,V.Local.sHose)
+GUI.Form_Main.txtHose.Text(V.Local.sHose)
+F.Intrinsic.Control.CallSub(HoseChange)
+V.Global.sHose.Set(V.Local.sHose)
+
+F.Intrinsic.String.Build("PART = '{0}'",V.Local.sHose,V.Local.sFilter)
+F.Data.DataView.Create("InvDT","TempInvVw",22,V.Local.sFilter,"")
+
+F.Intrinsic.Control.If(V.DataView.InvDT!TempInvVw.RowCount,>,0)
+	GUI.Form_Main.lblHoseError.text("")
+	GUI.Form_Main.lblHoseError.visible(False)
+	GUI.Form_Main.cmdOK.Enabled(True)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.lblHoseError.text("Invalid Part Entry!")
+	GUI.Form_Main.lblHoseError.visible(True)
+	GUI.Form_Main.cmdOK.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(CheckClassLogo)
+F.Data.DataView.Close("InvDT","TempInvVw")
+
+V.Global.bHoseDetail.Set(False)
+Program.Sub.ChangeHoseDetail.End
+
+Program.Sub.chkLogo2_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkLogo2.CheckedAsBoolean)
+	GUI.Form_Main.ddlLogo2.Enabled(True)
+	GUI.Form_Main.picLogo2.Enabled(True)
+	GUI.Form_Main.chkLogo3.Enabled(True)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo2.ListCount, >, 1)
+		GUI.Form_Main.ddlLogo2.Enabled(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.ddlLogo2.Enabled(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.ddlLogo2.Enabled(False)
+	GUI.Form_Main.picLogo2.Enabled(False)
+	GUI.Form_Main.chkLogo3.Enabled(False)
+	GUI.Form_Main.ddlLogo3.Enabled(False)
+	GUI.Form_Main.picLogo3.Enabled(False)
+	GUI.Form_Main.chkLogo3.value(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.chkLogo2_Click.End
+
+Program.Sub.chkLogo3_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkLogo3.CheckedAsBoolean)
+	GUI.Form_Main.ddlLogo3.Enabled(True)
+	GUI.Form_Main.picLogo3.Enabled(True)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo3.ListCount, >, 1)
+		GUI.Form_Main.ddlLogo3.Enabled(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.ddlLogo3.Enabled(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.ddlLogo3.Enabled(False)
+	GUI.Form_Main.picLogo3.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.chkLogo3_Click.End
+
+Program.Sub.chkSpec_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkSpec.CheckedAsBoolean)
+	GUI.Form_Main.frameSpclSten.Enabled(True)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtSpecIns.Text("")
+	GUI.Form_Main.frameSpclSten.Enabled(False)
+	GUI.Form_Main.chkStencilPrice.Value(0)
+	F.Intrinsic.Control.CallSub(chkStencilPrice_Click)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkSpec_Click.End
+
+Program.Sub.ddlC1S1_Click.Start
+GUI.Form_Main.ddlC1S1Cover.Enabled(True)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Value,=,"Stamped")
+	GUI.Form_Main.txtC1S1.Enabled(True)
+	GUI.Form_Main.ddlC1S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S1Cover.AddItem("Black")
+	GUI.Form_Main.ddlC1S1Cover.AddItem("Yellow")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC1S1.Value,=,"Text Only")
+	GUI.Form_Main.txtC1S1.Enabled(True)
+	GUI.Form_Main.ddlC1S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S1Cover.AddItem("No Cover")
+	GUI.Form_Main.ddlC1S1Cover.Text("No Cover")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC1S1.Value,=,"Bar Code")
+	GUI.Form_Main.txtC1S1.Enabled(True)
+	GUI.Form_Main.ddlC1S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S1Cover.AddItem("Epoxy")
+	GUI.Form_Main.ddlC1S1Cover.AddItem("Clear")
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtC1S1.Enabled(False)
+	GUI.Form_Main.ddlC1S1Cover.ClearItems("")
+	'GUI.Form_Main.ddlC1S1Cover.Text("No Cover")
+	GUI.Form_Main.ddlC1S1Cover.ListIndex(-1)
+	GUI.Form_Main.ddlC1S1Cover.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlC1S1_Click.End
+
+Program.Sub.ddlC1S2_Click.Start
+GUI.Form_Main.ddlC1S2Cover.Enabled(True)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2.Value,=,"Stamped")
+	GUI.Form_Main.txtC1S2.Enabled(True)
+	GUI.Form_Main.ddlC1S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S2Cover.AddItem("Black")
+	GUI.Form_Main.ddlC1S2Cover.AddItem("Yellow")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC1S2.Value,=,"Text Only")
+	GUI.Form_Main.txtC1S2.Enabled(True)
+	GUI.Form_Main.ddlC1S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S2Cover.AddItem("No Cover")
+	GUI.Form_Main.ddlC1S2Cover.Text("No Cover")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC1S2.Value,=,"Bar Code")
+	GUI.Form_Main.txtC1S2.Enabled(True)
+	GUI.Form_Main.ddlC1S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC1S2Cover.AddItem("Epoxy")
+	GUI.Form_Main.ddlC1S2Cover.AddItem("Clear")
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtC1S2.Enabled(False)
+	GUI.Form_Main.ddlC1S2Cover.ClearItems("")
+	'GUI.Form_Main.ddlC1S2Cover.Text("No Cover")
+	GUI.Form_Main.ddlC1S2Cover.ListIndex(-1)
+	GUI.Form_Main.ddlC1S2Cover.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlC1S2_Click.End
+
+Program.Sub.ddlC2S1_Click.Start
+GUI.Form_Main.ddlC2S1Cover.Enabled(True)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1.Value,=,"Stamped")
+	GUI.Form_Main.txtC2S1.Enabled(True)
+	GUI.Form_Main.ddlC2S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S1Cover.AddItem("Black")
+	GUI.Form_Main.ddlC2S1Cover.AddItem("Yellow")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC2S1.Value,=,"Text Only")
+	GUI.Form_Main.txtC2S1.Enabled(True)
+	GUI.Form_Main.ddlC2S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S1Cover.AddItem("No Cover")
+	GUI.Form_Main.ddlC2S1Cover.Text("No Cover")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC2S1.Value,=,"Bar Code")
+	GUI.Form_Main.txtC2S1.Enabled(True)
+	GUI.Form_Main.ddlC2S1Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S1Cover.AddItem("Epoxy")
+	GUI.Form_Main.ddlC2S1Cover.AddItem("Clear")
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtC2S1.Enabled(False)
+	GUI.Form_Main.ddlC2S1Cover.ClearItems("")
+	'GUI.Form_Main.ddlC2S1Cover.Text("No Cover")
+	GUI.Form_Main.ddlC2S1Cover.ListIndex(-1)
+	GUI.Form_Main.ddlC2S1Cover.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlC2S1_Click.End
+
+Program.Sub.ddlC2S2_Click.Start
+GUI.Form_Main.ddlC2S2Cover.Enabled(True)
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2.Value,=,"Stamped")
+	GUI.Form_Main.txtC2S2.Enabled(True)
+	GUI.Form_Main.ddlC2S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S2Cover.AddItem("Black")
+	GUI.Form_Main.ddlC2S2Cover.AddItem("Yellow")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC2S2.Value,=,"Text Only")
+	GUI.Form_Main.txtC2S2.Enabled(True)
+	GUI.Form_Main.ddlC2S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S2Cover.AddItem("No Cover")
+	GUI.Form_Main.ddlC2S2Cover.Text("No Cover")
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlC2S2.Value,=,"Bar Code")
+	GUI.Form_Main.txtC2S2.Enabled(True)
+	GUI.Form_Main.ddlC2S2Cover.ClearItems("")
+	GUI.Form_Main.ddlC2S2Cover.AddItem("Epoxy")
+	GUI.Form_Main.ddlC2S2Cover.AddItem("Clear")
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtC2S2.Enabled(False)
+	GUI.Form_Main.ddlC2S2Cover.ClearItems("")
+	'GUI.Form_Main.ddlC2S2Cover.Text("No Cover")
+	GUI.Form_Main.ddlC2S2Cover.ListIndex(-1)
+	GUI.Form_Main.ddlC2S2Cover.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlC2S2_Click.End
+
+Program.Sub.ddlCode1_Change.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.text,=,"Both Ends")
+	GUI.Form_Main..ClearGroup(11)
+	GUI.Form_Main.ddlC2S1.Enabled(False)
+	GUI.Form_Main.ddlC2S1Cover.Enabled(False)
+	GUI.Form_Main.ddlC2S2.Enabled(False)
+	GUI.Form_Main.ddlC2S2Cover.Enabled(False)
+	GUI.Form_Main.txtC2S1.Enabled(False)
+	GUI.Form_Main.txtC2S2.Enabled(False)
+	GUI.Form_Main.ddlCode2.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlCode1.text,=,"Female")
+	GUI.Form_Main.ddlC2S1.Enabled(True)
+	GUI.Form_Main.ddlC2S1Cover.Enabled(True)
+	GUI.Form_Main.ddlC2S2.Enabled(True)
+	GUI.Form_Main.ddlC2S2Cover.Enabled(True)
+	GUI.Form_Main.ddlCode2.Text("Male")
+	GUI.Form_Main.ddlCode2.Enabled(True)
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlCode1.text,=,"Male")
+	GUI.Form_Main.ddlC2S1.Enabled(True)
+	GUI.Form_Main.ddlC2S1Cover.Enabled(True)
+	GUI.Form_Main.ddlC2S2.Enabled(True)
+	GUI.Form_Main.ddlC2S2Cover.Enabled(True)
+	GUI.Form_Main.ddlCode2.Text("Female")
+	GUI.Form_Main.ddlCode2.Enabled(True)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlCode1_Change.End
+
+Program.Sub.cboLength_LostFocus.Start
+V.Local.sLength.Declare
+F.Intrinsic.Control.If(V.Screen.Form_Main!cboLength.text.trim,<>,"")
+	V.Local.sLength.Set(V.Screen.Form_Main!cboLength.text)
+	F.Intrinsic.String.LPad(V.Local.sLength,"0",3,V.Local.sLength)
+	GUI.Form_Main.cboLength.Text(V.Local.sLength)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.CallSub(ChangeHoseDetail)
+Program.Sub.cboLength_LostFocus.End
+
+Program.Sub.ddlClass_Click.Start
+V.Local.sFilter.Declare
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("CLASS = '{0}' and ENABLED = True",V.Screen.Form_Main!ddlClass.Value,V.Local.sFilter)
+F.Data.DataView.Create("PinFoldDT","TempPinVw",22,V.Local.sFilter,"")
+
+F.Intrinsic.Control.If(V.DataView.PinFoldDT!TempPinVw.RowCount,>,0)
+	'GUI.Form_Main.txtPinfold.Enabled(True)
+	GUI.Form_Main.chkPinFold.Enabled(True)
+	GUI.Form_Main.chkPinFold.Value(0)
+	GUI.Form_Main.txtPinfold.BackColor(-2147483643)
+	GUI.Form_Main.lblPin.Enabled(True)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.chkPinFold.Enabled(False)
+	GUI.Form_Main.chkPinFold.Value(1)
+	'GUI.Form_Main.txtPinfold.Enabled(False)
+	GUI.Form_Main.txtPinfold.Text("")
+	GUI.Form_Main.txtPinfold.BackColor(-2147483626)
+	GUI.Form_Main.lblPin.Enabled(False)
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Close("PinFoldDT","TempPinVw")
+F.Intrinsic.Control.CallSub(ChangeHoseDetail)
+Program.Sub.ddlClass_Click.End
+
+Program.Sub.chkIdentify_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkIdentify.CheckedAsBoolean)
+	GUI.Form_Main.frameIdentify.Enabled(True)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.frameIdentify.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.chkIdentify_Click.End
+
+Program.Sub.chkStamp_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkStamp.CheckedAsBoolean)
+	GUI.Form_Main.frameMarking.Enabled(True)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtMark.Text("")
+	GUI.Form_Main.frameMarking.Enabled(False)
+	GUI.Form_Main.chkStampPrice.Value(0)
+	F.Intrinsic.Control.CallSub(chkStampPrice_Click)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkStamp_Click.End
+
+Program.Sub.ddlQtyPP1_Click.Start
+V.Local.sUM.Declare
+V.Local.sQtyPerPart.Declare
+V.Local.fQtyOnOrder.Declare
+V.Local.sQtyHose.Declare
+
+V.Local.sUM.Set(V.Screen.Form_Main!txtCpl1UM.Text)
+F.Intrinsic.Control.If(V.Local.sUM.Trim,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.sUM,=,"EA")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"1")
+		GUI.Form_Main.frameCpl2.Enabled(True)
+		GUI.Form_Main.txtCplType.Text("Different Ends")
+	F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"2")
+		GUI.Form_Main.frameCpl2.Enabled(False)
+		GUI.Form_Main.txtPartCpl2.Text("")
+		GUI.Form_Main.txtCplType.Text("Same Ends")
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.ElseIf(V.Local.sUM,=,"ST")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"0.5")
+		GUI.Form_Main.frameCpl2.Enabled(True)
+		GUI.Form_Main.txtCplType.Text("Different Ends")
+	F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"1")
+		GUI.Form_Main.frameCpl2.Enabled(False)
+		GUI.Form_Main.txtPartCpl2.Text("")
+		GUI.Form_Main.txtCplType.Text("Same Ends")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Local.sQtyHose.Set(V.Screen.Form_Main!txtHoseQty.text)
+F.Intrinsic.Control.If(V.Local.sQtyHose.long,>,0)
+	V.Local.sQtyPerPart.Set(V.Screen.Form_Main!ddlQtyPP1.text)
+	F.Intrinsic.Math.Mult(V.Local.sQtyHose.Float,V.Local.sQtyPerPart.Float,V.Local.fQtyOnOrder)
+	F.Intrinsic.Control.If(V.Local.fQtyOnOrder, >, 0)
+		GUI.Form_Main.txtCpl1OrderQty.Text(V.Local.fQtyOnOrder)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.txtCpl1OrderQty.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.ddlQtyPP1_Click.End
+
+Program.Sub.ddlQtyPP2_Click.Start
+V.Local.sUM.Declare
+V.Local.sQtyPerPart.Declare
+V.Local.fQtyOnOrder.Declare
+V.Local.sQtyHose.Declare
+
+V.Local.sUM.Set(V.Screen.Form_Main!txtCpl2UM.Text)
+F.Intrinsic.Control.If(V.Local.sUM.Trim,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+V.Local.sQtyHose.Set(V.Screen.Form_Main!txtHoseQty.text)
+F.Intrinsic.Control.If(V.Local.sQtyHose.long,>,0)
+	V.Local.sQtyPerPart.Set(V.Screen.Form_Main!ddlQtyPP2.text)
+	F.Intrinsic.Math.Mult(V.Local.sQtyHose.Float,V.Local.sQtyPerPart.Float,V.Local.fQtyOnOrder)
+	F.Intrinsic.Control.If(V.Local.fQtyOnOrder, >, 0)
+		GUI.Form_Main.txtCpl2OrderQty.Text(V.Local.fQtyOnOrder)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.txtCpl2OrderQty.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+F.Intrinsic.Control.EndIf
+Program.Sub.ddlQtyPP2_Click.End
+
+Program.Sub.cmdCpl1_Click.Start
+V.Local.sSql.Declare
+V.local.sTitles.Declare
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sDisp.Declare
+V.Local.sClass.Declare
+V.Local.sDiam.Declare
+
+V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.text)
+V.Local.sDiam.Set(V.Screen.Form_Main!ddlDiam.text)
+F.Intrinsic.Control.If(V.Local.sClass.Trim,=,"","OR",V.Local.sDiam.Trim,=,"")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+'create browser
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+	V.Local.sSql.Set("select distinct PART, Description, RTRIM(UM_INVENTORY) as UM_INVENTORY from INVENTORY_MSTR where PRODUCT_LINE = 'CP'")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select distinct PART, Description, RTRIM(UM_INVENTORY) as UM_INVENTORY from INVENTORY_MSTR where PRODUCT_LINE = 'CP' and PART in (Select distinct Part from GCG_4908_CDHBPART where MCLASS = '{0}' and MDIAM = '{1}' and ENABLED = 1)",V.Local.sClass,V.Local.sDiam,V.Local.sSql)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split("Part*!*Description*!*UM","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("300*!*600*!*300","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Coupling part","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,V.Ambient.Cancel)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.local.sRet)
+	GUI.Form_Main.txtPartCpl1.Text(V.Local.sRet(0))	
+	GUI.Form_Main.txtCpl1UM.Text(V.Local.sRet(2))
+	GUI.Form_Main.txtCplType.Text("")
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+	V.Global.bBrowser.Set(True)
+	F.Intrinsic.Control.CallSub(txtPartCpl1_LostFocus)
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdCpl1_Click.End
+
+Program.Sub.cmdCpl2_Click.Start
+V.Local.sSql.Declare
+V.local.sTitles.Declare
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sDisp.Declare
+V.Local.sClass.Declare
+V.Local.sDiam.Declare
+
+V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.text)
+V.Local.sDiam.Set(V.Screen.Form_Main!ddlDiam.text)
+F.Intrinsic.Control.If(V.Local.sClass.Trim,=,"","OR",V.Local.sDiam.Trim,=,"")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+'create browser
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+	V.Local.sSql.Set("select distinct PART, Description, RTRIM(UM_INVENTORY) as UM_INVENTORY from INVENTORY_MSTR where PRODUCT_LINE = 'CP'")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select distinct PART, Description, RTRIM(UM_INVENTORY) as UM_INVENTORY from INVENTORY_MSTR where PRODUCT_LINE = 'CP' and PART in (Select distinct Part from GCG_4908_CDHBPART where MCLASS = '{0}' and MDIAM = '{1}' and ENABLED = 1)",V.Local.sClass,V.Local.sDiam,V.Local.sSql)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split("Part*!*Description*!*UM","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("300*!*600*!*300","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Coupling part","Conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+'handle return
+F.Intrinsic.Control.If(V.Local.sRet,=,V.Ambient.Cancel)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.local.sRet)
+	GUI.Form_Main.txtPartCpl2.Text(V.Local.sRet(0))
+	GUI.Form_Main.txtCpl2UM.Text(V.Local.sRet(2))
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+	V.Global.bBrowser.Set(True)
+	F.Intrinsic.Control.CallSub(txtPartCpl2_LostFocus)
+F.Intrinsic.Control.EndIf
+Program.Sub.cmdCpl2_Click.End
+
+Program.Sub.txtPartCpl1_LostFocus.Start
+V.Local.sFilter.Declare
+V.Local.sCPart.Declare
+V.Local.sUM.Declare
+V.Local.sClass.Declare(String)
+V.Local.sDiam.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+
+'F.Intrinsic.Control.If(V.Global.bLoadScreen)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+'	GUI.Form_Main.lblCplAssocError2.Visible(False)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+GUI.Form_Main.txtPartCpl1.Text(V.Screen.Form_Main!txtPartCpl1.Text.UCase)
+V.Local.sCPart.set(V.Screen.Form_Main!txtPartCpl1.text.Trim)
+
+F.Intrinsic.Control.If(V.Local.sCPart.Trim,=,"")
+	GUI.Form_Main.lblCplAssocError.Visible(False)
+	GUI.Form_Main.txtCpl1UM.Text("")
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+	GUI.Form_Main.txtCplType.Text("")
+	GUI.Form_Main.ddlQtyPP1.ClearItems
+	GUI.Form_Main.frameCpl2.Enabled(False)
+	V.Global.bBrowser.Set(False)
+	F.Intrinsic.Control.CallSub(CheckDropDowns)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("PART = '{0}' AND (CODE_SORT = 'WO' OR CODE_SORT = 'IDF')",V.Local.sCPart.UCase,V.Local.sFilter)
+
+F.Data.Dataview.create("InvDT","TempInvVw",22,V.Local.sFilter,"")
+
+F.Intrinsic.Control.If(V.DataView.InvDT!TempInvVw.RowCount,=,0)
+	GUI.Form_Main.chkIdentify.Value(0)
+	GUI.Form_Main.chkIdentify.Enabled(False)
+	GUI.Form_Main.frameIdentify.Enabled(False)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.chkIdentify.Value(1)
+	GUI.Form_Main.chkIdentify.Enabled(True)
+	GUI.Form_Main.frameIdentify.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("PART = '{0}'",V.Local.sCPart.UCase,V.Local.sFilter)
+F.Data.Dataview.SetFilter("InvDT","TempInvVw",V.Local.sFilter)
+
+F.Intrinsic.Control.If(V.DataView.InvDT!TempInvVw.RowCount,>,0)
+	V.Local.sUM.Set(V.DataView.InvDT!TempInvVw(0).UM_INVENTORY!fieldvalTrim)
+	GUI.Form_Main.txtCpl1UM.Text(V.Local.sUM)
+	F.Intrinsic.Control.If(V.Local.sUM.UCase,=,"ST")
+		GUI.Form_Main.ddlQtyPP1.ClearItems
+		GUI.Form_Main.ddlQtyPP1.AddItem(1)
+		GUI.Form_Main.ddlQtyPP1.AddItem(0.5)
+		GUI.Form_Main.ddlQtyPP1.Text(1)
+		
+	F.Intrinsic.Control.ElseIf(V.Local.sUM.UCase,=,"EA")
+		GUI.Form_Main.ddlQtyPP1.ClearItems
+		GUI.Form_Main.ddlQtyPP1.AddItem(2)
+		GUI.Form_Main.ddlQtyPP1.AddItem(1)
+	F.Intrinsic.Control.EndIf
+	
+	'check assocation if not coming from browser
+	F.Intrinsic.Control.If(V.Global.bBrowser.Not)
+		
+		V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.text)
+		V.Local.sDiam.Set(V.Screen.Form_Main!ddlDiam.text)
+	
+		'check if associated
+		F.Intrinsic.String.Build("Select distinct Part from GCG_4908_CDHBPART where MCLASS = '{0}' and MDIAM = '{1}' and ENABLED = 1 and PART = '{2}'", V.Local.sClass, V.Local.sDiam, V.Local.sCPart.UCase, V.Local.sSql)
+		
+		F.ODBC.Connection!Conx.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			GUI.Form_Main.lblCplAssocError.Visible(True)
+		F.Intrinsic.Control.Else
+			GUI.Form_Main.lblCplAssocError.Visible(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.lblCplAssocError.Visible(False)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	
+	F.Intrinsic.UI.Msgbox("Error: Invalid Coupling")
+	GUI.Form_Main.lblCplAssocError.Visible(False)
+	GUI.Form_Main.txtPartCpl1.Text("")
+	GUI.Form_Main.txtCpl1UM.Text("")
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+	GUI.Form_Main.txtCplType.Text("")
+	GUI.Form_Main.ddlQtyPP1.ClearItems
+F.Intrinsic.Control.EndIf
+
+GUI.Form_Main.frameCpl2.Enabled(False)
+
+V.Global.bBrowser.Set(False)
+F.Data.DataView.Close("InvDT","TempInvVw")
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.txtPartCpl1_LostFocus.End
+
+Program.Sub.txtPartCpl2_LostFocus.Start
+V.Local.sFilter.Declare
+V.Local.sCPart.Declare
+V.Local.sUM.Declare
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sClass.Declare(String)
+V.Local.sDiam.Declare(String)
+
+'F.Intrinsic.Control.If(V.Global.bLoadScreen)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+'	GUI.Form_Main.lblCplAssocError2.Visible(False)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+GUI.Form_Main.txtPartCpl2.Text(V.Screen.Form_Main!txtPartCpl2.Text.UCase)
+V.Local.sCPart.set(V.Screen.Form_Main!txtPartCpl2.text)
+
+F.Intrinsic.Control.If(V.Local.sCPart.Trim,=,"")
+	GUI.Form_Main.lblCplAssocError2.Visible(False)
+	GUI.Form_Main.txtCpl2UM.Text("")
+	GUI.Form_Main.ddlQtyPP2.ClearItems
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+	V.Global.bBrowser.Set(False)
+	F.Intrinsic.Control.CallSub(CheckDropDowns)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bBrowser.Not)
+	F.Intrinsic.String.Build("PART = '{0}' AND (CODE_SORT = 'WO' OR CODE_SORT = 'IDF')", V.Local.sCPart.UCase, V.Local.sFilter)
+	
+	F.Data.Dataview.create("InvDT","TempInvVw",22,V.Local.sFilter,"")
+	
+	F.Intrinsic.Control.If(V.DataView.InvDT!TempInvVw.RowCount,>,0)
+		GUI.Form_Main.chkIdentify.Value(1)
+		GUI.Form_Main.chkIdentify.Enabled(True)
+		GUI.Form_Main.frameIdentify.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("PART = '{0}'",V.Local.sCPart.UCase,V.Local.sFilter)
+	F.Data.Dataview.SetFilter("InvDT","TempInvVw",V.Local.sFilter)
+
+	F.Intrinsic.Control.If(V.DataView.InvDT!TempInvVw.RowCount,>,0)
+		V.Local.sUM.Set(V.DataView.InvDT!TempInvVw(0).UM_INVENTORY!fieldvalTrim)
+		GUI.Form_Main.txtCpl2UM.Text(V.Local.sUM)
+		
+		'check assocation if not coming from browser
+		V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.text)
+		V.Local.sDiam.Set(V.Screen.Form_Main!ddlDiam.text)
+	
+		'check if associated
+		F.Intrinsic.String.Build("Select distinct Part from GCG_4908_CDHBPART where MCLASS = '{0}' and MDIAM = '{1}' and ENABLED = 1 and PART = '{2}'", V.Local.sClass, V.Local.sDiam, V.Local.sCPart.UCase, V.Local.sSql)
+		
+		F.ODBC.Connection!Conx.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			GUI.Form_Main.lblCplAssocError2.Visible(True)
+		F.Intrinsic.Control.Else
+			GUI.Form_Main.lblCplAssocError2.Visible(False)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Error: Invalid Coupling")
+		GUI.Form_Main.lblCplAssocError2.Visible(False)
+		GUI.Form_Main.txtPartCpl2.Text("")
+		GUI.Form_Main.txtCpl2UM.Text("")
+		GUI.Form_Main.txtCpl2OrderQty.Text("")
+		GUI.Form_Main.ddlQtyPP2.ClearItems
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Close("InvDT", "TempInvVw")
+F.Intrinsic.Control.Else
+	GUI.Form_Main.lblCplAssocError2.Visible(False)
+F.Intrinsic.Control.EndIf
+
+V.Local.sUM.Set(V.Screen.Form_Main!txtCpl2UM.text)
+F.Intrinsic.Control.If(V.Local.sUM.UCase,=,"ST")
+	GUI.Form_Main.ddlQtyPP2.ClearItems
+	GUI.Form_Main.ddlQtyPP2.AddItem(0.5)
+	GUI.Form_Main.ddlQtyPP2.Text(0.5)
+F.Intrinsic.Control.ElseIf(V.Local.sUM.UCase,=,"EA")
+	GUI.Form_Main.ddlQtyPP2.ClearItems
+	GUI.Form_Main.ddlQtyPP2.AddItem(1)
+	GUI.Form_Main.ddlQtyPP2.Text(1)
+F.Intrinsic.Control.EndIf	
+
+V.Global.bBrowser.Set(False)
+F.Intrinsic.Control.CallSub(ddlQtyPP2_Click)
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.txtPartCpl2_LostFocus.End
+
+Program.Sub.ddlLogo1_Click.Start
+V.Local.sFilter.Declare
+V.Local.bExists.Declare
+F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo1.Value,V.Local.sFilter)
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.CustLAChkDT!CustLAChkVw.RowCount,>,0)
+
+	F.Intrinsic.File.Exists(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		GUI.Form_Main.picLogo1.Picture(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+		GUI.Form_Main.picLogo1.Visible(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.picLogo1.Visible(False)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	GUI.Form_Main.picLogo1.Visible(False)
+F.Intrinsic.Control.EndIf
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw","")
+Program.Sub.ddlLogo1_Click.End
+
+Program.Sub.ddlLogo2_Click.Start
+V.Local.sFilter.Declare
+V.Local.bExists.Declare
+F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo2.Value,V.Local.sFilter)
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.CustLAChkDT!CustLAChkVw.RowCount,>,0)
+
+	F.Intrinsic.File.Exists(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		GUI.Form_Main.picLogo2.Picture(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+		GUI.Form_Main.picLogo2.Visible(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.picLogo2.Visible(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.picLogo2.Visible(False)
+F.Intrinsic.Control.EndIf
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw","")
+Program.Sub.ddlLogo2_Click.End
+
+Program.Sub.ddlLogo3_Click.Start
+V.Local.sFilter.Declare
+V.Local.bExists.Declare
+
+F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo3.Value,V.Local.sFilter)
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw",V.Local.sFilter)
+F.Intrinsic.Control.If(V.DataView.CustLAChkDT!CustLAChkVw.RowCount,>,0)
+
+	F.Intrinsic.File.Exists(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		GUI.Form_Main.picLogo3.Picture(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+		GUI.Form_Main.picLogo3.Visible(True)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.picLogo3.Visible(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	GUI.Form_Main.picLogo3.Visible(False)
+F.Intrinsic.Control.EndIf
+F.Data.Dataview.SetFilter("CustLAChkDT","CustLAChkVw","")
+Program.Sub.ddlLogo3_Click.End
+
+Program.Sub.CMDOK_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.sHose.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sOrder.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sQTY.Declare(String)
+V.Local.sPrice.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.sCoupling.Declare(String)
+V.Local.sDesc.Declare(String)
+V.Local.sPL.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sFold.Declare(String)
+V.Local.sCPL.Declare(String)
+V.Local.sTST.Declare(String)
+V.Local.sPlus.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.bCouplingRouter.Declare(Boolean)
+
+V.Global.bPinFold.Set(V.Screen.Form_Main!txtPinfold.Enabled)
+GUI.Form_Main..Enabled(False)
+GUI.Form_Main.progressBar1.Min(0)
+GUI.Form_Main.progressBar1.Max(100)
+
+GUI.Form_Main.progressBar1.Visible(True)
+GUI.Form_Main.lblStatus.Visible(True)
+GUI.Form_Main.lblStatus.Text("Adding order lines...")
+
+F.Intrinsic.Control.CallSub(PreRunCheck)
+F.Intrinsic.Control.If(V.Global.bStop)
+	F.Intrinsic.Control.CallSub(StopUpload)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'000060 = Order Number LINES
+F.Intrinsic.String.LPad(V.Passed.000060.Trim, "0", 7, V.Local.sOrder)
+
+F.ODBC.Connection!Con.OpenCompanyConnection
+
+'get order info for re-creation
+F.Intrinsic.Control.CallSub(RecreateOrder, "Order", V.Local.sOrder)
+V.Global.sOrder.Set(V.Local.sOrder)
+
+'add hose
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean, =, False)
+	'No longer need price, might not need any but part
+	V.Local.sHose.Set(V.Screen.Form_Main!txtHose.Text.Trim)
+	F.Intrinsic.String.Build("select AMT_PRICE as Price, RTRIM(PRODUCT_LINE) as PL, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(UM_INVENTORY) as UM, RTRIM(LOCATION) as LOCATION from V_INVENTORY_MSTR where PART = '{0}'", V.Local.sHose, V.Local.sSQL)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("Error: Hose not found")
+		F.ODBC.Connection!Con.Close
+		F.Intrinsic.Control.CallSub(StopUpload)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+		V.Local.sPrice.Set(V.Local.sRet(0))
+		V.Local.sPL.Set(V.Local.sRet(1))
+		V.Local.sDesc.Set(V.Local.sRet(2))
+		V.Local.sUM.Set(V.Local.sRet(3))
+		V.Local.sLoc.Set(V.Local.sRet(4))
+	F.Intrinsic.Control.EndIf
+	
+	'pad qty, 13 characters, last four are decimals
+	V.Local.sQTY.Set(V.Screen.Form_Main!txtHoseQty.Text.Trim)
+	F.Intrinsic.String.Format(V.Local.sQTY,"0.0000",V.Local.sQTY)
+	F.Intrinsic.String.Replace(V.Local.sQTY,".","",V.Local.sQTY)
+	F.Intrinsic.String.LPad(V.Local.sQTY,"0",13,V.Local.sQTY)
+F.Intrinsic.Control.EndIf
+
+'copy router
+GUI.Form_Main.progressBar1.Value(33)
+GUI.Form_Main.lblStatus.Text("Creating new router...")
+V.Global.bStop.Set(False)
+V.Local.bCouplingRouter.Set(True)
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkIdentify.checkedASBoolean, =, True, Or, V.Screen.Form_Main!chkStamp.checkedAsBoolean, =, True)
+		F.Intrinsic.Control.CallSub(CopyRouter)
+	F.Intrinsic.Control.Else
+		V.Local.bCouplingRouter.Set(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(CopyRouter)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bStop)
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.CallSub(StopUpload)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'add hose row
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean, =, False)
+	F.Intrinsic.Math.Add(V.DataTable.ORDUPLLines.RowCount, 1, V.Local.sLine)
+	F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+	F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "QtyOrdered", V.Local.sQTY, "PartNumber", V.Local.sHose, "PartDesc", V.Local.sDesc, "PL", V.Local.sPL, "UM", V.Local.sUM, "PartLoc", V.Local.sLoc)
+F.Intrinsic.Control.EndIf
+
+'get couplings, add to order
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtPartCpl1.Text.Trim, !=, "")
+	'add first coupling
+	V.Local.sCoupling.Set(V.Screen.Form_Main!txtPartCpl1.Text.Trim)
+	V.Local.sQTY.Set(V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim)
+	
+	F.Intrinsic.String.Format(V.Local.sQTY,"0.0000",V.Local.sQTY)
+	F.Intrinsic.String.Replace(V.Local.sQTY,".","",V.Local.sQTY)
+	F.Intrinsic.String.LPad(V.Local.sQTY,"0",13,V.Local.sQTY)
+	
+	F.Intrinsic.String.Build("select AMT_PRICE as Price, RTRIM(PRODUCT_LINE) as PL, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(UM_INVENTORY) as UM, RTRIM(LOCATION) as LOCATION from V_INVENTORY_MSTR where PART = '{0}'", V.Local.sCoupling, V.Local.sSQL)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("Error: First coupling not found")
+		F.ODBC.Connection!Con.Close
+		F.Intrinsic.Control.CallSub(StopUpload)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+		V.Local.sPrice.Set(V.Local.sRet(0))
+		V.Local.sPL.Set(V.Local.sRet(1))
+		V.Local.sDesc.Set(V.Local.sRet(2))
+		V.Local.sUM.Set(V.Local.sRet(3))
+		V.Local.sLoc.Set(V.Local.sRet(4))
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Math.Add(V.DataTable.ORDUPLLines.RowCount, 1, V.Local.sLine)
+	F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+	F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "QtyOrdered", V.Local.sQTY, "PartNumber", V.Local.sCoupling, "PartDesc", V.Local.sDesc, "PL", V.Local.sPL, "UM", V.Local.sUM, "PartLoc", V.Local.sLoc)
+	
+	F.Intrinsic.Control.If(V.Global.bTwoCouplings)
+		'add second coupling
+		V.Local.sCoupling.Set(V.Screen.Form_Main!txtPartCpl2.Text.Trim)
+		V.Local.sQTY.Set(V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim)
+		F.Intrinsic.String.Format(V.Local.sQTY,"0.0000",V.Local.sQTY)
+		F.Intrinsic.String.Replace(V.Local.sQTY,".","",V.Local.sQTY)
+		F.Intrinsic.String.LPad(V.Local.sQTY,"0",13,V.Local.sQTY)
+		
+		F.Intrinsic.String.Build("select AMT_PRICE as Price, RTRIM(PRODUCT_LINE) as PL, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(UM_INVENTORY) as UM, RTRIM(LOCATION) as LOCATION from V_INVENTORY_MSTR where PART = '{0}'", V.Local.sCoupling, V.Local.sSQL)
+		F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.UI.Msgbox("Error: Second coupling not found")
+			F.ODBC.Connection!Con.Close
+			F.Intrinsic.Control.CallSub(StopUpload)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+			V.Local.sPrice.Set(V.Local.sRet(0))
+			V.Local.sPL.Set(V.Local.sRet(1))
+			V.Local.sDesc.Set(V.Local.sRet(2))
+			V.Local.sUM.Set(V.Local.sRet(3))
+			V.Local.sLoc.Set(V.Local.sRet(4))
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Math.Add(V.DataTable.ORDUPLLines.RowCount, 1, V.Local.sLine)
+		F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+		F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "QtyOrdered", V.Local.sQTY, "PartNumber", V.Local.sCoupling, "PartDesc", V.Local.sDesc, "PL", V.Local.sPL, "UM", V.Local.sUM, "PartLoc", V.Local.sLoc)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean, =, False)
+	F.Intrinsic.UI.Msgbox("Error: No couplings set")
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.Control.CallSub(StopUpload)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Check params file, create file, upload
+F.Data.DataView.Create("ORDUPLLines", "dvOLines", 22)
+F.Intrinsic.Control.If(V.DataTable.dtOLines.Exists)
+	F.Data.DataTable.Close("dtOLines")
+F.Intrinsic.Control.EndIf
+F.Data.DataView.ToDataTable("ORDUPLLines", "dvOLines", "dtOLines", True)
+F.Data.DataView.Close("ORDUPLLines", "dvOLines")
+F.Intrinsic.Control.CallSub(UploadOrder, "Order", V.Local.sOrder)
+
+F.Intrinsic.Control.If(V.Local.bCouplingRouter)
+	F.Intrinsic.Control.CallSub(AddSalesOrderComments)
+F.Intrinsic.Control.EndIf
+
+GUI.Form_Main.progressBar1.Value(100)
+GUI.Form_Main.lblStatus.Text("Done")
+
+F.Intrinsic.Control.CallSub(CheckUpload)
+F.ODBC.Connection!Con.Close
+
+GUI.Form_Main..AlwaysOnTop(True)
+GUI.Form_Main..AlwaysOnTop(False)
+
+GUI.Form_Main.progressBar1.Visible(False)
+GUI.Form_Main.lblStatus.Visible(False)
+GUI.Form_Main..Enabled(True)
+
+'make sure everything is closed and cleared out
+F.Intrinsic.Control.CallSub(StopUpload)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.CMDOK_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.CallSub(Form_Main_Unload)
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.CheckParamsTxt.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.bExists.Declare(Boolean)
+V.Local.sPath.Declare(String)
+F.Intrinsic.String.Build("{0}\GSSPARAM{1}.txt", V.Caller.FilesDir, V.Caller.CompanyCode, V.Local.sPath)
+F.Intrinsic.File.Exists(V.Local.sPath, V.Local.bExists)
+
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	F.Intrinsic.Control.CallSub(CreateParamsTxt)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckParamsTxt.End
+
+Program.Sub.CreateParamsTxt.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.sParams.Declare(String)
+V.Local.sPath.Declare(String)
+
+F.Intrinsic.String.Build("WEB ORDER DIRECTORY   = {1}\WEB_ORDERS\{2}{0}WEB ERROR DIRECTORY   = {1}\WEB_ORDERS\{2}\WEB_ERRORS{0}WEB CONVERTED DIR     = {1}\WEB_ORDERS\{2}\CONVERTED{0}WEB UPLOADED DIRECTORY= {1}\WEB_ORDERS\{2}\UPLOADED{0}EMAIL FROM ADDRESS    = {0}EMAIL TO ADDRESS      = ", V.Ambient.NewLine, V.Caller.FilesDir, V.Caller.CompanyCode, V.Local.sParams)
+F.Intrinsic.String.Build("{0}\GSSPARAM{1}.txt", V.Caller.FilesDir, V.Caller.CompanyCode, V.Local.sPath)
+F.Intrinsic.File.String2File(V.Local.sPath, V.Local.sParams)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.CreateParamsTxt.End
+
+Program.Sub.RecreateOrder.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+'here pass all of that stuff to callwrapper somehow, to keep changed information, or already existing lines
+'ORDER_HEADER  -	A
+'ORDER_BILL_TO -	B
+'ORDER_SHIP_TO - C
+'ORDER_REPAIR  - D
+'ORDER_LINES   - L
+
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sOrder.Declare(String)
+V.Local.sUserID.Declare(String)
+V.Local.sFromLoc.Declare(String)
+V.Local.sCustomerPO.Declare(String)
+V.Local.sShipTo.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sPart.Declare(String)
+V.Local.sReV.Declare(String)
+V.Local.sQTY.Declare(String)
+V.Local.sPrice.Declare(String)
+V.Local.sCost.Declare(String)
+V.Local.sOrderDate.Declare(String)
+V.Local.sPromiseDate.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.dTemp.Declare(Date)
+V.Local.sNegativeQuantity.Declare(String)
+V.Local.bNegativeQuantity.Declare(Boolean)
+V.Local.iLength.Declare(Long)
+V.Local.sLine.Declare(String)
+
+V.Local.sOrder.Set(V.Args.Order)
+F.Global.Security.GetUserId(V.Caller.User, V.Caller.CompanyCode, V.Local.sUserID)
+
+F.Intrinsic.String.Build("select RTRIM(CUSTOMER_PO) as P, RTRIM(SHIP_ID) as S, RTRIM(ORDER_LOCATION) as L from V_ORDER_HEADER where ORDER_NO = '{0}'", V.Local.sOrder, V.Local.sSQL)
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+
+V.Local.sCustomerPO.Set(V.Local.sRet(0).Trim)
+F.Intrinsic.Control.If(V.Local.sCustomerPO, =, "")
+	F.Intrinsic.UI.Msgbox("Error: Customer PO is required")
+	F.Intrinsic.Control.CallSub(Form_Main_Unload)
+F.Intrinsic.Control.EndIf
+V.Local.sShipTo.Set(V.Local.sRet(1).Trim)
+V.Local.sFromLoc.Set(V.Local.sRet(2).Trim)
+
+'add line to ORDUPL Header table, and blank line to extra table
+'if you don't override auto numbering it will just add a new order if a duplicate order is passed... so have to delete and reupload order to use the same number
+'might need to add extra data here
+F.Data.DataTable.AddRow("ORDUPL", "Transaction", "O", "CustomerNo", V.Global.sCustomer, "OrderNumber", V.Local.sOrder, "UserID", V.Local.sUserID, "OrderType", " ", "OverrideAutoNumbering", "1", "FromLoc", V.Local.sFromLoc, "CustomerPO", V.Local.sCustomerPO, "ShipToID", V.Local.sShipTo)
+F.Data.DataTable.AddRow("ORDUPLExtra")
+
+'add the lines to the upload table
+F.Intrinsic.String.Build("select RTRIM(RECORD_NO) as LINE, RTRIM(LINE_TYPE) as LINE_TYPE, QTY_ORDERED, WEIGHT, RTRIM(UM_ORDER) as UM_ORDER, RTRIM(PART) as PART, PRICE_ORDER as PRICE, COST, RTRIM(DESCRIPTION) as DESCRIPTION, RTRIM(USER_1) as USER_1, RTRIM(USER_2) as USER_2, RTRIM(USER_3) as USER_3, RTRIM(USER_4) as USER_4, RTRIM(USER_5) as USER_5, RTRIM(LOCATION) as LOCATION, DATE_ORDER, DATE_ITEM_PROM, RTRIM(FLAG_TAX_STATUS) as FLAG_TAX_STATUS, RTRIM(PRODUCT_LINE) as PRODUCT_LINE from V_ORDER_LINES where ORDER_NO = '{0}'", V.Local.sOrder, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtOrderLines", "Con", V.Local.sSQL)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataTable.dtOrderLines.RowCount--, 1)
+	'currently not taking rev into account
+	
+	'formatting
+	V.Local.sQTY.Set(V.DataTable.dtOrderLines(V.Local.iCounter).QTY_ORDERED!FieldValFloat)
+	
+	F.Intrinsic.String.IsInString(V.Local.sQTY, "-", True, V.Local.bNegativeQuantity)
+	F.Intrinsic.Control.If(V.Local.bNegativeQuantity)
+		F.Intrinsic.String.Replace(V.Local.sQTY, "-", "", V.Local.sQTY)
+		V.Local.sNegativeQuantity.Set("1")
+	F.Intrinsic.Control.Else
+		V.Local.sNegativeQuantity.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Format(V.Local.sQTY,"0.0000",V.Local.sQTY)
+	F.Intrinsic.String.Replace(V.Local.sQTY,".","",V.Local.sQTY)
+	F.Intrinsic.String.LPad(V.Local.sQTY,"0",13,V.Local.sQTY)
+	
+	V.Local.sPrice.Set(V.DataTable.dtOrderLines(V.Local.iCounter).PRICE!FieldValFloat)
+	F.Intrinsic.String.Format(V.Local.sPrice,"0.000000",V.Local.sPrice)
+	F.Intrinsic.String.Replace(V.Local.sPrice,".","",V.Local.sPrice)
+	F.Intrinsic.String.LPad(V.Local.sPrice,"0",16,V.Local.sPrice)
+
+	V.Local.sCost.Set(V.DataTable.dtOrderLines(V.Local.iCounter).COST!FieldValFloat)
+	F.Intrinsic.String.Format(V.Local.sCost,"0.000000",V.Local.sCost)
+	F.Intrinsic.String.Replace(V.Local.sCost,".","",V.Local.sCost)
+	F.Intrinsic.String.LPad(V.Local.sCost,"0",16,V.Local.sCost)
+	
+	'Dates
+	V.Local.dTemp.Set(V.DataTable.dtOrderLines(V.Local.iCounter).DATE_ORDER!FieldValTrim)
+	V.Local.sOrderDate.Set(V.Local.dTemp.FormatYYYYMMDD)
+	
+	V.Local.dTemp.Set(V.DataTable.dtOrderLines(V.Local.iCounter).DATE_ITEM_PROM!FieldValTrim)
+	V.Local.sPromiseDate.Set(V.Local.dTemp.FormatYYYYMMDD)
+	
+	V.Local.sPart.Set(V.DataTable.dtOrderLines(V.Local.iCounter).PART!FieldValTrim)
+	F.Intrinsic.Control.If(V.Local.sPart.Length, >, 17)
+		F.Intrinsic.Math.Sub(V.Local.sPart.Length, 17, V.Local.iLength)
+		F.Intrinsic.String.Right(V.Local.sPart, V.Local.iLength, V.Local.sRev)
+		V.Local.sPart.Set(V.Local.sPart.Left17)
+	F.Intrinsic.Control.Else
+		V.Local.sReV.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sLine.Set(V.DataTable.dtOrderLines(V.Local.iCounter).Line!FieldValTrim)
+	V.Local.sLine.Set(V.Local.sLine.Left3)
+	
+	'add the original rows
+	F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "LineType", V.DataTable.dtOrderLines(V.Local.iCounter).LINE_TYPE!FieldValTrim, "QtyOrdered", V.Local.sQTY, "Weight", V.DataTable.dtOrderLines(V.Local.iCounter).WEIGHT!FieldValFloat, "UM", V.DataTable.dtOrderLines(V.Local.iCounter).UM_ORDER!FieldValTrim, "PartNumber", V.Local.sPart, "PartRev", V.Local.sRev, "QuotedPrice", V.Local.sPrice, "Cost", V.Local.sCost, "PartDesc", V.DataTable.dtOrderLines(V.Local.iCounter).DESCRIPTION!FieldValTrim, "UserField1", V.DataTable.dtOrderLines(V.Local.iCounter).USER_1!FieldValTrim, "UserField2", V.DataTable.dtOrderLines(V.Local.iCounter).USER_2!FieldValTrim, "UserField3", V.DataTable.dtOrderLines(V.Local.iCounter).USER_3!FieldValTrim, "UserField4", V.DataTable.dtOrderLines(V.Local.iCounter).USER_4!FieldValTrim, "UserField5", V.DataTable.dtOrderLines(V.Local.iCounter).USER_5!FieldValTrim, "PartLoc", V.DataTable.dtOrderLines(V.Local.iCounter).LOCATION!FieldValTrim, "LineOrderDate", V.Local.sOrderDate, "LinePromiseDate", V.Local.sPromiseDate, "TaxStatusFlag", V.DataTable.dtOrderLines(V.Local.iCounter).FLAG_TAX_STATUS!FieldValTrim, "PL", V.DataTable.dtOrderLines(V.Local.iCounter).PRODUCT_LINE!FieldValTrim, "NegativeFlag", V.Local.sNegativeQuantity)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Data.DataTable.Close("dtOrderLines")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.RecreateOrder.End
+
+Program.Sub.CopyRouter.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+'get template router, copy, add comments, create part, add to order
+'here we need to find the template router that matches the required above things
+'Copy it, and add appropriate comment lines
+'Multiply certain operations by footage
+
+V.Local.sFold.Declare(String)
+V.Local.sCPL.Declare(String)
+V.Local.sTST.Declare(String)
+V.Local.sPlus.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sRouterHeaderInfo.Declare(String)
+V.Local.sNewRouterNumber.Declare(String)
+V.Local.fTemp.Declare(Float)
+V.Local.sComment.Declare(String)
+V.Local.sMadeInCanada.Declare(String)
+V.Local.iSeq.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sStencilInstructions.Declare(String)
+V.Local.sStampingInstructions.Declare(String)
+V.Local.sIdentify.Declare(String)
+V.Local.sStamping1.Declare(String)
+V.Local.sStamping2.Declare(String)
+V.Local.sCommentDescription.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPL.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.sPrice.Declare(String)
+V.Local.sLogoFile.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sQTY.Declare(String)
+V.Local.bAInString.Declare(Boolean)
+V.Local.bTInString.Declare(Boolean)
+V.Local.sOp.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sCover1.Declare(String)
+V.Local.sCover2.Declare(String)
+V.Local.sSlot1.Declare(String)
+V.Local.sSlot2.Declare(String)
+V.Local.sCoupling1.Declare(String)
+V.Local.sCoupling2.Declare(String)
+V.Local.sRouterDescription.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sDelim.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSelect.Declare(String)
+
+'build template router name
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtPinfold.Text.Trim, !=, "")
+		V.Local.sFold.Set("F")
+	F.Intrinsic.Control.Else
+		V.Local.sFold.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean.Not)
+		'on further examination, it looks like they never have one without the other
+		V.Local.sCPL.Set("CPL")
+		V.Local.sTST.Set("TST")
+		V.Local.sPlus.Set("+")
+	F.Intrinsic.Control.Else
+		V.Local.sCPL.Set("")
+		V.Local.sTST.Set("")
+		V.Local.sPlus.Set("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("*{0}{1}{2}{3}{4}{5}", V.Screen.Form_Main!ddlClass.Text.Trim, V.Screen.Form_Main!ddlDiam.Text.Trim, V.Local.sFold, V.Local.sCPL, V.Local.sPlus, V.Local.sTST, V.Local.sRouter)
+F.Intrinsic.Control.Else
+	V.Local.sRouter.Set("*CPLG")
+F.Intrinsic.Control.EndIf
+
+'get template router info
+F.Intrinsic.String.Build("select * from V_ROUTER_HEADER where ROUTER = '{0}'", V.Local.sRouter, V.Local.sSQL)
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.String.Build("Error: Template router {0} not found. Items will not be added to the order.", V.Local.sRouter, V.Local.sMessage)
+	F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+	V.Global.bStop.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRouterHeaderInfo)
+F.Intrinsic.String.Build("select * from V_ROUTER_LINE where ROUTER = '{0}'", V.Local.sRouter, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtRLINES", "Con", V.Local.sSQL, True)
+F.Data.DataTable.AddColumn("dtRLINES", "COMMENT", "String")
+
+F.Intrinsic.Control.CallSub(GenerateRouterNumber)
+V.Local.sNewRouterNumber.Set(V.Args.Router.Trim)
+
+'generate comments
+F.Intrinsic.Control.CallSub(GenerateRouterComments, "NewRouterNumber", V.Local.sNewRouterNumber)
+F.Intrinsic.Control.CallSub(AddRouterComments, "NewRouterNumber", V.Local.sNewRouterNumber)
+
+'They want the IDF step to be above the coupling step if one exists
+F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*IDF'", V.Local.sSelect)
+F.Intrinsic.Control.If(V.Local.sSelect.IsNotNoReturn)
+	'should only be one
+	F.Data.DataTable.SetValue("dtRLINES", V.Local.sSelect, "LINE_ROUTER", 199)
+F.Intrinsic.Control.EndIf
+
+'renumber router
+'need to sort first
+F.Data.DataTable.SetValueFormat("dtRLINES", -1, "LINE_ROUTER", "LINE_ROUTER", "000000")
+F.Data.DataView.Create("dtRLINES", "dvRlines", 22, "", "LINE_ROUTER")
+F.Intrinsic.Control.If(V.DataTable.dtRLINESSorted.Exists)
+	F.Data.DataTable.Close("dtRLINESSorted")
+F.Intrinsic.Control.EndIf
+F.Data.DataView.ToDataTable("dtRLINES", "dvRlines", "dtRLINESSorted", True)
+F.Data.DataTable.Close("dtRLINES")
+F.Data.DataTable.SetSeries("dtRLINESSorted", "LINE_ROUTER", 0, 100)
+F.Data.DataTable.SetValueFormat("dtRLINESSorted", -1, "LINE_ROUTER", "LINE_ROUTER", "000000")
+
+'F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtRLINESSorted.RowCount--, 1)
+'	F.Intrinsic.Math.Add(V.Local.iCount, 1, V.Local.iSeq)
+'	F.Intrinsic.Math.Mult(V.Local.iSeq, 100, V.Local.sSeq)
+'	F.Intrinsic.String.LPad(V.Local.sSeq, "0", 6, V.Local.sSeq)
+'	F.Data.DataTable.SetValue("dtRLINESSorted", V.Local.iCount, "LINE_ROUTER", V.Local.sSeq)
+'F.Intrinsic.Control.Next(V.Local.iCount)
+
+'wants the router description to be the description of the hose or coupling if no hose
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtHose.Text.Trim, !=, "")
+	F.Intrinsic.String.Build("select RTRIM(DESCRIPTION) from V_INVENTORY_MSTR where PART = '{0}' and LOCATION = 'P1'", V.Screen.Form_Main!txtHose.Text.Trim, V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select RTRIM(DESCRIPTION) from V_INVENTORY_MSTR where PART = '{0}' and LOCATION = 'P1'", V.Screen.Form_Main!txtPartCpl1.Text.Trim, V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.String.Build("Stamp/Stencil/Identify {0}", V.Global.sOrder, V.Local.sRouterDescription)
+F.Intrinsic.Control.Else
+	V.Local.sRouterDescription.Set(V.Local.sRet)
+F.Intrinsic.Control.EndIf
+
+'loop through the table we just built and add it to upload table
+F.Intrinsic.Control.For(V.Local.iCount, 0, V.DataTable.dtRLINESSorted.RowCount--, 1)
+		
+	F.Intrinsic.Control.SelectCase(V.DataTable.dtRLINESSorted(V.Local.iCount).LMO!FieldValTrim)
+		
+		F.Intrinsic.Control.Case("L")
+			'Multiply the footage
+			F.Intrinsic.Control.If(V.DataTable.dtRLINESSorted(V.Local.iCount).PART_WC_OUTSIDE!FieldValTrim, =, "*TBL", OR, V.DataTable.dtRLINESSorted(V.Local.iCount).PART_WC_OUTSIDE!FieldValTrim, =, "*FLD")
+				F.Intrinsic.Math.Mult(V.DataTable.dtRLINESSorted(V.Local.iCount).RUN_TIME!FieldValFloat, V.Screen.Form_Main!cboLength.Text.Trim, V.Local.fTemp)
+				F.Data.DataTable.SetValue("dtRLINESSorted", V.Local.iCount, "RUN_TIME", V.Local.fTemp)
+			F.Intrinsic.Control.EndIf
+		
+			F.Data.DataTable.AddRow("6021", "RouterNum", V.Local.sNewRouterNumber, "RouterDesc", V.Local.sRouterDescription, "Seq", V.DataTable.dtRLINESSorted(V.Local.iCount).LINE_ROUTER!FieldValTrim, "LineType", "L", "WC", V.DataTable.dtRLINESSorted(V.Local.iCount).PART_WC_OUTSIDE!FieldValTrim, "OperationCodeVend", V.DataTable.dtRLINESSorted(V.Local.iCount).OPERATION!FieldValTrim, "SetupQty", V.DataTable.dtRLINESSorted(V.Local.iCount).SET_UP!FieldValTrim, "RuntimeMatlQty", V.DataTable.dtRLINESSorted(V.Local.iCount).RUN_TIME!FieldValTrim, "RateUC", V.DataTable.dtRLINESSorted(V.Local.iCount).RATE!FieldValTrim, "UM", V.DataTable.dtRLINESSorted(V.Local.iCount).UM_INVENTORY!FieldValTrim, "PartStepDesc", V.DataTable.dtRLINESSorted(V.Local.iCount).DESC_RT_LINE!FieldValTrim, "Freq", V.DataTable.dtRLINESSorted(V.Local.iCount).FREQUENCY!FieldValTrim, "Overlap", V.DataTable.dtRLINESSorted(V.Local.iCount).OVERLAP!FieldValTrim, "WCFactor", V.DataTable.dtRLINESSorted(V.Local.iCount).WC_FACTOR!FieldValTrim, "LeadTime", V.DataTable.dtRLINESSorted(V.Local.iCount).LEAD_TIME!FieldValTrim)
+			
+		F.Intrinsic.Control.Case("C")
+			F.Data.DataTable.AddRow("6021", "RouterNum", V.Local.sNewRouterNumber, "RouterDesc", V.Local.sRouterDescription, "Seq", V.DataTable.dtRLINESSorted(V.Local.iCount).LINE_ROUTER!FieldValTrim, "LineType", "C", "OperationCodeVend", V.DataTable.dtRLINESSorted(V.Local.iCount).OPERATION!FieldValTrim, "PartStepDesc", V.DataTable.dtRLINESSorted(V.Local.iCount).DESC_RT_LINE!FieldValTrim, "SetupQty", "0", "RuntimeMatlQty", "0", "RateUC", "0", "Freq", "0", "WCFactor", "0", "Overlap", "0", "LeadTime", "0", "MainCommentFlag", "Y")
+		
+		'F.Intrinsic.Control.Case("O")
+		
+		'F.Intrinsic.Control.Case("M")
+		
+		'F.Intrinsic.Control.Case("T")
+		
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+'upload router
+GUI.Form_Main..AlwaysOnTop(True)
+F.Intrinsic.Control.CallSub(6021Sync)
+F.Data.DataTable.AcceptChanges("6021")
+GUI.Form_Main..AlwaysOnTop(False)
+
+'save comments
+F.Intrinsic.String.Build("delete from RTR_SEQ_COMMENTS where RTR_NUMBER = '{0}'", V.Local.sNewRouterNumber, V.Local.sSQL)
+F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+
+F.Data.DataTable.SetValue("dtRLINESSorted", -1, "ROUTER", V.Local.sNewRouterNumber)
+
+'clear empty comment lines just in case
+F.Data.DataView.Create("dtRLINESSorted", "dvUsedComments", 22, "Comment <> ''", "")
+F.Intrinsic.Control.If(V.DataTable.dtUsedComments.Exists)
+	F.Data.DataTable.Close("dtUsedComments")
+F.Intrinsic.Control.EndIf
+F.Data.DataView.ToDataTable("dtRLINESSorted", "dvUsedComments", "dtUsedComments")
+F.Data.DataView.Close("dtRLINESSorted", "dvUsedComments")
+F.Data.DataTable.SaveToDB("dtUsedComments", "Con", "RTR_SEQ_COMMENTS", "ROUTER*!*LINE_ROUTER", 256, "ROUTER@!@RTR_NUMBER*!*LINE_ROUTER@!@RTR_SEQ*!*COMMENT@!@TEXT")
+F.Data.DataTable.Close("dtUsedComments")
+
+'create part,
+GUI.Form_Main.progressBar1.Value(50)
+GUI.Form_Main.lblStatus.Text("Adding router to order...")
+V.Local.sLoc.Set("P1")
+V.Local.sPL.Set("LB")
+F.Intrinsic.Control.CallSub(Determine80IDPrice)
+V.Local.sPrice.Set(V.Args.Price)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+	V.Local.sQTY.Set(V.Screen.Form_Main!txtHoseQty.Text.Trim)
+F.Intrinsic.Control.Else
+	V.Local.sQTY.Set(V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Format(V.Local.sQTY,"0.0000",V.Local.sQTY)
+F.Intrinsic.String.Replace(V.Local.sQTY,".","",V.Local.sQTY)
+F.Intrinsic.String.LPad(V.Local.sQTY,"0",13,V.Local.sQTY)
+
+F.Intrinsic.String.Format(V.Local.sPrice,"0.000000",V.Local.sPrice)
+F.Intrinsic.String.Replace(V.Local.sPrice,".","",V.Local.sPrice)
+F.Intrinsic.String.LPad(V.Local.sPrice,"0",16,V.Local.sPrice)
+
+F.Intrinsic.Math.Add(V.DataTable.ORDUPLLines.RowCount, 1, V.Local.sLine)
+F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+
+'split part and rev
+V.Local.sPart.Set(V.Local.sNewRouterNumber)
+F.Intrinsic.Control.If(V.Local.sPart.Length, >, 17)
+	F.Intrinsic.Math.Sub(V.Local.sPart.Length, 17, V.Local.iLength)
+	F.Intrinsic.String.Right(V.Local.sPart, V.Local.iLength, V.Local.sRev)
+	V.Local.sPart.Set(V.Local.sPart.Left17)
+F.Intrinsic.Control.Else
+	V.Local.sReV.Set("")
+F.Intrinsic.Control.EndIf
+
+'F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "QtyOrdered", V.Local.sQTY, "PartNumber", V.Local.sNewRouterNumber.Left17, "PartRev", V.Local.sNewRouterNumber.Right3, "PartDesc", V.Local.sRouterDescription, "UM", "EA", "QuotedPrice", V.Local.sPrice, "PartLoc", V.Local.sLoc, "PL", V.Local.sPL)
+F.Data.DataTable.AddRow("ORDUPLLines", "LineNumber", V.Local.sLine, "QtyOrdered", V.Local.sQTY, "PartNumber", V.Local.sPart, "PartRev", V.Local.sRev, "PartDesc", V.Local.sRouterDescription, "UM", "EA", "QuotedPrice", V.Local.sPrice, "PartLoc", V.Local.sLoc, "PL", V.Local.sPL)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.CopyRouter.End
+
+Program.Sub.GenerateRouterComments.Start
+'Clean these up
+V.Local.sFold.Declare(String)
+V.Local.sCPL.Declare(String)
+V.Local.sTST.Declare(String)
+V.Local.sPlus.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sRouterHeaderInfo.Declare(String)
+V.Local.sNewRouterNumber.Declare(String)
+V.Local.fTemp.Declare(Float)
+V.Local.sComment.Declare(String)
+V.Local.sMadeInCanada.Declare(String)
+V.Local.iSeq.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sStencilInstructions.Declare(String)
+V.Local.sStampingInstructions.Declare(String)
+V.Local.sIdentify.Declare(String)
+V.Local.sStamping1.Declare(String)
+V.Local.sStamping2.Declare(String)
+V.Local.sCommentDescription.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPL.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.sPrice.Declare(String)
+V.Local.sLogoFile.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sQTY.Declare(String)
+V.Local.bAInString.Declare(Boolean)
+V.Local.bTInString.Declare(Boolean)
+V.Local.sOp.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sCover1.Declare(String)
+V.Local.sCover2.Declare(String)
+V.Local.sSlot1.Declare(String)
+V.Local.sSlot2.Declare(String)
+V.Local.sCoupling1.Declare(String)
+V.Local.sCoupling2.Declare(String)
+V.Local.sRouterDescription.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sDelim.Declare(String)
+V.Local.bCoupleStep.Declare(Boolean, False)
+V.Local.sDTReturn.Declare(String)
+V.Local.sIdentify1.Declare(String)
+V.Local.sIdentify2.Declare(String)
+
+V.Local.sFinalMaterial.Declare(String)
+V.Local.sFinalLogo.Declare(String)
+V.Local.sFinalTradeName.Declare(String)
+V.Local.sFinalServiceTest.Declare(String)
+V.Local.sFinalStenciling.Declare(String)
+V.Local.sFinalHoseDate.Declare(String)
+V.Local.sFinalMadeInCanada.Declare(String)
+V.Local.sFinalIdentify.Declare(String)
+V.Local.sFinalStamping.Declare(String)
+V.Local.sFinalApproval.Declare(String)
+V.Local.iRow.Declare(Long)
+
+F.Intrinsic.Control.If(V.DataTable.dtComments.Exists)
+	F.Data.DataTable.Close("dtComments")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Create("dtComments", True)
+F.Data.DataTable.AddColumn("dtComments", "Comment", "String")
+
+'0 Hose
+'1 Couplings
+'2 Logo
+'3 Service test
+'4 Trade name
+'5 Approval
+'6 Made in Canada
+'7 Hose Date
+'8 Stencil
+'8 Stamping
+'10 Identify Left
+'11 Identify Right
+'12 Pinfold
+
+V.Local.sNewRouterNumber.Set(V.Args.NewRouterNumber)
+V.Local.sComment.Set("")
+
+'generate comments not looping
+'----------------------------------Hose
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtHose.Text.Trim, !=, "")
+	F.Intrinsic.String.Build("Hose: {0}, {1}", V.Screen.Form_Main!txtHose.Text.Trim, V.Screen.Form_Main!txtHoseQty.Text.Trim, V.Local.sComment)
+F.Intrinsic.Control.Else
+	V.Local.sComment.Set("")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Couplings
+V.Local.bCoupleStep.Set(True)
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtPartCpl1.Text.Trim, !=, "")
+	F.Intrinsic.String.Build("Coupling: {0}, {1}", V.Screen.Form_Main!txtPartCpl1.Text.Trim, V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim, V.Local.sCoupling1)
+F.Intrinsic.Control.Else
+	V.Local.sCoupling1.Set("***UNCOUPLED***")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtPartCpl2.Text.Trim, !=, "")
+	F.Intrinsic.String.Build("Coupling: {0}, {1}", V.Screen.Form_Main!txtPartCpl2.Text.Trim, V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim, V.Local.sCoupling2)
+F.Intrinsic.Control.Else
+	V.Local.sCoupling2.Set("")
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.String.Build("Hose: {0}, {1}{2}{3}{2}{4}", V.Screen.Form_Main!txtHose.Text.Trim, V.Screen.Form_Main!txtHoseQty.Text.Trim, V.Ambient.NewLine, V.Local.sCoupling1, V.Local.sCoupling2, V.Local.sComment)
+F.Intrinsic.String.Build("{0}{1}{2}", V.Local.sCoupling1, V.Ambient.NewLine, V.Local.sCoupling2, V.Local.sComment)
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Logo
+F.Data.DataView.Create("CustLAChkDT", "dvLogoTemp", 22)
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo1.Text.Trim, !=, "")
+	F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo1.Value,V.Local.sFilter)
+	F.Data.Dataview.SetFilter("CustLAChkDT","dvLogoTemp",V.Local.sFilter)
+	F.Intrinsic.Control.If(V.DataView.CustLAChkDT!dvLogoTemp.RowCount,>,0)
+		V.Local.sLogoFile.Set(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+	F.Intrinsic.Control.Else
+		V.Local.sLogoFile.Set("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Logo: {0}", V.Screen.Form_Main!ddlLogo1.Text.Trim, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkLogo2.checkedAsBoolean)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo2.Text.Trim, !=, "")
+	
+		F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo2.Value,V.Local.sFilter)
+		F.Data.Dataview.SetFilter("CustLAChkDT","dvLogoTemp",V.Local.sFilter)
+		F.Intrinsic.Control.If(V.DataView.CustLAChkDT!dvLogoTemp.RowCount,>,0)
+		V.Local.sLogoFile.Set(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+		F.Intrinsic.Control.Else
+			V.Local.sLogoFile.Set("")
+		F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.String.Build("{0}{1}Logo 2: {2}", V.Local.sComment, V.Ambient.NewLine, V.Screen.Form_Main!ddlLogo2.Text.Trim, V.Local.sComment)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkLogo2.checkedAsBoolean)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo3.Text.Trim, !=, "")
+		F.Intrinsic.string.Build("MVALUE = '{0}'",V.Screen.Form_Main!ddlLogo3.Value,V.Local.sFilter)
+		F.Data.Dataview.SetFilter("CustLAChkDT","dvLogoTemp",V.Local.sFilter)
+		F.Intrinsic.Control.If(V.DataView.CustLAChkDT!dvLogoTemp.RowCount,>,0)
+			V.Local.sLogoFile.Set(V.DataView.CustLAChkDT!CustLAChkVw(0).UNC_PATH!FieldValTrim)
+		F.Intrinsic.Control.Else
+			V.Local.sLogoFile.Set("")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("{0}{1}Logo 3: {2}", V.Local.sComment, V.Ambient.NewLine, V.Screen.Form_Main!ddlLogo3.Text.Trim, V.Local.sComment)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Close("CustLAChkDT", "dvLogoTemp")
+
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Service Test
+V.Local.sComment.Set(V.Screen.Form_Main!txtSrvTst.Text.Trim)
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Trade Name
+V.Local.sComment.Set(V.Screen.Form_Main!txtTrName.Text.Trim)
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Approval
+V.Local.sComment.Set(V.Screen.Form_Main!ddlApproval.Text.Trim)
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Made in Canada
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean)
+	V.Local.sComment.Set("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chk1.CheckedAsBoolean)
+		V.Local.sComment.Set("Yes")
+	F.Intrinsic.Control.Else
+		V.Local.sComment.Set("No")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+	
+'----------------------------------Hose Date
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean)
+	V.Local.sComment.Set("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}/{1}", V.Screen.Form_Main!txtHoseDateMonth.Text.Trim, V.Screen.Form_Main!txtHoseDateyear.Text.Trim, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Stencil Instructions
+V.Local.sComment.Set(V.Screen.Form_Main!txtSpecIns.Text.Trim)
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Stamping Instructions
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkStamp.CheckedAsBoolean)
+	V.Local.sStampingInstructions.Set(V.Screen.Form_Main!txtMark.Text.Trim)
+	F.Intrinsic.String.Build("Stamp: {0}", V.Local.sStampingInstructions, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Identify Left
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkIdentify.checkedAsBoolean, =, True)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S1.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("Slot 1: {1}, '{0}'", V.Screen.Form_Main!txtC1S1.Text.Trim, V.Screen.Form_Main!ddlC1S1.Text.Trim, V.Local.sStamping1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Text.Trim, !=, "")
+			F.Intrinsic.String.Build("Slot 1: {0}", V.Screen.Form_Main!ddlC1S1.Text.Trim, V.Local.sStamping1)
+		F.Intrinsic.Control.Else
+			V.Local.sStamping1.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S2.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("Slot 2: {1}, '{0}'", V.Screen.Form_Main!txtC1S2.Text.Trim, V.Screen.Form_Main!ddlC1S2.Text.Trim, V.Local.sStamping2)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2.Text.Trim, !=, "")
+			F.Intrinsic.String.Build("Slot 2: {0}", V.Screen.Form_Main!ddlC1S2.Text.Trim, V.Local.sStamping2)
+		F.Intrinsic.Control.Else
+			V.Local.sStamping2.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("{0}, {1}", V.Local.sStamping1, V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, V.Local.sStamping1)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("{0}, {1}", V.Local.sStamping2, V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, V.Local.sStamping2)
+	F.Intrinsic.Control.EndIf
+
+	'F.Intrinsic.String.Build("Identify: {0}{3}{1}{3}{2}", V.Screen.Form_Main!ddlCode1.Text.Trim, V.Local.sStamping1, V.Local.sStamping2, V.Ambient.NewLine, V.Local.sIdentify1)
+	F.Intrinsic.String.Build("Identify: {0}{3}{1}{3}{2}", V.Screen.Form_Main!ddlCode1.Text.Trim, V.Local.sStamping1, V.Local.sStamping2, V.Ambient.NewLine, V.Local.sComment)
+	
+	'F.Intrinsic.String.Build("{0}{1}{2}", V.Local.sIdentify1, V.Ambient.NewLine, V.Local.sIdentify2, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Identify Right
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode2.Text.Trim, !=, "")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S1.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("Slot 1: {1}, '{0}'", V.Screen.Form_Main!txtC2S1.Text.Trim, V.Screen.Form_Main!ddlC2S1.Text.Trim, V.Local.sStamping1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1.Text.Trim, !=, "")
+			F.Intrinsic.String.Build("Slot 1: {0}", V.Screen.Form_Main!ddlC2S1.Text.Trim, V.Local.sStamping1)
+		F.Intrinsic.Control.Else
+			V.Local.sStamping1.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S2.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("Slot 2: {1}, '{0}'", V.Screen.Form_Main!txtC2S2.Text.Trim, V.Screen.Form_Main!ddlC2S2.Text.Trim, V.Local.sStamping2)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2.Text.Trim, !=, "")
+			F.Intrinsic.String.Build("Slot 2: {0}", V.Screen.Form_Main!ddlC2S2.Text.Trim, V.Local.sStamping2)
+		F.Intrinsic.Control.Else
+			V.Local.sStamping2.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1Cover.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("{0}, {1}", V.Local.sStamping1, V.Screen.Form_Main!ddlC2S1Cover.Text.Trim, V.Local.sStamping1)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2Cover.Text.Trim, !=, "")
+		F.Intrinsic.String.Build("{0}, {1}", V.Local.sStamping2, V.Screen.Form_Main!ddlC2S2Cover.Text.Trim, V.Local.sStamping2)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("{1}{0}{2}{0}{3}", V.Ambient.NewLine, V.Screen.Form_Main!ddlCode2.Text.Trim, V.Local.sStamping1, V.Local.sStamping2, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+
+'----------------------------------Folding
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtPinfold.Text.Trim, !=, "")
+	F.Intrinsic.String.Build("{0} PIN FOLD", V.Screen.Form_Main!txtPinfold.Text.Trim, V.Local.sComment)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.AddRow("dtComments", "Comment", V.Local.sComment)
+V.Local.sComment.Set("")
+Program.Sub.GenerateRouterComments.End
+
+Program.Sub.AddRouterComments.Start
+V.Local.sFold.Declare(String)
+V.Local.sCPL.Declare(String)
+V.Local.sTST.Declare(String)
+V.Local.sPlus.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sRouterHeaderInfo.Declare(String)
+V.Local.sNewRouterNumber.Declare(String)
+V.Local.fTemp.Declare(Float)
+V.Local.sComment.Declare(String)
+V.Local.sMadeInCanada.Declare(String)
+V.Local.iSeq.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sStencilInstructions.Declare(String)
+V.Local.sStampingInstructions.Declare(String)
+V.Local.sIdentify.Declare(String)
+V.Local.sStamping1.Declare(String)
+V.Local.sStamping2.Declare(String)
+V.Local.sCommentDescription.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sPL.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.sPrice.Declare(String)
+V.Local.sLogoFile.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sQTY.Declare(String)
+V.Local.bAInString.Declare(Boolean)
+V.Local.bTInString.Declare(Boolean)
+V.Local.sOp.Declare(String)
+V.Local.sMessage.Declare(String)
+V.Local.sCover1.Declare(String)
+V.Local.sCover2.Declare(String)
+V.Local.sSlot1.Declare(String)
+V.Local.sSlot2.Declare(String)
+V.Local.sCoupling1.Declare(String)
+V.Local.sCoupling2.Declare(String)
+V.Local.sRouterDescription.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sDelim.Declare(String)
+V.Local.bCoupleStep.Declare(Boolean, False)
+V.Local.sDTReturn.Declare(String)
+V.Local.sIdentify1.Declare(String)
+V.Local.sIdentify2.Declare(String)
+
+V.Local.sFinalMaterial.Declare(String)
+V.Local.sFinalLogo.Declare(String)
+V.Local.sFinalTradeName.Declare(String)
+V.Local.sFinalServiceTest.Declare(String)
+V.Local.sFinalStenciling.Declare(String)
+V.Local.sFinalHoseDate.Declare(String)
+V.Local.sFinalMadeInCanada.Declare(String)
+V.Local.sFinalIdentify.Declare(String)
+V.Local.sFinalStamping.Declare(String)
+V.Local.sFinalApproval.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sTopSeq.Declare(String)
+V.Local.sFoldSeq.Declare(String)
+V.Local.sStripped.Declare(String)
+V.Local.bIDF.Declare(Boolean)
+V.Local.sHose.Declare(String)
+V.Local.sIDFSteps.Declare(String)
+
+V.Local.sNewRouterNumber.Set(V.Args.NewRouterNumber)
+V.Local.sComment.Set("")
+F.Intrinsic.Control.If(V.DataTable.dtRLINES.RowCount, >, 0)
+	V.Local.sTopSeq.Set(V.DataTable.dtRLINES(V.DataTable.dtRLINES.RowCount--).LINE_ROUTER!FieldValTrim)
+F.Intrinsic.Control.Else
+	V.Local.sTopSeq.Set("0")
+F.Intrinsic.Control.EndIf
+
+V.Local.sFoldSeq.Set("")
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkPinFold.CheckedAsBoolean.Not)
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*FLD'", V.Local.sDTReturn)
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		V.Local.sFoldSeq.Set(V.DataTable.dtRLINES(V.Local.sDTReturn).LINE_ROUTER!FieldValTrim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Add Comments where they are needed
+'----------------------------------Material
+'V.Local.sComment.Set(V.DataTable.dtComments(0).Comment!FieldValTrim)
+V.Local.sCommentDescription.Set("Material")
+
+'F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*IDF'", V.Local.sDTReturn)
+'F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+'	'add coupling to IDF step if there is one
+'	V.Local.sComment.Set(V.DataTable.dtComments(1).Comment!FieldValTrim)
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.String.Build("{0}{1}{2}", V.DataTable.dtComments(0).Comment!FieldValTrim, V.Ambient.NewLine, V.DataTable.dtComments(1).Comment!FieldValTrim, V.Local.sComment)
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+	F.Intrinsic.String.Build("{0}{1}{2}", V.DataTable.dtComments(0).Comment!FieldValTrim, V.Ambient.NewLine, V.DataTable.dtComments(1).Comment!FieldValTrim, V.Local.sComment)
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*CPL'", V.Local.sDTReturn)
+	
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		'should only be one for now
+		V.Local.iRow.Set(V.Local.sDTReturn)
+		F.Data.DataTable.SetValue("dtRLINES", V.Local.iRow, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+		'F.Intrinsic.Math.Add(V.Local.sTopSeq, 1, V.Local.sTopSeq)
+		'V.Local.sSeq.Set(199)
+		F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+		F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Logo
+V.Local.sComment.Set(V.DataTable.dtComments(2).Comment!FieldValTrim)
+V.Local.sCommentDescription.Set("")
+F.Intrinsic.String.StripCharacters(V.Local.sComment, V.Local.sStripped)
+F.Intrinsic.Control.If(V.Local.sStripped.Trim, !=, "")
+	F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Service Test/Trade Name
+V.Local.sCommentDescription.Set("Stencil")
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean, =, False)
+	F.Intrinsic.String.Build("{0}{1}{2}", V.DataTable.dtComments(3).Comment!FieldValTrim, V.Ambient.NewLine, V.DataTable.dtComments(4).Comment!FieldValTrim, V.Local.sComment)
+	F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Approval
+V.Local.sComment.Set(V.DataTable.dtComments(5).Comment!FieldValTrim)
+F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+	V.Local.sCommentDescription.Set("Approval")
+	F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Made In Canada
+V.Local.sCommentDescription.Set("Made in Canada")
+V.Local.sComment.Set(V.DataTable.dtComments(6).Comment!FieldValTrim)
+	F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+		F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Hose Date
+V.Local.sComment.Set(V.DataTable.dtComments(7).Comment!FieldValTrim)
+F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+	V.Local.sCommentDescription.Set("Hose Date")
+	F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Stencil
+V.Local.sComment.Set(V.DataTable.dtComments(8).Comment!FieldValTrim)
+V.Local.sCommentDescription.Set("Stencil Instructions")
+F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+	F.Intrinsic.Control.If(V.Local.sFoldSeq.Trim, !=, "")
+		V.Local.sSeq.Set(V.Local.sFoldSeq.++)
+	F.Intrinsic.Control.Else
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+	F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Stamping
+V.Local.sComment.Set(V.DataTable.dtComments(9).Comment!FieldValTrim)
+F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*IDF'", V.Local.sDTReturn)
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		'should only be one for now
+		V.Local.iRow.Set(V.Local.sDTReturn)
+		'F.Intrinsic.String.Build("{0}{1}{1}{2}", V.DataTable.dtRLINES(V.Local.iRow).COMMENT!FieldValTrim, V.Ambient.NewLine, V.Local.sComment, V.Local.sComment)
+		F.Data.DataTable.SetValue("dtRLINES", V.Local.iRow, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.Else
+		V.Local.sOp.Set("")
+		F.Intrinsic.String.Build("CPX{0}", V.Screen.Form_Main!ddlDiam.Text.Trim, V.Local.sOp)
+		F.Intrinsic.String.Build("select RTRIM(DESCRIPTION) as DESCRIPTION, STANDARD_SETUP, STANDARD_RUNTIME, RTRIM(UNIT_MEASURE) as UNIT_MEASURE, FREQUENCY, MULTIPLE, RATE, OVERLAP, WC_FACTOR, STD_LEAD_TIME from V_OP_CODES where MACHINE = '*IDF' and OPERATION = '{0}'", V.Local.sOp, V.Local.sSQL)
+		F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQl, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("Error: No valid opcode '{0}' found for Machine *IDF, Identify step will not be added to router", V.Local.sOp, V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+		F.Intrinsic.Control.Else
+			V.Local.sSeq.Set(V.Local.sTopSeq.++)
+			F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+			F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+			F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "L", "DESC_RT_LINE", V.Local.sRet(0), "COMMENT", V.Local.sComment, "OPERATION", V.Local.sOp, "SET_UP", V.Local.sRet(1).Float, "RUN_TIME", V.Local.sRet(2).Float, "UM_INVENTORY", V.Local.sRet(3), "FREQUENCY", V.Local.sRet(4).Long, "MULTIPLE", V.Local.sRet(5).Long, "RATE", V.Local.sRet(6).Float, "OVERLAP", V.Local.sRet(7).Long, "WC_FACTOR", V.Local.sRet(8).Float, "LEAD_TIME", V.Local.sRet(9).Float, "PART_WC_OUTSIDE", "*IDF")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Identify Left/Right
+V.Local.sIdentify1.Set(V.DataTable.dtComments(10).Comment!FieldValTrim)
+V.Local.sIdentify2.Set(V.DataTable.dtComments(11).Comment!FieldValTrim)
+'V.Local.sComment.Set(V.DataTable.dtComments(9).Comment!FieldValTrim)
+F.Intrinsic.String.Build("{0}{1}{2}", V.Local.sIdentify1, V.Ambient.NewLine, V.Local.sIdentify2, V.Local.sComment)
+F.Intrinsic.String.StripCharacters(V.Local.sComment, V.Local.sStripped)
+F.Intrinsic.Control.If(V.Local.sStripped, !=, "")
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*IDF'", V.Local.sDTReturn)
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		'should only be one for now
+		V.Local.iRow.Set(V.Local.sDTReturn)
+		F.Intrinsic.String.Build("{0}{1}{1}{2}", V.DataTable.dtRLINES(V.Local.iRow).COMMENT!FieldValTrim, V.Ambient.NewLine, V.Local.sComment, V.Local.sComment)
+		F.Data.DataTable.SetValue("dtRLINES", V.Local.iRow, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.Else
+		V.Local.sOp.Set("")
+		F.Intrinsic.String.Build("CPX{0}", V.Screen.Form_Main!ddlDiam.Text.Trim, V.Local.sOp)
+		F.Intrinsic.String.Build("select RTRIM(DESCRIPTION) as DESCRIPTION, STANDARD_SETUP, STANDARD_RUNTIME, RTRIM(UNIT_MEASURE) as UNIT_MEASURE, FREQUENCY, MULTIPLE, RATE, OVERLAP, WC_FACTOR, STD_LEAD_TIME from V_OP_CODES where MACHINE = '*IDF' and OPERATION = '{0}'", V.Local.sOp, V.Local.sSQL)
+		F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQl, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+			F.Intrinsic.String.Build("Error: No valid opcode '{0}' found for Machine *IDF, Identify step will not be added to router", V.Local.sOp, V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+		F.Intrinsic.Control.Else
+			V.Local.sSeq.Set(V.Local.sTopSeq.++)
+			F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+			F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+			F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "L", "DESC_RT_LINE", V.Local.sRet(0), "COMMENT", V.Local.sComment, "OPERATION", V.Local.sOp, "SET_UP", V.Local.sRet(1).Float, "RUN_TIME", V.Local.sRet(2).Float, "UM_INVENTORY", V.Local.sRet(3), "FREQUENCY", V.Local.sRet(4).Long, "MULTIPLE", V.Local.sRet(5).Long, "RATE", V.Local.sRet(6).Float, "OVERLAP", V.Local.sRet(7).Long, "WC_FACTOR", V.Local.sRet(8).Float, "LEAD_TIME", V.Local.sRet(9).Float, "PART_WC_OUTSIDE", "*IDF")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'----------------------------------Folding
+V.Local.sComment.Set(V.DataTable.dtComments(12).Comment!FieldValTrim)
+F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*FLD'", V.Local.sDTReturn)
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		V.Local.iRow.Set(V.Local.sDTReturn)
+		F.Data.DataTable.SetValue("dtRLINES", V.Local.iRow, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("No folding step found on template router, pinfold will be added as a comment line.")
+		V.Local.sCommentDescription.Set("Folding Instructions")
+		V.Local.sSeq.Set(V.Local.sTopSeq.++)
+		F.Intrinsic.Math.Add(V.Local.sSeq, 1, V.Local.sSeq)
+		F.Data.DataTable.AddRow("dtRLINES", "ROUTER", V.Local.sNewRouterNumber, "LINE_ROUTER", V.Local.sSeq, "LMO", "C", "DESC_RT_LINE", V.Local.sCommentDescription, "COMMENT", V.Local.sComment)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+V.Local.sComment.Set("")
+
+'Here we check if there is an IDF step to determine if the coupling material should go on it or not
+'This has to be last because the IDF step gets added in the stamping and IDF sections here
+F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*IDF'", V.Local.sDTReturn)
+F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+	V.Local.sIDFSteps.Set(V.Local.sDTReturn)
+	V.Local.sComment.Set(V.DataTable.dtComments(0).Comment!FieldValTrim)
+	'remove coupling from other material coment
+	F.Data.DataTable.Select("dtRLINES", "PART_WC_OUTSIDE = '*CPL'", V.Local.sDTReturn)
+	F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+		'material was added on coupling step, should only be one
+		F.Data.DataTable.SetValue("dtRLINES", V.Local.sDTReturn, "Comment", V.Local.sComment)
+	F.Intrinsic.Control.Else
+		'material was added as comment line
+		F.Data.DataTable.Select("dtRLINES", "DESC_RT_LINE = 'Material'", V.Local.sDTReturn)
+		F.Intrinsic.Control.If(V.Local.sDTReturn.Trim, !=, "***NORETURN***")
+			F.Data.DataTable.SetValue("dtRLINES", V.Local.sDTReturn, "Comment", V.Local.sComment)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	V.Local.sComment.Set(V.DataTable.dtComments(1).Comment!FieldValTrim)
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sComment, V.DataTable.dtRLINES(V.Local.sIDFSteps).Comment!FieldValTrim, V.Local.sComment)
+	'should only be one, add coupling to IDF step
+	F.Data.DataTable.SetValue("dtRLINES", V.Local.sIDFSteps, "Comment", V.Local.sComment)
+F.Intrinsic.Control.EndIf
+Program.Sub.AddRouterComments.End
+
+Program.Sub.AddSalesOrderComments.Start
+'here, add the comments added to the router to the sales order
+
+V.Local.iStart.Declare(Long, 1)
+V.Local.sComment.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.iCounter.Declare(Long)
+V.Local.sPart.Declare(String)
+V.Local.sSelect.Declare(String)
+V.Local.bInString.Declare(Boolean)
+V.Local.iIndex.Declare(Long)
+V.Local.iJCounter.Declare(Long)
+V.Local.sLine.Declare(String)
+V.Local.iTemp.Declare(String)
+V.Local.bInStringMade.Declare(Boolean)
+V.Local.bInStringDate.Declare(Boolean)
+V.Local.sTemp.Declare(String)
+
+V.Local.sServiceTest.Declare(String)
+V.Local.sSpecialInstructions.Declare(String)
+V.Local.sPinfold.Declare(String)
+V.Local.sApproval.Declare(String)
+V.Local.sUncoupled.Declare(String)
+V.Local.sIdentify.Declare(String)
+V.Local.sStamping.Declare(String)
+V.Local.sIdentify2.Declare(String)
+
+F.Data.DataTable.Create("dtOrderComments")
+F.Data.DataTable.AddColumn("dtOrderComments", "ORDER_NUM", "String")
+F.Data.DataTable.AddColumn("dtOrderComments", "ORDER_LINE", "String")
+F.Data.DataTable.AddColumn("dtOrderComments", "ORDER_TYPE", "String")
+F.Data.DataTable.AddColumn("dtOrderComments", "TEXT", "String")
+
+'depending on how many items were added to the order, we only need the last 1-3 lines
+'check if two couplings are used
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean.Not)
+
+	F.Intrinsic.Math.Add(V.Local.iStart, 1, V.Local.iStart)
+	
+	F.Intrinsic.Control.If(V.Global.bTwoCouplings)
+		F.Intrinsic.Math.Add(V.Local.iStart, 1, V.Local.iStart)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Sub(V.DataTable.dtOLines.RowCount, V.Local.iStart, V.Local.iStart)
+F.Intrinsic.Control.For(V.Local.iCounter, V.Local.iStart, V.DataTable.dtOLines.RowCount--, 1)
+	'here add the comments
+	'presumably it should be hose, coupling, coupling,
+	F.Intrinsic.String.Build("{0}{1}", V.DataTable.dtOLines(V.Local.iCounter).PartNumber!FieldValTrim, V.DataTable.dtOLines(V.Local.iCounter).PartRev!FieldValTrim, V.Local.sPart)
+
+	F.Intrinsic.Control.SelectCase(V.Local.sPart)
+		F.Intrinsic.Control.Case(V.Screen.Form_Main!txtHose.Text.Trim)
+			'service test
+			'F.Intrinsic.String.Build("Service test: {0}", V.DataTable.dtComments(2).Comment!FieldValTrim, V.Local.sServiceTest)
+			V.Local.sServiceTest.Set(V.DataTable.dtComments(2).Comment!FieldValTrim)
+			
+			'special stencil
+			V.Local.sSpecialInstructions.Set(V.DataTable.dtComments(7).Comment!FieldValTrim)
+			F.Intrinsic.Control.If(V.Local.sSpecialInstructions.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sSpecialInstructions, V.Local.sSpecialInstructions)
+			F.Intrinsic.Control.EndIf
+			
+			'pinfold
+			V.Local.sPinfold.Set(V.DataTable.dtComments(11).Comment!FieldValTrim)
+			F.Intrinsic.Control.If(V.Local.sPinfold.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sPinfold, V.Local.sPinfold)
+			F.Intrinsic.Control.EndIf
+			
+			'approval
+			V.Local.sApproval.Set(V.DataTable.dtComments(4).Comment!FieldValTrim)
+			F.Intrinsic.Control.If(V.Local.sApproval.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sApproval, V.Local.sApproval)
+			F.Intrinsic.Control.EndIf
+			
+			'uncoupled
+			F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean)
+				V.Local.sUncoupled.Set("***UNCOUPLED***")
+			F.Intrinsic.Control.Else
+				V.Local.sUncoupled.Set("")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.Local.sUncoupled.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sUncoupled, V.Local.sUncoupled)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.String.Build("{0}{1}{2}{3}{4}", V.Local.sServiceTest, V.Local.sSpecialInstructions, V.Local.sPinfold, V.Local.sApproval, V.Local.sUncoupled, V.Local.sComment)
+			
+		'left identify (or both)
+		F.Intrinsic.Control.Case(V.Screen.Form_Main!txtPartCpl1.Text.Trim)
+			V.Local.sStamping.Set(V.DataTable.dtComments(8).Comment!FieldValTrim)
+			V.Local.sIdentify.Set(V.DataTable.dtComments(9).Comment!FieldValTrim)
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.Text.Trim, =, "Both Ends", or, V.Screen.Form_Main!txtPartCpl2.Text.Trim, =, "")
+				V.Local.sIdentify2.Set(V.DataTable.dtComments(10).Comment!FieldValTrim)
+				F.Intrinsic.String.Build("{0}{1}{2}", V.Local.sIdentify, V.Ambient.NewLine, V.Local.sIdentify2, V.Local.sIdentify)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Local.sIdentify.Trim, !=, "", and, V.Local.sStamping.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sIdentify, V.Local.sIdentify)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0}{1}", V.Local.sStamping, V.Local.sIdentify, V.Local.sComment)
+			
+		'right identify
+		F.Intrinsic.Control.Case(V.Screen.Form_Main!txtPartCpl2.Text.Trim)
+			V.Local.sStamping.Set(V.DataTable.dtComments(8).Comment!FieldValTrim)
+			V.Local.sIdentify.Set(V.DataTable.dtComments(10).Comment!FieldValTrim)
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.Text.Trim, =, "Both Ends")
+				V.Local.sIdentify2.Set(V.DataTable.dtComments(9).Comment!FieldValTrim)
+				F.Intrinsic.String.Build("{0}{1}{2}", V.Local.sIdentify2, V.Ambient.NewLine, V.Local.sIdentify, V.Local.sIdentify)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Local.sIdentify.Trim, !=, "", and, V.Local.sStamping.Trim, !=, "")
+				F.Intrinsic.String.Build("{0}{1}", V.Ambient.NewLine, V.Local.sIdentify, V.Local.sIdentify)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Build("{0}{1}", V.Local.sStamping, V.Local.sIdentify, V.Local.sComment)
+			
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.If(V.Local.sComment.Trim, !=, "")
+		F.Intrinsic.Math.Add(V.Local.iCounter, 1, V.Local.sLine)
+		F.Intrinsic.String.LPad(V.Local.sLine, "0", 3, V.Local.sLine)
+		F.Intrinsic.String.RPad(V.Local.sLine, "0", 4, V.Local.sLine)
+		F.Data.DataTable.AddRow("dtOrderComments", "ORDER_NUM", V.Global.sOrder, "ORDER_LINE", V.Local.sLine, "ORDER_TYPE", "9999", "TEXT", V.Local.sComment.Trim)
+		V.Local.sComment.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+'might want to delete comments that will be changed first here
+F.Data.DataTable.SaveToDB("dtOrderComments", "Con", "ORDER_LN_TEXT", "ORDER_NUM*!*ORDER_LINE*!*ORDER_TYPE", 256, "ORDER_NUM@!@ORDER_NUM*!*ORDER_LINE@!@ORDER_LINE*!*ORDER_TYPE@!@ORDER_TYPE*!*TEXT@!@TEXT")
+F.Data.DataTable.Close("dtOrderComments")
+F.Data.DataTable.Close("dtRLINESSorted")
+F.Data.DataTable.Close("dtOLines")
+Program.Sub.AddSalesOrderComments.End
+
+Program.Sub.Determine80IDPrice.Start
+F.Intrinsic.Control.Try
+V.Local.sError.Declare
+
+V.Local.fPrice.Declare(Float)
+V.Local.iSlots.Declare(Long)
+V.Local.iEpoxy.Declare(Long, 0)
+V.Local.fEpoxyCost.Declare(Float)
+V.Local.fSlotsCost.Declare(Float)
+V.Local.fTemp.Declare(Float)
+
+'IDENTIFY PRICING
+'One end ? 1 slot ? $3.50
+'Two ends ? 1 slot ? $4.50
+'One end ? 2 slots ? $4.50
+'Two ends ? 2 slots - $9.00
+'Epoxy is to be determined, as a general rule $7.00 per end (1 slot or 2 slots)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Text.Trim, !=, "")
+	F.Intrinsic.Math.Add(V.Local.iSlots, 1, V.Local.iSlots)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2.Text.Trim, !=, "")
+	F.Intrinsic.Math.Add(V.Local.iSlots, 1, V.Local.iSlots)
+F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.Text.Trim, =, "Both Ends")
+	'need to check only one as both are the same
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, =, "Epoxy", OR, V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, =, "Epoxy")
+		V.Local.iEpoxy.Set(2)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	'need to check both
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, =, "Epoxy", OR, V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, =, "Epoxy")
+		F.Intrinsic.Math.Add(V.Local.iEpoxy, 1, V.Local.iEpoxy)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1Cover.Text.Trim, =, "Epoxy", OR, V.Screen.Form_Main!ddlC2S2Cover.Text.Trim, =, "Epoxy")
+		F.Intrinsic.Math.Add(V.Local.iEpoxy, 1, V.Local.iEpoxy)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1.Text.Trim, !=, "")
+		F.Intrinsic.Math.Add(V.Local.iSlots, 1, V.Local.iSlots)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2.Text.Trim, !=, "")
+		F.Intrinsic.Math.Add(V.Local.iSlots, 1, V.Local.iSlots)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Local.iSlots)
+	F.Intrinsic.Control.Case(1)
+		V.Local.fSlotsCost.Set(3.50)
+	F.Intrinsic.Control.Case(2)
+		V.Local.fSlotsCost.Set(4.50)
+	F.Intrinsic.Control.Case(4)
+		V.Local.fSlotsCost.Set(9)
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Math.Mult(V.Local.iEpoxy, 7.00, V.Local.fEpoxyCost)
+F.Intrinsic.Math.Add(V.Local.fEpoxyCost, V.Local.fSlotsCost, V.Local.fPrice)
+
+V.Local.fTemp.Set(V.Screen.Form_Main!txtStencilPrice.Text.Trim)
+F.Intrinsic.Math.Add(V.Local.fPrice, V.Local.fTemp, V.Local.fPrice)
+V.Local.fTemp.Set(V.Screen.Form_Main!txtStampPrice.Text.Trim)
+F.Intrinsic.Math.Add(V.Local.fPrice, V.Local.fTemp, V.Local.fPrice)
+
+F.Intrinsic.Variable.AddRV("Price", V.Local.fPrice)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Determine80IDPrice.End
+
+Program.Sub.GenerateRouterNumber.Start
+'here we make a new name for the router / part.
+'The name is a Z followed by the hose name, followed by the threading of each coupling (character 5 and 6), followed by a counter
+V.Local.sThreading1.Declare(String)
+V.Local.sThreading2.Declare(String)
+V.Local.sHose.Declare(String)
+V.Local.sRouter.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iLength.Declare(String)
+V.Local.sCounter.Declare(String)
+V.Local.bDone.Declare(Boolean)
+V.Local.sRouterTemp.Declare(String)
+
+V.Local.sHose.Set(V.Screen.Form_Main!txtHose.Text.Trim)
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean)
+	V.Local.sThreading1.Set("")
+	V.Local.sThreading2.Set("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Mid(V.Screen.Form_Main!txtPartCpl1.Text.Trim, 5, 2, V.Local.sThreading1)
+	F.Intrinsic.Control.If(V.Global.bTwoCouplings)
+		F.Intrinsic.String.Mid(V.Screen.Form_Main!txtPartCpl2.Text.Trim, 5, 2, V.Local.sThreading2)
+	F.Intrinsic.Control.Else
+		V.Local.sThreading2.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Z{0}{1}{2}", V.Local.sHose, V.Local.sThreading1, V.Local.sThreading2, V.Local.sRouter)
+'F.Intrinsic.Math.Sub(20, V.Local.sRouter.Length, V.Local.iLength)
+F.Intrinsic.Math.Sub(17, V.Local.sRouter.Length, V.Local.iLength)
+
+'this could be more efficient
+V.Local.sCounter.Set(-1)
+F.Intrinsic.Control.DoUntil(V.Local.bDone, =, True)
+	F.Intrinsic.Math.Add(V.Local.sCounter, 1, V.Local.sCounter)
+	F.Intrinsic.String.LPad(V.Local.sCounter, "0", V.Local.iLength, V.Local.sCounter)
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sRouter, V.Local.sCounter, V.Local.sRouterTemp)
+	F.Intrinsic.String.Build("select RTRIM(ROUTER) as ROUTER from V_ROUTER_HEADER where ROUTER = '{0}'", V.Local.sRouterTemp, V.Local.sSQL)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		V.Local.bDone.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Loop
+V.Local.sRouter.Set(V.Local.sRouterTemp)
+
+F.Intrinsic.Variable.AddRV("Router", V.Local.sRouter)
+Program.Sub.GenerateRouterNumber.End
+
+Program.Sub.chkNoCoupling_Click.Start
+GUI.Form_Main.frameCpl.Enabled(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean.Not)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean, =, False)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtCpl1UM.Text.Trim,=,"EA")
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"1")
+			GUI.Form_Main.frameCpl2.Enabled(True)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!txtCpl1UM.Text.Trim,=,"ST")
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"0.5")
+			GUI.Form_Main.frameCpl2.Enabled(True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	GUI.Form_Main.frameIdentify.Enabled(False)
+	GUI.Form_Main.frameMarking.Enabled(False)
+	GUI.Form_Main.frameCpl2.Enabled(False)
+	
+	GUI.Form_Main.chkIdentify.Value(0)
+	GUI.Form_Main.chkStamp.Value(0)
+	
+	GUI.Form_Main.txtPartCpl1.Text("")
+	GUI.Form_Main.txtPartCpl2.Text("")
+	GUI.Form_Main.txtCpl1UM.Text("")
+	GUI.Form_Main.txtCpl2UM.Text("")
+	GUI.Form_Main.ddlQtyPP1.ListIndex(-1)
+	GUI.Form_Main.ddlQtyPP2.ListIndex(-1)
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+	GUI.Form_Main.txtCplType.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(chkIdentify_Click)
+F.Intrinsic.Control.CallSub(chkStamp_Click)
+F.Intrinsic.Control.CallSub(CheckDropDowns)
+Program.Sub.chkNoCoupling_Click.End
+
+Program.Sub.txtHoseDateMonth_LostFocus.Start
+V.Local.dDate.Declare(Date)
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtHoseDateMonth.Text.Trim, =, "")
+	F.Intrinsic.Date.DateAdd("M", 1, V.Ambient.Date, V.Local.dDate)
+	GUI.Form_Main.txtHoseDateMonth.Text(V.Local.dDate.FormatMM)
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!txtHoseDateMonth.Text.Trim, >, 12)
+	GUI.Form_Main.txtHoseDateMonth.Text(12)
+F.Intrinsic.Control.ElseIf(V.Screen.Form_Main!txtHoseDateMonth.Text.Trim, <, 1)
+	GUI.Form_Main.txtHoseDateMonth.Text(1)
+F.Intrinsic.Control.EndIf
+Program.Sub.txtHoseDateMonth_LostFocus.End
+
+Program.Sub.txtHoseDateyear_LostFocus.Start
+V.Local.dDate.Declare(Date)
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtHoseDateYear.Text.Trim, =, "")
+	F.Intrinsic.Date.DateAdd("M", 1, V.Ambient.Date, V.Local.dDate)
+	GUI.Form_Main.txtHoseDateYear.Text(V.Local.dDate.FormatYY)
+F.Intrinsic.Control.EndIf
+Program.Sub.txtHoseDateyear_LostFocus.End
+
+Program.Sub.UploadOrder.Start
+V.Local.sSQL.Declare(String)
+V.Local.sOrder.Declare(String)
+
+V.Local.sOrder.Set(V.Args.Order.Trim)
+GUI.Form_Main.progressBar1.Value(65)
+GUI.Form_Main.lblStatus.Text("Uploading Order...")
+F.Intrinsic.Control.CallSub(CheckParamsTxt)
+F.Intrinsic.Control.CallSub(ORDUPLCreateFile)
+
+'delete the original
+F.Intrinsic.String.Build("Delete from ORDER_HEADER where ORDER_NO = '{0}'", V.Local.sOrder, V.Local.sSQL)
+F.ODBC.Connection!Con.Execute(V.Local.sSQL)
+
+F.Intrinsic.Control.CallSub(ORDUPLSync)
+
+GUI.Form_Main..AlwaysOnTop(True)
+GUI.Form_Main..AlwaysOnTop(False)
+Program.Sub.UploadOrder.End
+
+Program.Sub.CheckUpload.Start
+'check if the order was successfully uploaded
+
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sPath.Declare(String)
+V.Local.bExists.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sError.Declare(String)
+
+F.Intrinsic.String.Build("select ORDER_NO from V_ORDER_HEADER where ORDER_NO = '{0}'", V.Global.sOrder, V.Local.sSQL)
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+
+'upload failed, get details
+F.Intrinsic.String.Build("{0}\ORDUP{1}.ERR", V.Caller.FilesDir, V.Caller.CompanyCode, V.Local.sPath)
+F.Intrinsic.File.Exists(V.Local.sPath, V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		F.Intrinsic.File.File2String(V.Local.sPath, V.Local.sFile)
+		F.Intrinsic.String.Split(V.Local.sFile, "ERROR:", V.Local.sFile)
+		V.Local.sError.Set(V.Local.sFile(V.Local.sFile.UBound))
+		F.Intrinsic.String.RegExReplace(V.Local.sError, " {2,}", " ", True, True, V.Local.sError)
+		F.Intrinsic.String.Replace(V.Local.sError, "|", " ", V.Local.sError)
+		F.Intrinsic.String.Build("Order upload failed with error message:{0}{1}{0}Order was unable to be rebuilt.", V.Ambient.NewLine, V.Local.sError, V.Local.sError)
+		F.Intrinsic.UI.MsgBox(V.Local.sError)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Order was unable to be rebuilt.")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(Form_Main_UnLoad)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Order added successfully")
+F.Intrinsic.Control.EndIf
+Program.Sub.CheckUpload.End
+
+Program.Sub.CheckDropDowns.Start
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.ListCount, =, 0)
+'	GUI.Form_Main.ddlC1S1Cover.Enabled(False)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.ddlC1S1Cover.Enabled(True)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2Cover.ListCount, =, 0)
+'	GUI.Form_Main.ddlC1S2Cover.Enabled(False)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.ddlC1S2Cover.Enabled(True)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1Cover.ListCount, =, 0)
+'	GUI.Form_Main.ddlC2S1Cover.Enabled(False)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.ddlC2S1Cover.Enabled(True)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2Cover.ListCount, =, 0)
+'	GUI.Form_Main.ddlC2S2Cover.Enabled(False)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.ddlC2S2Cover.Enabled(True)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo1.ListCount, =, 0)
+'	GUI.Form_Main.ddlLogo1.ListIndex(-1)
+'	GUI.Form_Main.ddlLogo1.Enabled(False)
+'F.Intrinsic.Control.EndIf
+
+''these two have blank rows
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo2.ListCount, =, 1)
+'	GUI.Form_Main.ddlLogo2.ListIndex(-1)
+'	GUI.Form_Main.ddlLogo2.Enabled(False)
+'F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.If(V.Screen.Form_Main!ddlLogo3.ListCount, =, 1)
+'	GUI.Form_Main.ddlLogo3.ListIndex(-1)
+'	GUI.Form_Main.ddlLogo3.Enabled(False)
+'F.Intrinsic.Control.EndIf
+
+'Clear some stuff if necessary
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S1.Enabled.Not)
+	GUI.Form_Main.txtC1S1.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S2.Enabled.Not)
+	GUI.Form_Main.txtC1S2.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S1.Enabled.Not)
+	GUI.Form_Main.txtC2S1.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S2.Enabled.Not)
+	GUI.Form_Main.txtC2S2.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.Enabled.Not)
+	GUI.Form_Main.ddlC1S1Cover.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2Cover.Enabled.Not)
+	GUI.Form_Main.ddlC1S2Cover.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1Cover.Enabled.Not)
+	GUI.Form_Main.ddlC2S1Cover.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2Cover.Enabled.Not)
+	GUI.Form_Main.ddlC2S2Cover.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.Enabled.Not)
+	GUI.Form_Main.ddlCode1.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode2.Enabled.Not)
+	GUI.Form_Main.ddlCode2.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Enabled.Not)
+	GUI.Form_Main.ddlC1S1.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2.Enabled.Not)
+	GUI.Form_Main.ddlC1S2.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1.Enabled.Not)
+	GUI.Form_Main.ddlC2S1.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2.Enabled.Not)
+	GUI.Form_Main.ddlC2S2.ListIndex(-1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.bLoadScreen)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(V.Screen.Form_Main!frameCpl2.Enabled.Not)
+	GUI.Form_Main.txtPartCpl2.Text("")
+	GUI.Form_Main.txtCpl2UM.Text("")
+	GUI.Form_Main.ddlQtyPP2.ClearItems
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+f.Intrinsic.Control.EndIf
+Program.Sub.CheckDropDowns.End
+
+Program.Sub.LoadSavedScreen.Start
+V.Local.sScreen.Declare(String)
+V.Local.sPath.Declare(String)
+V.Local.bExists.Declare(Boolean)
+
+F.Intrinsic.String.Build("{0}\Custom\4908\Screens", V.Caller.GlobalDir, V.Local.sPath)
+F.Intrinsic.File.DirExists(V.Local.sPath, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	F.Intrinsic.File.CreateDir(V.Local.sPath)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("{0}\Screen-{1}-{2}.txt", V.Local.sPath, V.Caller.Terminal, V.Global.sOrder, V.Local.sPath)
+F.Intrinsic.File.Exists(V.Local.sPath, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.File.File2String(V.Local.sPath, V.Local.sScreen)
+F.Intrinsic.String.Split(V.Local.sScreen, "*&#!#&*", V.Local.sScreen)
+
+V.Global.bLoadScreen.Set(True)
+V.Global.sHose.Set(V.Local.sScreen(0))
+GUI.Form_Main.txtHose.Text(V.Local.sScreen(0))
+'GUI.Form_Main.ddlClass.Text(V.Local.sScreen(1))
+'GUI.Form_Main.ddlDiam.Text(V.Local.sScreen(2))
+'GUI.Form_Main.cboLength.Text(V.Local.sScreen(3))
+'GUI.Form_Main.ddlAssy.Text(V.Local.sScreen(4))
+'GUI.Form_Main.ddlColor.Text(V.Local.sScreen(5))
+F.Intrinsic.Control.CallSub(txtHose_LostFocus)
+GUI.Form_Main.ddlLogo1.Text(V.Local.sScreen(6))
+GUI.Form_Main.chkLogo2.Value(V.Local.sScreen(7))
+GUI.Form_Main.ddlLogo2.Text(V.Local.sScreen(8))
+GUI.Form_Main.chkLogo3.Value(V.Local.sScreen(9))
+GUI.Form_Main.ddlLogo3.Text(V.Local.sScreen(10))
+GUI.Form_Main.txtSrvTst.Text(V.Local.sScreen(11))
+GUI.Form_Main.txtTrName.Text(V.Local.sScreen(12))
+GUI.Form_Main.ddlApproval.Text(V.Local.sScreen(13))
+GUI.Form_Main.txtHoseQty.Text(V.Local.sScreen(14))
+GUI.Form_Main.chk1.Value(V.Local.sScreen(15))
+GUI.Form_Main.chkSpec.Value(V.Local.sScreen(16))
+GUI.Form_Main.txtPinfold.Text(V.Local.sScreen(17))
+GUI.Form_Main.txtHoseDateMonth.Text(V.Local.sScreen(18))
+GUI.Form_Main.txtHoseDateYear.Text(V.Local.sScreen(19))
+GUI.Form_Main.chkNoCoupling.Value(V.Local.sScreen(20))
+GUI.Form_Main.txtSpecIns.Text(V.Local.sScreen(21))
+GUI.Form_Main.txtPartCpl1.Text(V.Local.sScreen(22))
+F.Intrinsic.Control.CallSub(txtPartCpl1_LostFocus)
+GUI.Form_Main.txtCpl1UM.Text(V.Local.sScreen(23))
+GUI.Form_Main.txtCpl1OrderQty.Text(V.Local.sScreen(25))
+GUI.Form_Main.txtCplType.Text(V.Local.sScreen(26))
+GUI.Form_Main.chkStamp.Value(V.Local.sScreen(27))
+GUI.Form_Main.chkIdentify.Value(V.Local.sScreen(28))
+GUI.Form_Main.txtPartCpl2.Text(V.Local.sScreen(29))
+F.Intrinsic.Control.CallSub(txtPartCpl2_LostFocus)
+GUI.Form_Main.txtCpl2UM.Text(V.Local.sScreen(30))
+GUI.Form_Main.txtCpl2OrderQty.Text(V.Local.sScreen(32))
+GUI.Form_Main.txtMark.Text(V.Local.sScreen(33))
+GUI.Form_Main.ddlCode1.Text(V.Local.sScreen(34))
+GUI.Form_Main.ddlC1S1.Text(V.Local.sScreen(35))
+GUI.Form_Main.ddlC1S1Cover.Text(V.Local.sScreen(36))
+GUI.Form_Main.ddlC1S2.Text(V.Local.sScreen(37))
+GUI.Form_Main.ddlC1S2Cover.Text(V.Local.sScreen(38))
+GUI.Form_Main.txtC1S1.Text(V.Local.sScreen(39))
+GUI.Form_Main.txtC1S2.Text(V.Local.sScreen(40))
+GUI.Form_Main.ddlCode2.Text(V.Local.sScreen(41))
+GUI.Form_Main.ddlC2S1.Text(V.Local.sScreen(42))
+GUI.Form_Main.ddlC2S1Cover.Text(V.Local.sScreen(43))
+GUI.Form_Main.ddlC2S2.Text(V.Local.sScreen(44))
+GUI.Form_Main.ddlC2S2Cover.Text(V.Local.sScreen(45))
+GUI.Form_Main.txtC2S1.Text(V.Local.sScreen(46))
+GUI.Form_Main.txtC2S2.Text(V.Local.sScreen(47))
+
+F.Intrinsic.Control.If(V.Local.sScreen.UBound, >, 47)
+	GUI.Form_Main.chkPinFold.Value(V.Local.sScreen(48))
+	F.Intrinsic.Control.CallSub(chkPinFold_Click)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sScreen.UBound, >, 48)
+	GUI.Form_Main.chkStencilPrice.Value(V.Local.sScreen(49))
+	GUI.Form_Main.txtStencilPrice.Text(V.Local.sScreen(50))
+	GUI.Form_Main.chkStampPrice.Value(V.Local.sScreen(51))
+	GUI.Form_Main.txtStampPrice.Text(V.Local.sScreen(52))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sScreen.UBound, >, 52)
+	GUI.Form_Main.chkCouplingOnly.Value(V.Local.sScreen(53))
+	F.Intrinsic.Control.CallSub(chkCouplingOnly_Click)
+F.Intrinsic.Control.EndIf
+
+GUI.Form_Main.ddlQtyPP1.Text(V.Local.sScreen(24))
+GUI.Form_Main.ddlQtyPP2.Text(V.Local.sScreen(31))
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+	GUI.Form_Main.lblCplAssocError.Visible(False)
+	GUI.Form_Main.lblCplAssocError2.Visible(False)
+	GUI.Form_Main.lblAssocError.Visible(False)
+	GUI.Form_Main.lblHoseError.Visible(False)
+	
+	F.Intrinsic.Control.If(V.Local.sScreen.UBound, >, 53)
+		GUI.Form_Main.txtCpl1OrderQty.Text(V.Local.sScreen(54))
+		GUI.Form_Main.txtCpl2OrderQty.Text(V.Local.sScreen(55))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.bLoadScreen.Set(False)
+Program.Sub.LoadSavedScreen.End
+
+Program.Sub.SaveScreen.Start
+V.Local.sScreen.Declare(String)
+V.Local.sPath.Declare(String)
+V.Local.bExists.Declare(Boolean)
+
+F.Intrinsic.String.Build("{0}*&#!#&*{1}*&#!#&*{2}*&#!#&*{3}*&#!#&*{4}*&#!#&*{5}*&#!#&*{6}*&#!#&*{7}*&#!#&*{8}*&#!#&*{9}*&#!#&*{10}*&#!#&*{11}*&#!#&*{12}*&#!#&*{13}*&#!#&*{14}*&#!#&*{15}*&#!#&*{16}*&#!#&*{17}*&#!#&*{18}*&#!#&*{19}*&#!#&*{20}*&#!#&*{21}*&#!#&*{22}*&#!#&*{23}*&#!#&*{24}*&#!#&*{25}*&#!#&*{26}*&#!#&*{27}*&#!#&*{28}*&#!#&*{29}*&#!#&*{30}*&#!#&*{31}*&#!#&*{32}*&#!#&*{33}*&#!#&*{34}*&#!#&*{35}*&#!#&*{36}*&#!#&*{37}*&#!#&*{38}*&#!#&*{39}*&#!#&*{40}*&#!#&*{41}*&#!#&*{42}*&#!#&*{43}*&#!#&*{44}*&#!#&*{45}*&#!#&*{46}*&#!#&*{47}*&#!#&*{48}*&#!#&*{49}*&#!#&*{50}*&#!#&*{51}*&#!#&*{52}*&#!#&*{53}*&#!#&*{54}*&#!#&*{55}", V.Screen.Form_Main!txtHose.Text.Trim, V.Screen.Form_Main!ddlClass.Text.Trim, V.Screen.Form_Main!ddlDiam.Text.Trim, V.Screen.Form_Main!cboLength.Text.Trim, V.Screen.Form_Main!ddlAssy.Text.Trim, V.Screen.Form_Main!ddlColor.Text.Trim, V.Screen.Form_Main!ddlLogo1.Text.Trim, V.Screen.Form_Main!chkLogo2.checkedAsBoolean, V.Screen.Form_Main!ddlLogo2.Text.Trim, V.Screen.Form_Main!chkLogo3.checkedAsBoolean, V.Screen.Form_Main!ddlLogo3.Text.Trim, V.Screen.Form_Main!txtSrvTst.Text.Trim, V.Screen.Form_Main!txtTrName.Text.Trim, V.Screen.Form_Main!ddlApproval.Text.Trim, V.Screen.Form_Main!txtHoseQty.Text.Trim, V.Screen.Form_Main!chk1.checkedAsBoolean, V.Screen.Form_Main!chkSpec.checkedAsBoolean, V.Screen.Form_Main!txtPinfold.Text.Trim, V.Screen.Form_Main!txtHoseDateMonth.Text.Trim, V.Screen.Form_Main!txtHoseDateYear.Text.Trim, V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean, V.Screen.Form_Main!txtSpecIns.Text.Trim, V.Screen.Form_Main!txtPartCpl1.Text.Trim, V.Screen.Form_Main!txtCpl1UM.Text.Trim, V.Screen.Form_Main!ddlQtyPP1.Text.Trim, V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim, V.Screen.Form_Main!txtCplType.Text.Trim, V.Screen.Form_Main!chkStamp.checkedAsBoolean, V.Screen.Form_Main!chkIdentify.checkedAsBoolean, V.Screen.Form_Main!txtPartCpl2.Text.Trim, V.Screen.Form_Main!txtCpl2UM.Text.Trim, V.Screen.Form_Main!ddlQtyPP2.Text.Trim, V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim, V.Screen.Form_Main!txtMark.Text.Trim, V.Screen.Form_Main!ddlCode1.Text.Trim, V.Screen.Form_Main!ddlC1S1.Text.Trim, V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, V.Screen.Form_Main!ddlC1S2.Text.Trim, V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, V.Screen.Form_Main!txtC1S1.Text.Trim, V.Screen.Form_Main!txtC1S2.Text.Trim, V.Screen.Form_Main!ddlCode2.Text.Trim, V.Screen.Form_Main!ddlC2S1.Text.Trim, V.Screen.Form_Main!ddlC2S1Cover.Text.Trim, V.Screen.Form_Main!ddlC2S2.Text.Trim, V.Screen.Form_Main!ddlC2S2Cover.Text.Trim, V.Screen.Form_Main!txtC2S1.Text.Trim, V.Screen.Form_Main!txtC2S2.Text.Trim, V.Screen.Form_Main!chkPinFold.checkedAsBoolean, V.Screen.Form_Main!chkStencilPrice.checkedAsBoolean, V.Screen.Form_Main!txtStencilPrice.Text.Trim, V.Screen.Form_Main!chkStampPrice.checkedAsBoolean, V.Screen.Form_Main!txtStampPrice.Text.Trim, V.Screen.Form_Main!chkCouplingOnly.checkedAsBoolean, V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim,   V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim, V.Local.sScreen)
+
+F.Intrinsic.String.Build("{0}\Custom\4908\Screens", V.Caller.GlobalDir, V.Local.sPath)
+F.Intrinsic.File.DirExists(V.Local.sPath, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+	F.Intrinsic.File.CreateDir(V.Local.sPath)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("{0}\Screen-{1}-{2}.txt", V.Local.sPath, V.Caller.Terminal, V.Global.sOrder, V.Local.sPath)
+F.Intrinsic.File.Exists(V.Local.sPath, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.File.DeleteFile(V.Local.sPath)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.File.String2File(V.Local.sPath, V.Local.sScreen)
+Program.Sub.SaveScreen.End
+
+Program.Sub.cmdClear_Click.Start
+'clear
+GUI.Form_Main.cboLength.Text("")
+GUI.Form_Main.chk1.Value(1)
+GUI.Form_Main.chkIdentify.Value(0)
+GUI.Form_Main.chkLogo2.Value(0)
+GUI.Form_Main.chkLogo3.Value(0)
+GUI.Form_Main.chkNoCoupling.Value(0)
+GUI.Form_Main.chkSpec.Value(0)
+GUI.Form_Main.chkStamp.Value(0)
+GUI.Form_Main.ddlApproval.ListIndex(0)
+GUI.Form_Main.ddlAssy.Text("")
+GUI.Form_Main.ddlC1S1.Text("")
+GUI.Form_Main.ddlC1S1Cover.Text("")
+GUI.Form_Main.ddlC1S2.Text("")
+GUI.Form_Main.ddlC1S2Cover.Text("")
+GUI.Form_Main.ddlC2S1.Text("")
+GUI.Form_Main.ddlC2S1Cover.Text("")
+GUI.Form_Main.ddlC2S2.Text("")
+GUI.Form_Main.ddlC2S2Cover.Text("")
+GUI.Form_Main.ddlClass.ListIndex(0)
+GUI.Form_Main.ddlColor.Text("")
+GUI.Form_Main.ddlDiam.ListIndex(0)
+GUI.Form_Main.ddlLogo1.Text("")
+GUI.Form_Main.ddlLogo2.Text("")
+GUI.Form_Main.ddlLogo3.Text("")
+GUI.Form_Main.ddlQtyPP1.Text("")
+GUI.Form_Main.ddlQtyPP2.Text("")
+GUI.Form_Main.txtC1S1.Text("")
+GUI.Form_Main.txtC1S2.Text("")
+GUI.Form_Main.txtC2S1.Text("")
+GUI.Form_Main.txtC2S2.Text("")
+GUI.Form_Main.txtCpl1OrderQty.Text("")
+GUI.Form_Main.txtCpl1UM.Text("")
+GUI.Form_Main.txtCpl2OrderQty.Text("")
+GUI.Form_Main.txtCpl2UM.Text("")
+GUI.Form_Main.txtCplType.Text("")
+GUI.Form_Main.txtHose.Text("")
+GUI.Form_Main.txtHoseDateMonth.Text("")
+GUI.Form_Main.txtHoseDateyear.Text("")
+GUI.Form_Main.txtHoseQty.Text("")
+GUI.Form_Main.txtMark.Text("")
+GUI.Form_Main.txtPartCpl1.Text("")
+GUI.Form_Main.txtPartCpl2.Text("")
+GUI.Form_Main.txtPinfold.Text("")
+GUI.Form_Main.txtSpecIns.Text("")
+GUI.Form_Main.txtSrvTst.Text("")
+GUI.Form_Main.txtTrName.Text("")
+
+GUI.Form_Main.lblHoseError.Caption("")
+GUI.Form_Main.lblHoseError.Visible(False)
+GUI.Form_Main.lblAssocError.Caption("")
+GUI.Form_Main.lblAssocError.Visible(False)
+
+GUI.Form_Main.ddlCode1.ListIndex(-1)
+GUI.Form_Main.ddlCode2.ListIndex(0)
+
+GUI.Form_Main.ddlQtyPP1.ClearItems
+GUI.Form_Main.ddlQtyPP2.ClearItems
+
+GUI.Form_Main.lblCplAssocError.Visible(False)
+GUI.Form_Main.lblCplAssocError2.Visible(False)
+
+F.Intrinsic.Control.CallSub(txtHoseDateyear_LostFocus)
+F.Intrinsic.Control.CallSub(txtHoseDateMonth_LostFocus)
+F.Intrinsic.Control.CallSub(ddlQtyPP1_Click)
+F.Intrinsic.Control.CallSub(ddlQtyPP2_Click)
+
+GUI.Form_Main.chkStencilPrice.Value(0)
+F.Intrinsic.Control.CallSub(chkStencilPrice_Click)
+
+GUI.Form_Main.chkStampPrice.Value(0)
+F.Intrinsic.Control.CallSub(chkStampPrice_Click)
+
+GUI.Form_Main.chkCouplingOnly.Value(0)
+F.Intrinsic.Control.CallSub(chkCouplingOnly_Click)
+
+'GUI.Form_Main.ddlLogo1.Text("MERCEDES")
+'F.Intrinsic.Control.CallSub(ddlLogo1_Click)
+
+GUI.Form_Main.ddlLogo1.ListIndex(-1)
+F.Intrinsic.Control.CallSub(ddlLogo1_Click)
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.StopUpload.Start
+F.Intrinsic.Control.If(V.DataTable.dtOrderComments.Exists)
+	F.Data.DataTable.Close("dtOrderComments")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtOrderLines.Exists)
+	F.Data.DataTable.Close("dtOrderLines")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtOLines.Exists)
+	F.Data.DataTable.Close("dtOLines")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtRLINES.Exists)
+	F.Data.DataTable.Close("dtRLINES")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtRLINESSorted.Exists)
+	F.Data.DataTable.Close("dtRLINESSorted")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtComments.Exists)
+	F.Data.DataTable.Close("dtComments")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.DeleteRow("ORDUPL")
+F.Data.DataTable.AcceptChanges("ORDUPL")
+
+F.Data.DataTable.DeleteRow("ORDUPLExtra")
+F.Data.DataTable.AcceptChanges("ORDUPLExtra")
+
+F.Data.DataTable.DeleteRow("ORDUPLLines")
+F.Data.DataTable.AcceptChanges("ORDUPLLines")
+
+F.Data.DataTable.DeleteRow("6021")
+F.Data.DataTable.AcceptChanges("6021")
+
+GUI.Form_Main.progressBar1.Visible(False)
+GUI.Form_Main.lblStatus.Visible(False)
+GUI.Form_Main..Enabled(True)
+
+'GUI.Form_Main.timer1.Enabled(False)
+
+V.Global.bStop.Set(False)
+Program.Sub.StopUpload.End
+
+Program.Sub.CheckTwoCouplings.Start
+V.Local.sUM.Declare(String)
+V.Local.bTwoCouplings.Declare(Boolean, False)
+
+'check if two couplings are used
+V.Local.sUM.Set(V.Screen.Form_Main!txtCpl1UM.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sUM,=,"EA")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"1")
+		V.Local.bTwoCouplings.Set(True)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.ElseIf(V.Local.sUM,=,"ST")
+	F.Intrinsic.Control.If(V.Screen.Form_Main!ddlQtyPP1.Text.Trim,=,"0.5")
+		V.Local.bTwoCouplings.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.bTwoCouplings.Set(V.Local.bTwoCouplings)
+Program.Sub.CheckTwoCouplings.End
+
+Program.Sub.HoseChange.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!txtHose.Text.Trim, !=, V.Global.sHose.Trim)
+	GUI.Form_Main.chkIdentify.Value(0)
+	GUI.Form_Main.chkSpec.Value(0)
+	GUI.Form_Main.chkStamp.Value(0)
+	GUI.Form_Main.chk1.Value(0)
+	
+	GUI.Form_Main.txtPartCpl1.Text("")
+	F.Intrinsic.Control.CallSub(txtPartCpl1_LostFocus)
+	GUI.Form_Main.ddlQtyPP1.Text("")
+	'F.Intrinsic.Control.CallSub(ddlQtyPP1_Click)
+	GUI.Form_Main.txtCpl1OrderQty.Text("")
+	GUI.Form_Main.txtCpl1UM.Text("")
+	
+	GUI.Form_Main.txtPartCpl2.Text("")
+	F.Intrinsic.Control.CallSub(txtPartCpl2_LostFocus)
+	GUI.Form_Main.ddlQtyPP1.Text("")
+	'F.Intrinsic.Control.CallSub(ddlQtyPP2_Click)
+	GUI.Form_Main.txtCpl2OrderQty.Text("")
+	GUI.Form_Main.txtCpl2UM.Text("")
+	
+	GUI.Form_Main.txtCplType.Text("")
+	GUI.Form_Main.frameCpl2.Enabled(False)
+	
+	F.Intrinsic.Control.CallSub(CheckDropDowns)
+F.Intrinsic.Control.EndIf
+Program.Sub.HoseChange.End
+
+Program.Sub.txtHoseQty_Change.Start
+F.Intrinsic.Control.CallSub(ddlQtyPP1_Click)
+F.Intrinsic.Control.CallSub(ddlQtyPP2_Click)
+Program.Sub.txtHoseQty_Change.End
+
+Program.Sub.PreRunCheck.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+	'check hose
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtHose.Text.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Error: No hose entered")
+		'F.Intrinsic.Control.CallSub(StopUpload)
+		
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'check hose quantity
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtHoseQty.Text.Trim, =, "", or, V.Screen.Form_Main!txtHoseQty.Text.Trim, =, 0)
+		F.Intrinsic.UI.Msgbox("Error: No hose quantity entered")
+		'F.Intrinsic.Control.CallSub(StopUpload)
+		V.Global.bStop.Set(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkNoCoupling.checkedAsBoolean.Not)
+	
+	'check first coupling
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtPartCpl1.Text.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Error: No coupling entered")
+		V.Global.bStop.Set(True)
+		'F.Intrinsic.Control.CallSub(StopUpload)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'check first coupling quantity
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim, =, "", or, V.Screen.Form_Main!txtCpl1OrderQty.Text.Trim, =, 0)
+		F.Intrinsic.UI.Msgbox("Error: No coupling quantity entered")
+		V.Global.bStop.Set(True)
+		'F.Intrinsic.Control.CallSub(StopUpload)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.CallSub(CheckTwoCouplings)
+	
+	F.Intrinsic.Control.If(V.Global.bTwoCouplings)
+		'check second coupling
+		F.Intrinsic.Control.If(V.Screen.Form_Main!txtPartCpl2.Text.Trim, =, "")
+			F.Intrinsic.UI.Msgbox("Error: No second coupling entered")
+			V.Global.bStop.Set(True)
+			'F.Intrinsic.Control.CallSub(StopUpload)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		'check second coupling quantity
+		F.Intrinsic.Control.If(V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim, =, "", or, V.Screen.Form_Main!txtCpl2OrderQty.Text.Trim, =, 0)
+			F.Intrinsic.UI.Msgbox("Error: No second coupling quantity entered")
+			V.Global.bStop.Set(True)
+			'F.Intrinsic.Control.CallSub(StopUpload)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'check stamping
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkStamp.CheckedAsBoolean)
+		F.Intrinsic.Control.If(V.Screen.Form_Main!txtMark.Text.Trim, =, "")
+			F.Intrinsic.UI.Msgbox("Error: No stamping instructions entered")
+			V.Global.bStop.Set(True)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Screen.Form_Main!chkStampPrice.checkedAsBoolean)
+			F.Intrinsic.Control.If(V.Screen.Form_Main!txtStampPrice.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: Stamp pricing selected but none entered")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'check identify
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkIdentify.CheckedAsBoolean)
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlCode1.Text.Trim, =, "")
+			F.Intrinsic.UI.Msgbox("Error: No identify instructions entered")
+			V.Global.bStop.Set(True)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Text.Trim, =, "", and, V.Screen.Form_Main!ddlC1S2.Text.Trim, =, "", V.Screen.Form_Main!ddlC1S2.Text.Trim, =, "", V.Screen.Form_Main!ddlC2S2.Text.Trim, =, "")
+			F.Intrinsic.UI.Msgbox("Error: No slots selected")
+			V.Global.bStop.Set(True)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		'check special text / covers
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1.Text.Trim, =, "Stamped", OR, V.Screen.Form_Main!ddlC1S1.Text.Trim, =, "Text Only", V.Screen.Form_Main!ddlC1S1.Text.Trim, =, "Bar Code")
+			F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S1.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No text entered for coupling 1 slot 1")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S1Cover.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No cover selected for coupling 1 slot 1")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2.Text.Trim, =, "Stamped", OR, V.Screen.Form_Main!ddlC1S2.Text.Trim, =, "Text Only", V.Screen.Form_Main!ddlC1S2.Text.Trim, =, "Bar Code")
+			F.Intrinsic.Control.If(V.Screen.Form_Main!txtC1S2.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No text entered for coupling 1 slot 2")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC1S2Cover.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No cover selected for coupling 1 slot 2")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1.Text.Trim, =, "Stamped", OR, V.Screen.Form_Main!ddlC2S1.Text.Trim, =, "Text Only", V.Screen.Form_Main!ddlC2S1.Text.Trim, =, "Bar Code")
+			F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S1.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No text entered for coupling 2 slot 1")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S1Cover.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No cover selected for coupling 2 slot 1")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2.Text.Trim, =, "Stamped", OR, V.Screen.Form_Main!ddlC2S2.Text.Trim, =, "Text Only", V.Screen.Form_Main!ddlC2S2.Text.Trim, =, "Bar Code")
+			F.Intrinsic.Control.If(V.Screen.Form_Main!txtC2S2.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No text entered for coupling 2 slot 2")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Control.If(V.Screen.Form_Main!ddlC2S2Cover.Text.Trim, =, "")
+				F.Intrinsic.UI.Msgbox("Error: No cover selected for coupling 2 slot 2")
+				V.Global.bStop.Set(True)
+				F.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'check stenciling
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkSpec.CheckedAsBoolean)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtSpecIns.Text.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Error: No special stenciling instructions entered")
+		V.Global.bStop.Set(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.Form_Main!chkStencilPrice.checkedAsBoolean)
+		F.Intrinsic.Control.If(V.Screen.Form_Main!txtStencilPrice.Text.Trim, =, "")
+			F.Intrinsic.UI.Msgbox("Error: Stencil pricing selected but none entered")
+			V.Global.bStop.Set(True)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'check pinfold
+F.Intrinsic.Control.If(V.Global.bPinFold)
+	F.Intrinsic.Control.If(V.Screen.Form_Main!txtPinfold.Text.Trim, =, "")
+		F.Intrinsic.UI.Msgbox("Error: No Pinfold quantity entered")
+		V.Global.bStop.Set(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.bStop.Set(False)
+Program.Sub.PreRunCheck.End
+
+Program.Sub.CheckClassLogo.Start
+V.Local.sClass.Declare(String)
+V.Local.sSelect.Declare(String)
+V.Local.sFilter.Declare(String)
+
+V.Local.sClass.Set(V.Screen.Form_Main!ddlClass.Text.Trim)
+F.Intrinsic.String.Build("CLASS = '{0}' and CUSTOMER = '{1}'", V.Local.sClass, V.Global.sCustomer.Trim, V.Local.sSelect)
+F.Data.DataTable.Select("CustLogoDT", V.Local.sSelect, V.Local.sSelect)
+
+'should only be one
+F.Intrinsic.Control.If(V.Local.sSelect.Trim, !=, "***NORETURN***")
+	GUI.Form_Main.ddlLogo1.Text(V.DataTable.CustLogoDT(V.Local.sSelect).MVALUE!FieldValTrim)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("customer = '{0}' and PRILOGO = True", V.Global.sCustomer, V.Local.sSelect)
+	F.Data.DataTable.Select("CustLogoDT", V.Local.sSelect, V.Local.sSelect)
+	F.Intrinsic.Control.If(V.Local.sSelect.Trim, !=, "***NORETURN***")
+		'should only be one
+		GUI.Form_Main.ddlLogo1.Text(V.DataTable.CustLogoDT(V.Local.sSelect).MVALUE!FieldValTrim)
+	F.Intrinsic.Control.Else
+		GUI.Form_Main.ddlLogo1.Text("MERCEDES")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.CallSub(ddlLogo1_Click)
+Program.Sub.CheckClassLogo.End
+
+Program.Sub.chkPinFold_Click.Start
+'F.Intrinsic.Control.If(V.Screen.Form_Main!txtPinfold.Enabled)
+'	GUI.Form_Main.txtPinfold.Enabled(False)
+'	GUI.Form_Main.txtPinfold.Text("")
+'	GUI.Form_Main.txtPinfold.BackColor(-2147483626)
+'F.Intrinsic.Control.Else
+'	GUI.Form_Main.txtPinFold.Enabled(True)
+'	GUI.Form_Main.txtPinfold.BackColor(-2147483643)
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkPinFold.checkedAsBoolean)
+	GUI.Form_Main.txtPinfold.Enabled(False)
+	GUI.Form_Main.txtPinfold.Text("")
+	GUI.Form_Main.txtPinfold.BackColor(-2147483626)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtPinFold.Enabled(True)
+	GUI.Form_Main.txtPinfold.BackColor(-2147483643)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkPinFold_Click.End
+
+Program.Sub.chkStencilPrice_Click.Start
+GUI.Form_Main.txtStencilPrice.Enabled(V.Screen.Form_Main!chkStencilPrice.checkedAsBoolean)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkStencilPrice.checkedAsBoolean)
+	GUI.Form_Main.txtStencilPrice.BackColor(-2147483643)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtStencilPrice.Text("")
+	GUI.Form_Main.txtStencilPrice.BackColor(-2147483626)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkStencilPrice_Click.End
+
+Program.Sub.chkStampPrice_Click.Start
+GUI.Form_Main.txtStampPrice.Enabled(V.Screen.Form_Main!chkStampPrice.checkedAsBoolean)
+
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkStampPrice.checkedAsBoolean)
+	GUI.Form_Main.txtStampPrice.BackColor(-2147483643)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtStampPrice.Text("")
+	GUI.Form_Main.txtStampPrice.BackColor(-2147483626)
+F.Intrinsic.Control.EndIf
+Program.Sub.chkStampPrice_Click.End
+
+Program.Sub.txtStencilPrice_LostFocus.Start
+V.Local.sPrice.Declare(String)
+
+V.Local.sPrice.Set(V.Screen.Form_Main!txtStencilPrice.Text.Trim)
+F.Intrinsic.String.Format(V.Local.sPrice, "#########.00", V.Local.sPrice)
+GUI.Form_Main.txtStencilPrice.Text(V.Local.sPrice)
+Program.Sub.txtStencilPrice_LostFocus.End
+
+Program.Sub.txtStampPrice_LostFocus.Start
+V.Local.sPrice.Declare(String)
+
+V.Local.sPrice.Set(V.Screen.Form_Main!txtStampPrice.Text.Trim)
+F.Intrinsic.String.Format(V.Local.sPrice, "#########.00", V.Local.sPrice)
+GUI.Form_Main.txtStampPrice.Text(V.Local.sPrice)
+Program.Sub.txtStampPrice_LostFocus.End
+
+Program.Sub.chkCouplingOnly_Click.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean)
+	GUI.Form_Main.txtHose.Text("")
+	F.Intrinsic.Control.CallSub(txtHose_LostFocus)
+
+	GUI.Form_Main.txtHose.Enabled(False)
+	GUI.Form_Main.txtHose.BackColor(-2147483626)
+	GUI.Form_Main.ddlClass.Enabled(False)
+	GUI.Form_Main.cmdBrClass.Enabled(False)
+	GUI.Form_Main.ddlDiam.Enabled(False)
+	GUI.Form_Main.cboLength.Enabled(False)
+	GUI.Form_Main.ddlAssy.Enabled(False)
+	GUI.Form_Main.ddlColor.Enabled(False)
+	GUI.Form_Main.ddlLogo1.Enabled(False)
+	GUI.Form_Main.chkLogo2.Enabled(False)
+	GUI.Form_Main.chkLogo3.Enabled(False)
+	GUI.Form_Main.txtSrvTst.Enabled(False)
+	GUI.Form_Main.txtSrvTst.BackColor(-2147483626)
+	GUI.Form_Main.txtTrName.Enabled(False)
+	GUI.Form_Main.txtTrName.BackColor(-2147483626)
+	GUI.Form_Main.ddlApproval.Enabled(False)
+	GUI.Form_Main.txtHoseQty.Enabled(False)
+	GUI.Form_Main.txtHoseQty.BackColor(-2147483626)
+	GUI.Form_Main.chk1.Enabled(False)
+	GUI.Form_Main.chkSpec.Enabled(False)
+	GUI.Form_Main.txtHoseDateMonth.Enabled(False)
+	GUI.Form_Main.txtHoseDateMonth.BackColor(-2147483626)
+	GUI.Form_Main.txtHoseDateyear.Enabled(False)
+	GUI.Form_Main.txtHoseDateyear.BackColor(-2147483626)
+	GUI.Form_Main.chkNoCoupling.Enabled(False)
+	GUI.Form_Main.ddlQtyPP1.ListIndex(-1)
+	GUI.Form_Main.ddlQtyPP1.Enabled(False)
+	GUI.Form_Main.ddlQtyPP2.ListIndex(-1)
+	GUI.Form_Main.ddlQtyPP2.Enabled(False)
+	GUI.Form_Main.txtCpl1OrderQty.Enabled(True)
+	GUI.Form_Main.txtCpl2OrderQty.Enabled(True)
+	GUI.Form_Main.txtCpl1OrderQty.BackColor(-2147483643)
+	GUI.Form_Main.txtCpl2OrderQty.BackColor(-2147483643)
+	
+	GUI.Form_Main.cmdOK.Enabled(True)
+	GUI.Form_Main.lblCplAssocError.Visible(False)
+	GUI.Form_Main.lblCplAssocError2.Visible(False)
+	GUI.Form_Main.lblAssocError.Visible(False)
+	GUI.Form_Main.lblHoseError.Visible(False)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtHose.Enabled(True)
+	GUI.Form_Main.txtHose.BackColor(-2147483643)
+	GUI.Form_Main.ddlClass.Enabled(True)
+	GUI.Form_Main.cmdBrClass.Enabled(True)
+	GUI.Form_Main.ddlDiam.Enabled(True)
+	GUI.Form_Main.cboLength.Enabled(True)
+	GUI.Form_Main.ddlAssy.Enabled(True)
+	GUI.Form_Main.ddlColor.Enabled(True)
+	GUI.Form_Main.ddlLogo1.Enabled(True)
+	GUI.Form_Main.chkLogo2.Enabled(True)
+	GUI.Form_Main.chkLogo3.Enabled(True)
+	GUI.Form_Main.txtSrvTst.Enabled(True)
+	GUI.Form_Main.txtSrvTst.BackColor(-2147483643)
+	GUI.Form_Main.txtTrName.Enabled(True)
+	GUI.Form_Main.txtTrName.BackColor(-2147483643)
+	GUI.Form_Main.ddlApproval.Enabled(True)
+	GUI.Form_Main.txtHoseQty.Enabled(True)
+	GUI.Form_Main.txtHoseQty.BackColor(-2147483643)
+	GUI.Form_Main.chk1.Enabled(True)
+	GUI.Form_Main.chkSpec.Enabled(True)
+	GUI.Form_Main.txtHoseDateMonth.Enabled(True)
+	GUI.Form_Main.txtHoseDateMonth.BackColor(-2147483643)
+	GUI.Form_Main.txtHoseDateyear.Enabled(True)
+	GUI.Form_Main.txtHoseDateyear.BackColor(-2147483643)
+	GUI.Form_Main.chkNoCoupling.Enabled(True)
+
+	GUI.Form_Main.ddlQtyPP1.Enabled(True)
+
+	GUI.Form_Main.ddlQtyPP2.Enabled(True)
+	GUI.Form_Main.txtCpl1OrderQty.Enabled(False)
+	GUI.Form_Main.txtCpl2OrderQty.Enabled(False)
+	GUI.Form_Main.txtCpl1OrderQty.BackColor(-2147483626)
+	GUI.Form_Main.txtCpl2OrderQty.BackColor(-2147483626)
+	
+	GUI.Form_Main.lblCplAssocError.Visible(False)
+	GUI.Form_Main.lblCplAssocError2.Visible(False)
+	GUI.Form_Main.lblAssocError.Visible(False)
+	GUI.Form_Main.lblHoseError.Visible(False)
+	
+	'F.Intrinsic.Control.CallSub(cmdClear_Click)
+	F.Intrinsic.Control.If(V.Global.bLoadScreen.Not)
+		GUI.Form_Main.txtPartCpl1.Text("")
+		GUI.Form_Main.txtCpl1OrderQty.Text("")
+		GUI.Form_Main.txtCpl1UM.Text("")
+		GUI.Form_Main.ddlQtyPP1.ListIndex(-1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.chkCouplingOnly_Click.End
+
+Program.Sub.ClearHose.Start
+F.Intrinsic.Control.If(V.Screen.Form_Main!chkCouplingOnly.CheckedAsBoolean, =, False)
+	F.Intrinsic.Control.CallSub(cmdClear_Click)
+F.Intrinsic.Control.Else
+	GUI.Form_Main.txtSrvTst.Text("")
+	GUI.Form_Main.txtTrName.Text("")
+	GUI.Form_Main.ddlLogo1.ListIndex(-1)
+	F.Intrinsic.Control.CallSub(ddlLogo1_Click)
+	GUI.Form_Main.chkLogo2.Value(False)
+	F.Intrinsic.Control.CallSub(chkLogo2_Click)
+	GUI.Form_Main.chkLogo3.Value(False)
+	F.Intrinsic.Control.CallSub(chkLogo3_Click)
+	GUI.Form_Main.ddlApproval.ListIndex(-1)
+	GUI.Form_Main.txtHoseQty.Text("")
+	GUI.Form_Main.chk1.Value(0)
+	GUI.Form_Main.chkSpec.Value(0)
+	F.Intrinsic.Control.CallSub(chkSpec_Click)
+	GUI.Form_Main.chkPinFold.Value(1)
+	F.Intrinsic.Control.CallSub(chkPinFold_Click)
+	GUI.Form_Main.chkNoCoupling.Value(0)
+	F.Intrinsic.Control.CallSub(chkNoCoupling_Click)
+F.Intrinsic.Control.EndIf
+Program.Sub.ClearHose.End
